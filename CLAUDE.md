@@ -52,8 +52,15 @@ tekst + bildenavn + plassering; Claude lager stedssiden fra `steder/_mal.html`, 
 neste ledige kode, legger til raden i `steder.js`, pusher, og returnerer stolpekode +
 QR-URL. **Kode-register ligger i `LEGGE-TIL-STED.md` — hold det oppdatert.**
 
+**Flerspråk (planlagt, ikke implementert):** Kulturjakten skal bli flerspråklig — første
+språk er **ukrainsk** (`uk`), første omfang er **kun forsiden**. Arkitektur er besluttet:
+én `index.html` + ordbok `assets/js/i18n.js` (én kolonne per språk), flagg som SVG (ikke
+emoji). **Full oppskrift i `OVERSETTE.md`** — følg den når Espen sier fra (f.eks. «oversett
+forsiden til ukrainsk»). Ikke bygd ennå.
+
 **Venter på Espen:** rydde testrader i Firestore-ledertavla; generere QR-koder (Milepæl 3);
-fylle inn flere steder; (valgfritt) sette `MAILERLITE_URL` i `index.html`.
+fylle inn flere steder; (valgfritt) sette `MAILERLITE_URL` i `index.html`; **gi klarsignal
+for ukrainsk oversetting av forsiden (se `OVERSETTE.md`).**
 
 ---
 
