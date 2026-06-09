@@ -34,6 +34,11 @@ npx serve
 
 ## Legge til et nytt sted (3 steg)
 
+> Jobber du sammen med Claude Code? Se [`LEGGE-TIL-STED.md`](LEGGE-TIL-STED.md) for den
+> AI-assisterte arbeidsflyten (du sender tekst + bilder, får kode + QR-URL tilbake).
+> Den manuelle fremgangsmåten er beskrevet under.
+
+
 1. **Lag stedssiden:** kopier [`steder/_mal.html`](steder/_mal.html) til
    `steder/<din-id>.html`. Bytt ut alt merket med `[[ ... ]]` med ekte innhold,
    og sett `STED_ID` nederst lik stedets id.

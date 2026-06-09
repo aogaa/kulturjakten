@@ -4,6 +4,58 @@ Dette dokumentet er prosjektgrunnlaget for Claude Code. Les hele før du begynne
 
 ---
 
+## 0. Status (sist oppdatert 2026-06-09) — LES DENNE FØRST
+
+Prosjektet er **bygget og publisert live**. Det meste av brief-en under (§1–§10) er
+realisert. Denne seksjonen beskriver dagens faktiske tilstand og de beslutningene som er
+tatt; ved konflikt mellom §0 og resten gjelder §0.
+
+**Live:** https://kulturjakten.frivilligsentralen.org/ (GitHub Pages).
+- Repo: `aogaa/kulturjakten` (gh-konto `aogaa`, espen@aogaa.no), **public**, branch `main`,
+  Pages-kilde `main`/rot, Enforce HTTPS på. `CNAME` i rot. DNS er satt opp.
+- Publiser endringer = `git add -A && git commit && git push` til `main` (Pages bygger automatisk).
+
+**Milepæler:** 0, 1 og 2 er ferdige og deployet. Gjenstår **Milepæl 3** (QR-koder i `/qr/`
++ flere steder).
+
+**Beslutninger som er tatt (ikke åpne uten grunn):**
+- Klasser: **Barn / Voksen / Senior** (ikke Sykkel).
+- Kartverket WMTS: `https://cache.kartverket.no/v1/wmts/1.0.0/topo/default/webmercator/{z}/{y}/{x}.png`.
+- Firebase Firestore-prosjekt `kulturjakten-1e9a7`; regler publisert (offentlig les; skriv
+  med formvalidering; **delete blokkert fra klient** → rydd testrader manuelt i konsollen).
+
+**Viktige tillegg/avvik fra original brief:**
+- **Poeng krever stolpekoden i URL-en (`?k=<kode>`).** Registrering/poeng skjer KUN når
+  stedssiden åpnes med `?k=<kode>` (samme `kode` som i `steder.js`). Uten/feil kode = ren
+  lesemodus, ingen poeng (tetter «poeng fra sofaen» via kart-/lenkeklikk). **Derfor må
+  QR-koden peke til `.../steder/<id>.html?k=<KODE>`**, ikke den nakne URL-en. Logikk i
+  `registrering.js`; manuell inntasting på forsiden legger på `?k=` automatisk.
+- **Forside (`index.html`)** er redesignet: fullbredde hero-bilde (`assets/img/ui/hero.jpg`,
+  optimalisert fra `hero.png`) + «golden circle»-struktur (Hvorfor → Hva → Hvordan →
+  kom-i-gang → kart → manuell kode → ledertavle).
+- **Logo + identitet:** VAFS-logo (`assets/img/ui/vafs-logo.png`) på hvit badge i den delte
+  grønne headeren på alle sider, med «Stiftelsen Vestre Aker Frivilligsentral» (lenke til
+  `https://frivilligsentralen.org/om-oss.html`) under. Footer-banner (`.bunn`) med © + samme
+  lenke.
+- **Moderering av kallenavn:** `assets/js/forbudteord.js` (blokkliste + normalisering); lag 1
+  hindrer registrering, lag 2 maskerer på ledertavla. Ikke vanntett — reaktiv sletting i
+  Firestore er bakstopper.
+- **Lokal testing:** `serve.json` i rot (`cleanUrls:false` + rewrite `/`→`/index.html`) så
+  `npx serve` bevarer `?k=` og serverer forsiden. GitHub Pages ignorerer fila.
+
+**Innhold nå:** ett ekte sted — **Møteplass Vinderen** (`id: moteplass-vinderen`, kode
+`VAFS-01`). Holmenkollen-eksempelet er fjernet.
+
+**Legge til nye steder:** følg `LEGGE-TIL-STED.md` (egen runbook). Kort fortalt: Espen gir
+tekst + bildenavn + plassering; Claude lager stedssiden fra `steder/_mal.html`, tildeler
+neste ledige kode, legger til raden i `steder.js`, pusher, og returnerer stolpekode +
+QR-URL. **Kode-register ligger i `LEGGE-TIL-STED.md` — hold det oppdatert.**
+
+**Venter på Espen:** rydde testrader i Firestore-ledertavla; generere QR-koder (Milepæl 3);
+fylle inn flere steder; (valgfritt) sette `MAILERLITE_URL` i `index.html`.
+
+---
+
 ## 1. Hva prosjektet er
 
 En lokal **kultur- og historiejakt** for Vestre Aker Frivilligsentral (VAFS). Konseptet:
