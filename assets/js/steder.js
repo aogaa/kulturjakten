@@ -1,0 +1,44 @@
+// steder.js — FASIT over alle stolper i kultur- og historiejakten.
+//
+// Dette er eneste sannhetskilde for hvilke steder som finnes. Kart-markører,
+// gyldige koder og lenker til stedssider leses herfra. Skal du legge til et nytt
+// sted: legg til ett objekt i STEDER nedenfor, og lag den tilhørende HTML-sida
+// under /steder/ (kopier steder/_mal.html).
+//
+// Krav til hvert sted:
+//   - `id`   må være unik (brukes i URL og som nøkkel i localStorage).
+//   - `kode` må være unik (lesbar reservekode som står på stolpen).
+//
+// VIKTIG om poeng: registrering skjer kun når stedssiden åpnes med koden i URL-en
+// (?k=<kode>). QR-koden på stolpen MÅ derfor peke til f.eks.
+//   steder/moteplass-vinderen.html?k=VAFS-01
+// Uten ?k= blir siden ren lesemodus (ingen poeng). Se README for detaljer.
+
+export const STEDER = [
+  {
+    id: "moteplass-vinderen",                  // unik nøkkel — IKKE endre etter publisering
+    navn: "Møteplass Vinderen",
+    kode: "VAFS-01",                           // lesbar reservekode på stolpen
+    poeng: 100,                                // poeng for å finne stedet
+    lat: 59.943133,                            // fra UTM 260093.04,6652867.77 (EPSG:25833)
+    lng: 10.704232,
+    side: "steder/moteplass-vinderen.html",    // relativ lenke til stedssiden
+    kortbeskrivelse: "Kafé, frivillighet og varme møter mellom mennesker – kultur i hverdagen." // vises i kart-popup
+  }
+  // ── Legg til flere steder her ──
+];
+
+/** Finn et sted ut fra unik id. Returnerer objektet eller undefined. */
+export function finnSted(id) {
+  return STEDER.find((s) => s.id === id);
+}
+
+/**
+ * Finn et sted ut fra lesbar kode (manuell inntasting / reserve for QR).
+ * Tolerant for store/små bokstaver og omkringliggende mellomrom.
+ */
+export function finnStedMedKode(kode) {
+  if (!kode) return undefined;
+  const normalisert = kode.trim().toUpperCase();
+  return STEDER.find((s) => s.kode.toUpperCase() === normalisert);
+}

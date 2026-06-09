@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kultur- og historiejakt – Vestre Aker</title>
+  <meta name="description" content="Bli med på kultur- og historiejakt i Vestre Aker. Finn stolper, les lokalhistorie og samle poeng." />
+
+  <!-- Leaflet (kart) fra CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <a class="topp-logo" href="index.html">
+      <img src="assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>Kultur- og historiejakt</h1>
+  </header>
+
+  <!-- Hero: fullbredde stemningsbilde + den emosjonelle kroken (golden circle: hvorfor) -->
+  <section class="hero">
+    <div class="hero-innhold">
+      <h2>Oppdag historien rett rundt hjørnet</h2>
+      <p>Vestre Aker er fullt av historier. Gå på tur, finn stolpene og bli kjent
+         med nabolaget på en helt ny måte.</p>
+    </div>
+  </section>
+
+  <main class="innhold">
+    <!-- HVORFOR -->
+    <section>
+      <h2>Hvorfor kulturjakt?</h2>
+      <p class="seksjon-intro">Vi tror nærmiljøets historie fortjener å bli oppdaget –
+        til fots, sammen og ute i frisk luft. Kulturjakten er en gratis tur- og
+        historieopplevelse for hele Vestre Aker: god for beina, hjertet og
+        nysgjerrigheten.</p>
+    </section>
+
+    <!-- HVA -->
+    <section>
+      <h2>Hva vi har laget</h2>
+      <p class="seksjon-intro">Rundt om har vi satt ut stolper på steder med
+        lokalhistorisk verdi. Hver stolpe har en QR-kode som tar deg til en side med
+        historien om stedet, bilder og kart. Ingen app, ingen innlogging – bare et
+        kallenavn og en klasse. <span class="uthev"><span id="antall-steder">…</span>
+        steder</span> venter på å bli oppdaget.</p>
+    </section>
+
+    <!-- HVORDAN -->
+    <section>
+      <h2>Slik bruker du det</h2>
+      <ol class="steg-liste">
+        <li class="steg">
+          <div>
+            <h3>Velg kallenavn og klasse</h3>
+            <p>Helt enkelt – ingen innlogging. Alt er helt anonymt, perfekt for
+               deg som bare vil ha det hyggelig.</p>
+          </div>
+        </li>
+        <li class="steg">
+          <div>
+            <h3>Gå på tur og finn en stolpe</h3>
+            <p>Bruk kartet under for å se hvor stolpene står.</p>
+          </div>
+        </li>
+        <li class="steg">
+          <div>
+            <h3>Skann QR-koden</h3>
+            <p>Da åpnes stedssiden med historien, bilder og kart.</p>
+          </div>
+        </li>
+        <li class="steg">
+          <div>
+            <h3>Samle poeng</h3>
+            <p>Nye steder gir poeng. Følg med på ledertavla!</p>
+          </div>
+        </li>
+      </ol>
+      <div class="steg-cta">
+        <a class="knapp" href="#start">Kom i gang</a>
+      </div>
+    </section>
+
+    <!-- KOM I GANG (hero-knappen scroller hit) -->
+    <section class="kort" id="start">
+      <h2>Bli med på jakten</h2>
+      <p>Velg et kallenavn og en klasse, så er du i gang. Du kan endre det når som helst.</p>
+      <!-- Profil/«kom i gang» fylles inn av skriptet under -->
+      <div id="kom-i-gang"></div>
+    </section>
+
+    <section>
+      <h2>Utforsk stolpene på kartet</h2>
+      <p class="dempet">Trykk på en markør for å lese mer om stedet.</p>
+      <div id="kart"></div>
+      <div class="tegnforklaring">
+        <span><span class="prikk prikk-ny"></span> Ikke besøkt ennå</span>
+        <span><span class="prikk prikk-funnet"></span> Besøkt</span>
+      </div>
+    </section>
+
+    <section class="kort">
+      <h2>Fikk du ikke skannet QR-koden?</h2>
+      <p>Skriv inn koden som står på stolpen, så tar vi deg til stedet.</p>
+      <form id="kode-skjema" class="skjema">
+        <label>Kode
+          <input type="text" id="kode" autocomplete="off" placeholder="F.eks. VAFS-A7" />
+        </label>
+        <p class="reg-feil" id="kode-feil" hidden></p>
+        <button type="submit">Gå til stedet</button>
+      </form>
+    </section>
+
+    <!-- Valgfri nyhetsbrev-påmelding. Vises kun når MAILERLITE_URL er satt under. -->
+    <section class="kort" id="nyhetsbrev" hidden></section>
+
+    <div class="lenkerad">
+      <a class="knapp" href="ledertavle.html">Se ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { lagKart } from "./assets/js/kart.js";
+    import { KLASSER, lesTilstand, settProfil, harProfil } from "./assets/js/jakt.js";
+    import { erUpassende } from "./assets/js/forbudteord.js";
+    import { finnStedMedKode, STEDER } from "./assets/js/steder.js";
+
+    lagKart("kart");
+
+    // Dynamisk antall steder i «Hva vi har laget»-seksjonen.
+    const antallSteder = document.getElementById("antall-steder");
+    if (antallSteder) antallSteder.textContent = String(STEDER.length);
+
+    // ── Valgfri nyhetsbrev-påmelding (MailerLite) ──
+    // Lim inn URL-en til VAFS sitt MailerLite-skjema her. Seksjonen er skjult så
+    // lenge denne er tom, så ingen død lenke vises før den er konfigurert.
+    const MAILERLITE_URL = "";
+    if (MAILERLITE_URL) {
+      const nb = document.getElementById("nyhetsbrev");
+      nb.innerHTML = `
+        <h2>Vil du høre om nye stolper?</h2>
+        <p>Meld deg på VAFS sitt nyhetsbrev for å få beskjed når vi setter ut nye
+           stolper og arrangerer turer. Helt frivillig — du kan delta i jakten uten.
+           En voksen melder på e-post på vegne av familien.</p>
+        <a class="knapp" href="${MAILERLITE_URL}" target="_blank" rel="noopener">
+          Meld meg på (åpnes hos MailerLite)
+        </a>`;
+      nb.hidden = false;
+    }
+
+    // Manuell kode-inntasting (reserve hvis QR ikke virker).
+    document.getElementById("kode-skjema").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const kode = document.getElementById("kode").value;
+      const feil = document.getElementById("kode-feil");
+      const sted = finnStedMedKode(kode);
+      if (!sted) {
+        feil.textContent = "Fant ingen stolpe med den koden. Sjekk at du har skrevet den riktig.";
+        feil.hidden = false;
+        return;
+      }
+      // Send koden med i URL-en, så stedssiden registrerer besøket.
+      location.href = sted.side + "?k=" + encodeURIComponent(sted.kode);
+    });
+
+    const boks = document.getElementById("kom-i-gang");
+
+    function visProfil() {
+      const t = lesTilstand();
+      boks.innerHTML = `
+        <div class="profil-hei">
+          <span>Hei <strong>${escapeHtml(t.kallenavn)}</strong> (${escapeHtml(t.klasse)})</span>
+          <span class="poeng">${t.totalpoeng} poeng</span>
+        </div>
+        <p class="dempet">Klar for tur! Finn en stolpe og skann QR-koden.
+          <a href="#" id="endre-profil">Endre kallenavn/klasse</a>.</p>`;
+      boks.querySelector("#endre-profil").addEventListener("click", (e) => {
+        e.preventDefault();
+        visSkjema();
+      });
+    }
+
+    function visSkjema() {
+      const valg = KLASSER.map((k) => `<option value="${k}">${k}</option>`).join("");
+      boks.innerHTML = `
+        <form id="profil-skjema" class="skjema">
+          <label>Kallenavn
+            <input type="text" id="kallenavn" maxlength="20" required
+                   autocomplete="off" placeholder="F.eks. Turbo" />
+          </label>
+          <label>Klasse
+            <select id="klasse" required>${valg}</select>
+          </label>
+          <p class="reg-feil" id="navn-feil" hidden></p>
+          <button type="submit">Kom i gang</button>
+        </form>`;
+      boks.querySelector("#profil-skjema").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const kallenavn = boks.querySelector("#kallenavn").value.trim();
+        const klasse = boks.querySelector("#klasse").value;
+        if (!kallenavn) return;
+        const feil = boks.querySelector("#navn-feil");
+        if (erUpassende(kallenavn)) {
+          feil.textContent = "Velg et vennligere kallenavn 🙂";
+          feil.hidden = false;
+          return;
+        }
+        settProfil(kallenavn, klasse);
+        visProfil();
+      });
+    }
+
+    function escapeHtml(t) {
+      const d = document.createElement("div");
+      d.textContent = t;
+      return d.innerHTML;
+    }
+
+    if (harProfil()) visProfil();
+    else visSkjema();
+  </script>
+</body>
+</html>

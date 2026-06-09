@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nb">
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  MAL FOR EN STEDSSIDE — kopier denne fila for å lage et nytt sted.
+
+  Slik lager du et nytt sted (3 steg):
+    1. Kopier denne fila til steder/<din-id>.html  (samme id som i steder.js).
+    2. Bytt ut alt merket med [[ ... ]] nedenfor med ekte innhold.
+    3. Sett STED_ID nederst lik stedets id, og legg til raden i assets/js/steder.js.
+  Ikke noe mer. Resten (kart, registrering, poeng, ledertavle) skjer automatisk.
+  ════════════════════════════════════════════════════════════════════════
+-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[[Stedets navn]] – Kultur- og historiejakt</title>
+
+  <!-- Leaflet (kart) fra CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <a class="topp-logo" href="../index.html">
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>[[Stedets navn]]</h1>
+    <p><a href="../index.html">← Tilbake til kart og forside</a></p>
+  </header>
+
+  <main class="innhold">
+
+    <!-- Registreringsstatus (fylles av skriptet: nytt sted / allerede besøkt / bli med) -->
+    <section class="kort" id="registrering"></section>
+
+    <!-- Historisk tekst -->
+    <section class="sted-historie">
+      <h2>Om stedet</h2>
+      <!-- [[ Lim inn historisk tekst her. Flere <p>-avsnitt etter behov. ]] -->
+      <p>[[ Historisk tekst om stedet kommer her. ]]</p>
+
+      <!-- Bilde(r). Legg bildefil i assets/img/steder/ og pek på den under. -->
+      <img class="sted-bilde" src="../assets/img/steder/[[bildefil.jpg]]"
+           alt="[[Beskrivende alt-tekst for bildet]]" />
+    </section>
+
+    <!-- Lite kartutsnitt som viser hvor stedet er -->
+    <section>
+      <h2>Her er du</h2>
+      <div class="kart-utsnitt" id="kart"></div>
+    </section>
+
+    <!-- «Slik blir du med»-boks for nysgjerrige som ikke deltar ennå -->
+    <section class="kort">
+      <h3>Slik blir du med på jakten</h3>
+      <p>Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+         hvert sted. Velg et kallenavn og en klasse – så samler du poeng for hvert
+         nye sted du besøker. Ingen innlogging, ingen app.</p>
+      <a class="knapp" href="../index.html">Se kart og kom i gang</a>
+    </section>
+
+    <div class="lenkerad">
+      <a class="knapp-sekundaer knapp" href="../index.html">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html">Til ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { kjorRegistrering } from "../assets/js/registrering.js";
+    import { lagKart } from "../assets/js/kart.js";
+
+    // ── SETT denne lik stedets id (samme som i steder.js) ──
+    // Merk: poeng gis kun når siden åpnes med koden i URL-en (?k=<kode>).
+    // QR-koden på stolpen må derfor peke til .../steder/<id>.html?k=<KODE>.
+    const STED_ID = "[[din-id]]";
+
+    kjorRegistrering(STED_ID);
+    lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+  </script>
+</body>
+</html>

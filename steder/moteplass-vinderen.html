@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Møteplass Vinderen – Kultur- og historiejakt</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <a class="topp-logo" href="../index.html">
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>Møteplass Vinderen</h1>
+    <p><a href="../index.html">← Tilbake til kart og forside</a></p>
+  </header>
+
+  <main class="innhold">
+
+    <section class="kort" id="registrering"></section>
+
+    <section class="sted-historie">
+      <h2>Kultur i hverdagen</h2>
+
+      <p>Når vi hører ordet kultur, går tankene ofte til kunst, konserter, bøker,
+         museer og gamle bygninger. Og ja, alt dette er kultur. Viktig kultur.</p>
+
+      <p>Men kultur er også noe som skjer helt vanlig, midt i hverdagen.</p>
+
+      <p>Det er måten vi hilser på hverandre. Hvordan vi tar imot en som kommer inn
+         døren for første gang. Hvordan vi setter på kaffe, trekker ut en stol og
+         sier: «Så hyggelig at du kom.»</p>
+
+      <p>Derfor passer Møteplass Vinderen så godt inn i Kulturjakten i Vestre Aker.</p>
+
+      <img class="sted-bilde" src="../assets/img/steder/moteplassen/moteplass1.jpg"
+           alt="Fra Møteplass Vinderen" />
+
+      <p>Dette er ikke et sted du må forstå før du kommer. Du trenger ikke være
+         medlem. Du trenger ikke melde deg på alt mulig. Du trenger ikke ha en plan,
+         et ærend eller en god forklaring. Du kan bare komme innom.</p>
+
+      <p>Kanskje tar du en kopp kaffe. Kanskje møter du noen du kjenner. Kanskje slår
+         du av en prat med noen du aldri har møtt før. Eller kanskje sitter du bare
+         litt, ser deg rundt og kjenner at dette er et sted det går an å være.</p>
+
+      <p>På Møteplass Vinderen skjer det mye. Her er kafé, aktiviteter, frivillighet
+         og små og store møter mellom mennesker. Men det viktigste står ikke
+         nødvendigvis på programmet. Det viktigste skjer ofte rundt bordene, ved
+         kaffekoppen, i en kort samtale i døren eller når noen spør: «Hvordan går det
+         med deg?»</p>
+
+      <p>Noen kommer hit for å bidra. Noen kommer for å være med på en aktivitet.
+         Noen kommer fordi dagen blir bedre når man har et sted å gå. Mange gjør litt
+         av alt. Og det er kanskje nettopp derfor møteplassen betyr så mye.</p>
+
+      <img class="sted-bilde" src="../assets/img/steder/moteplassen/anita.jpg"
+           alt="Møteplass Vinderen" />
+
+      <p>For frivillighet handler ikke bare om oppgaver som skal løses. Det handler om
+         folk. Om å gjøre nærmiljøet litt varmere, litt tryggere og litt mer
+         menneskelig. Når noen ønsker velkommen, dekker et bord, lager kaffe,
+         arrangerer noe hyggelig eller tar seg tid til en prat, da bygges kultur. Ikke
+         høytidelig kultur. Ikke kultur på sokkel. Men levende kultur, slik vi merker
+         den i hverdagen.</p>
+
+      <p>Vestre Aker har mye å være stolt av. Vi har natur, historie, skoler,
+         idrettslag, foreninger, institusjoner og mange mennesker som legger ned tid
+         og krefter for andre. Møteplass Vinderen er en del av dette. Ikke fordi
+         stedet er gammelt eller storslått, men fordi det viser noe fint om hvem vi
+         ønsker å være.</p>
+
+      <p class="sitat"><em>Et lokalsamfunn der det er plass til flere rundt bordet.</em></p>
+
+      <p>Kulturjakten handler om å oppdage nærmiljøet med nye øyne. Møteplass Vinderen
+         minner oss om at kultur ikke bare er noe vi ser på. Det er også noe vi gjør
+         sammen.</p>
+
+      <img class="sted-bilde" src="../assets/img/steder/moteplassen/moteplass2.jpg"
+           alt="Fra Møteplass Vinderen" />
+
+      <p>Så kom gjerne innom. Ta med en nabo, en venn eller noen som kanskje trenger
+         et sted å gå. Sett deg ned. Ta en kopp kaffe. Kjenn litt på fellesskapet.</p>
+
+      <p>Og når du er ferdig her, fortsetter jakten. Vestre Aker har mange flere
+         steder, historier og møteplasser å oppdage.</p>
+    </section>
+
+    <section>
+      <h2>Her er du</h2>
+      <div class="kart-utsnitt" id="kart"></div>
+    </section>
+
+    <section class="kort">
+      <h3>Slik blir du med på jakten</h3>
+      <p>Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+         hvert sted. Velg et kallenavn og en klasse – så samler du poeng for hvert
+         nye sted du besøker. Ingen innlogging, ingen app.</p>
+      <a class="knapp" href="../index.html">Se kart og kom i gang</a>
+    </section>
+
+    <div class="lenkerad">
+      <a class="knapp-sekundaer knapp" href="../index.html">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html">Til ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { kjorRegistrering } from "../assets/js/registrering.js";
+    import { lagKart } from "../assets/js/kart.js";
+
+    const STED_ID = "moteplass-vinderen";
+
+    kjorRegistrering(STED_ID);
+    lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+  </script>
+</body>
+</html>

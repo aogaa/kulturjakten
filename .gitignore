@@ -1,0 +1,6 @@
+# Lokale verktøy- og editorfiler (ikke del av nettstedet)
+.claude/
+
+# OS-genererte filer
+Thumbs.db
+.DS_Store

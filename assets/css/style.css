@@ -1,0 +1,287 @@
+/* style.css — felles stil for kultur- og historiejakten.
+   Mobil først: folk står ute ved en stolpe med telefon. Hold det lett og lesbart. */
+
+:root {
+  --farge-skog: #2f5d3a;
+  --farge-skog-mork: #224429;
+  --farge-sand: #f5f1e6;
+  --farge-tekst: #23271f;
+  --farge-dempet: #5d6657;
+  --farge-aksent: #c2703d;
+  --farge-suksess: #2f7d4f;
+  --kant: #d9d2bf;
+  --skygge: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+  --bredde: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--farge-tekst);
+  background: var(--farge-sand);
+  line-height: 1.6;
+}
+
+.innhold {
+  max-width: var(--bredde);
+  margin: 0 auto;
+  padding: 1rem 1.1rem 3rem;
+}
+
+/* ── Topp ── */
+.topp {
+  background: var(--farge-skog);
+  color: #fff;
+  padding: 1.2rem 1.1rem;
+  text-align: center;
+}
+.topp h1 { margin: 0; font-size: 1.4rem; }
+.topp p { margin: 0.3rem 0 0; opacity: 0.9; font-size: 0.95rem; }
+.topp a { color: #fff; }
+
+/* Logo-badge: logoen har sort tekst på gjennomsiktig bunn, så den får en
+   lys «brikke» for å være lesbar mot den grønne toppstripa. */
+.topp-logo {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 0.7rem;
+  background: #fff;
+  border-radius: 14px;
+  padding: 0.5rem 0.8rem;
+  box-shadow: var(--skygge);
+  line-height: 0;
+}
+.topp-logo img { display: block; height: 58px; width: auto; }
+.topp-logo:hover { background: var(--farge-sand); }
+
+/* Organisasjonsnavn under logoen (lenke til frivilligsentralen.org). */
+.topp-org {
+  display: block;
+  margin: 0 0 0.6rem;
+  font-size: 0.92rem;
+  color: #fff;
+  opacity: 0.92;
+  text-decoration: none;
+}
+.topp-org:hover { text-decoration: underline; opacity: 1; }
+
+/* ── Bunn-banner ── */
+.bunn {
+  background: var(--farge-skog);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 1.1rem;
+  font-size: 0.9rem;
+}
+.bunn p { margin: 0; }
+.bunn a { color: #fff; }
+
+/* ── Hero (kun forsiden) ── */
+.hero {
+  position: relative;
+  background-image: linear-gradient(rgba(34, 68, 41, 0.55), rgba(34, 68, 41, 0.78)),
+    url("../img/ui/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1.2rem;
+}
+.hero-innhold { max-width: var(--bredde); margin: 0 auto; }
+.hero h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+.hero p {
+  margin: 0 auto 1.4rem;
+  max-width: 32rem;
+  font-size: 1.08rem;
+  opacity: 0.97;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+.hero .knapp {
+  background: #fff;
+  color: var(--farge-skog-mork);
+  font-size: 1.05rem;
+  padding: 0.8rem 1.6rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+.hero .knapp:hover { background: var(--farge-sand); }
+
+/* ── Seksjoner (golden circle: hvorfor/hva/hvordan) ── */
+.seksjon-intro { font-size: 1.08rem; max-width: 38rem; }
+.uthev { font-weight: 700; color: var(--farge-skog); }
+
+/* Steg-liste: nummererte steg i et responsivt rutenett */
+.steg-liste {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: 1fr;
+  counter-reset: steg;
+}
+.steg {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid var(--kant);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+  box-shadow: var(--skygge);
+}
+.steg::before {
+  counter-increment: steg;
+  content: counter(steg);
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--farge-skog);
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.steg h3 { margin: 0 0 0.15rem; font-size: 1.05rem; }
+.steg p { margin: 0; font-size: 0.95rem; color: var(--farge-dempet); }
+
+/* CTA under steg-lista */
+.steg-cta { text-align: center; margin-top: 1.2rem; }
+.steg-cta .knapp { font-size: 1.05rem; padding: 0.8rem 1.8rem; }
+
+@media (min-width: 640px) {
+  .hero { padding: 4.5rem 1.2rem; }
+  .hero h2 { font-size: 2.3rem; }
+  .steg-liste { grid-template-columns: 1fr 1fr; }
+}
+
+h2 { font-size: 1.25rem; margin: 1.8rem 0 0.6rem; }
+h3 { margin: 0 0 0.5rem; }
+
+a { color: var(--farge-skog-mork); }
+
+/* ── Kort/bokser ── */
+.kort {
+  background: #fff;
+  border: 1px solid var(--kant);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--skygge);
+  margin: 1rem 0;
+}
+
+/* ── Skjema ── */
+.skjema { display: flex; flex-direction: column; gap: 0.8rem; }
+.skjema label { display: flex; flex-direction: column; gap: 0.25rem; font-weight: 600; font-size: 0.95rem; }
+.skjema input, .skjema select {
+  padding: 0.65rem 0.7rem;
+  font-size: 1rem;
+  border: 1px solid var(--kant);
+  border-radius: 8px;
+  background: #fff;
+}
+button, .knapp {
+  display: inline-block;
+  background: var(--farge-skog);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+button:hover, .knapp:hover { background: var(--farge-skog-mork); }
+.knapp-sekundaer { background: transparent; color: var(--farge-skog-mork); border: 1px solid var(--farge-skog); }
+.knapp-sekundaer:hover { background: rgba(47, 93, 58, 0.08); }
+
+/* ── Kart ── */
+#kart, .kart-utsnitt {
+  width: 100%;
+  height: 60vh;
+  min-height: 320px;
+  border-radius: var(--radius);
+  border: 1px solid var(--kant);
+}
+.kart-utsnitt { height: 240px; }
+.kart-popup strong { font-size: 1rem; }
+.kart-popup p { margin: 0.3rem 0; }
+.popup-funnet { color: var(--farge-suksess); font-weight: 600; }
+
+/* Kart-markører (divIcon) */
+.kart-markor {
+  width: 26px;
+  height: 26px;
+  background: var(--farge-aksent);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.kart-markor--funnet { background: var(--farge-suksess); }
+
+/* Tegnforklaring under kartet */
+.tegnforklaring { display: flex; gap: 1.2rem; flex-wrap: wrap; margin: 0.6rem 0 0; font-size: 0.9rem; color: var(--farge-dempet); }
+.tegnforklaring span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.tegnforklaring .prikk { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.3); }
+.tegnforklaring .prikk-ny { background: var(--farge-aksent); }
+.tegnforklaring .prikk-funnet { background: var(--farge-suksess); }
+
+/* ── Registreringsstatus på stedssider ── */
+.reg-nytt { border-left: 4px solid var(--farge-suksess); padding-left: 0.9rem; }
+.reg-nytt .reg-poeng { font-size: 1.6rem; font-weight: 700; color: var(--farge-suksess); margin: 0.2rem 0; }
+.reg-besokt { color: var(--farge-dempet); }
+.reg-feil { color: var(--farge-aksent); }
+.reg-blimed h3 { color: var(--farge-skog-mork); }
+
+/* ── Profil/«hei»-stripe ── */
+.profil-hei { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.profil-hei .poeng { font-weight: 700; color: var(--farge-skog); }
+
+/* ── Stedsside-innhold ── */
+.sted-bilde { width: 100%; border-radius: var(--radius); margin: 0.8rem 0; }
+.sted-historie p { margin: 0.7rem 0; }
+.sted-historie .sitat {
+  border-left: 4px solid var(--farge-aksent);
+  padding-left: 1rem;
+  margin: 1.2rem 0;
+  font-size: 1.15rem;
+  color: var(--farge-skog-mork);
+}
+
+/* ── Ledertavle ── */
+.filter { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 1rem; }
+.filter button { background: #fff; color: var(--farge-skog-mork); border: 1px solid var(--farge-skog); padding: 0.4rem 0.9rem; }
+.filter button.aktiv { background: var(--farge-skog); color: #fff; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--kant); }
+th { font-size: 0.85rem; color: var(--farge-dempet); text-transform: uppercase; letter-spacing: 0.03em; }
+td.plass { font-weight: 700; color: var(--farge-skog); width: 2.5rem; }
+td.poeng { text-align: right; font-weight: 600; }
+
+/* ── Diverse ── */
+.dempet { color: var(--farge-dempet); font-size: 0.9rem; }
+.lenkerad { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.2rem; }
+
+@media (min-width: 640px) {
+  .topp h1 { font-size: 1.7rem; }
+}
