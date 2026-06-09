@@ -8,7 +8,8 @@ Dette dokumentet er prosjektgrunnlaget for Claude Code. Les hele før du begynne
 
 Prosjektet er **bygget og publisert live**. Det meste av brief-en under (§1–§10) er
 realisert. Denne seksjonen beskriver dagens faktiske tilstand og de beslutningene som er
-tatt; ved konflikt mellom §0 og resten gjelder §0.
+tatt; ved konflikt mellom §0 og resten gjelder §0. Detaljert historikk og tekniske feller:
+se `ENDRINGSLOGG.md`.
 
 **Live:** https://kulturjakten.frivilligsentralen.org/ (GitHub Pages).
 - Repo: `aogaa/kulturjakten` (gh-konto `aogaa`, espen@aogaa.no), **public**, branch `main`,
