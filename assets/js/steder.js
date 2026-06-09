@@ -24,6 +24,16 @@ export const STEDER = [
     lng: 10.704232,
     side: "steder/moteplass-vinderen.html",    // relativ lenke til stedssiden
     kortbeskrivelse: "Kafé, frivillighet og varme møter mellom mennesker – kultur i hverdagen." // vises i kart-popup
+  },
+  {
+    id: "froen-politistasjon",                 // unik nøkkel — IKKE endre etter publisering
+    navn: "Frøen politistasjon",
+    kode: "VAFS-02",                           // lesbar reservekode på stolpen
+    poeng: 100,                                // poeng for å finne stedet
+    lat: 59.939396,                            // fra UTM 260037.13,6652454.01 (EPSG:25833)
+    lng: 10.703714,
+    side: "steder/froen-politistasjon.html",   // relativ lenke til stedssiden
+    kortbeskrivelse: "Slemdalsveien 54 A – bolig, venterom og politistasjon med celler i sokkelen." // vises i kart-popup
   }
   // ── Legg til flere steder her ──
 ];

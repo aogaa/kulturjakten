@@ -260,6 +260,10 @@ button:hover, .knapp:hover { background: var(--farge-skog-mork); }
 /* ── Stedsside-innhold ── */
 .sted-bilde { width: 100%; border-radius: var(--radius); margin: 0.8rem 0; }
 .sted-historie p { margin: 0.7rem 0; }
+.sted-historie .ingress { font-size: 1.15rem; color: var(--farge-skog-mork); font-weight: 500; }
+.sted-historie figure { margin: 1rem 0; }
+.sted-historie figure .sted-bilde { margin: 0 0 0.4rem; }
+.sted-historie figcaption { font-size: 0.9rem; color: var(--farge-dempet); line-height: 1.45; }
 .sted-historie .sitat {
   border-left: 4px solid var(--farge-aksent);
   padding-left: 1rem;

@@ -85,5 +85,6 @@ Hver stolpe har en unik, lesbar kode `VAFS-NN`. Neste ledige nummer brukes for n
 | Kode | Sted | id | Status |
 |------|------|----|--------|
 | VAFS-01 | Møteplass Vinderen | `moteplass-vinderen` | ✅ live |
+| VAFS-02 | Frøen politistasjon | `froen-politistasjon` | ✅ live |
 
-**Neste ledige kode: `VAFS-02`.**
+**Neste ledige kode: `VAFS-03`.**

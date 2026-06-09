@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frøen politistasjon – Kultur- og historiejakt</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <a class="topp-logo" href="../index.html">
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>Frøen politistasjon</h1>
+    <p><a href="../index.html">← Tilbake til kart og forside</a></p>
+  </header>
+
+  <main class="innhold">
+
+    <section class="kort" id="registrering"></section>
+
+    <section class="sted-historie">
+      <h2>Huset med tog, venterom og politistasjon</h2>
+
+      <p class="ingress">Like ved Steinerud stasjon ligger et hus med mer liv i veggene enn
+         mange aner. Slemdalsveien 54 A har vært både bolig, venterom for reisende og
+         politistasjon med celler i sokkelen.</p>
+
+      <figure>
+        <img class="sted-bilde" src="../assets/img/steder/froen/froen1.jpg"
+             alt="Frøen politistasjon i dag – Slemdalsveien 54 A" />
+        <figcaption>Frøen Politistasjon i dag. Foto: Ola Ramstad</figcaption>
+      </figure>
+
+      <p>Slemdalsveien 54 A ble tegnet i 1901 av arkitekten Gustav Lorentz Guldbrandsen.
+         Huset ble reist i en tid da området rundt Vinderen og Frøen var i stor forandring.
+         Gårder og jordbruksområder forsvant gradvis, og nye villatomter kom til. En viktig
+         grunn var Holmenkollbanen, som gjorde det lettere å reise mellom byen og området
+         her oppe.</p>
+
+      <p>Huset lå ved det som den gang het Diakonhjemmets stasjon. Stasjonen åpnet i 1900, to
+         år etter flere av de andre stasjonene på banen. Den skulle særlig betjene pasienter,
+         besøkende og ansatte ved Diakonhjemmet. Derfor fikk Slemdalsveien 54 A også et eget
+         venterom for stasjonen.</p>
+
+      <p>Da huset ble planlagt, skulle det ha fire leiligheter og et venterom på rundt 20
+         kvadratmeter. I kjelleren var det boder, rom for klesvask og praktiske fellesrom.
+         Leilighetene hadde entré, kjøkken og to stuer som også kunne brukes som soverom. På
+         fasaden mot Holmenkollbanen ble det tegnet inn fire verandaer, som fortsatt finnes.</p>
+
+      <p>Men huset fikk snart enda en rolle. I 1903 ble sokkelen gjort om til Frøen
+         politistasjon. Kjøkkenet ble kontor, og stuene ble bygget om til tre celler med
+         gitter i vinduene. Dermed rommet huset både familier, reisende som ventet på toget,
+         politifolk og arrestanter.</p>
+
+      <figure>
+        <img class="sted-bilde" src="../assets/img/steder/froen/Aker_politi_1900-1905.jpg"
+             alt="Politistyrken i Aker politi med de to lensmennene, 1900–1905" />
+        <figcaption>Politistyrken i Aker politi og de to lensmennene: I midten første rad
+           sitter politimester Emil Jørgensen, med lensmannen for Vestre Aker, Ole Bøhn til
+           venstre og lensmannen for Østre Aker, August Wetlesen til høyre. Legg merke til
+           forskjellene i uniformen mellom lensmennene og politiet.</figcaption>
+      </figure>
+
+      <p>Det må ha vært et travelt sted. Her kom folk til og fra banen, pasienter og besøkende
+         skulle til Diakonhjemmet, og politistasjonen hadde sitt å gjøre. Det fortelles at det
+         kunne være mye bråk på løkkene i området, men sjelden med de fastboende. I starten var
+         det en stasjonær og to ridende betjenter knyttet til Frøen politistasjon. Senere var
+         det to fotbetjenter.</p>
+
+      <p>Politistasjonen holdt til i huset i over 30 år. I 1934 flyttet den ut, og navnet ble
+         endret fra Frøen politistasjon til Vinderen politistasjon. Etter hvert forsvant også
+         venterommet. Fra 1936 var Slemdalsveien 54 A et rent bolighus med fem leiligheter.</p>
+
+      <p>Huset er ikke fredet, men fasaden er i store trekk bevart. Holmenkollbanen går
+         fortsatt utenfor, slik den gjorde da huset var nytt. Ser du godt etter, står du ved et
+         lite stykke lokalhistorie: et hus som har fulgt området fra landlig Aker til bydel i
+         Oslo.</p>
+    </section>
+
+    <section>
+      <h2>Her er du</h2>
+      <div class="kart-utsnitt" id="kart"></div>
+    </section>
+
+    <section class="kort">
+      <h3>Slik blir du med på jakten</h3>
+      <p>Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+         hvert sted. Velg et kallenavn og en klasse – så samler du poeng for hvert
+         nye sted du besøker. Ingen innlogging, ingen app.</p>
+      <a class="knapp" href="../index.html">Se kart og kom i gang</a>
+    </section>
+
+    <div class="lenkerad">
+      <a class="knapp-sekundaer knapp" href="../index.html">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html">Til ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { kjorRegistrering } from "../assets/js/registrering.js";
+    import { lagKart } from "../assets/js/kart.js";
+
+    const STED_ID = "froen-politistasjon";
+
+    kjorRegistrering(STED_ID);
+    lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+  </script>
+</body>
+</html>
