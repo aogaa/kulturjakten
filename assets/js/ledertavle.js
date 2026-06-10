@@ -1,8 +1,10 @@
 // ledertavle.js — all Firestore-kontakt for ledertavla.
 //
 // Kolleksjonen `ledertavle` har ett dokument per deltaker:
-//   { kallenavn, klasse, poeng, sistOppdatert }
+//   { kallenavn, poeng, sistOppdatert }
 // Ingen e-post, ingen koordinater, ingenting som identifiserer en person.
+// (Rader skrevet før klassene ble fjernet kan ha et ekstra `klasse`-felt —
+// det ignoreres ved lesing og forsvinner når raden overskrives.)
 //
 // Dokument-id utledes fra kallenavnet (slug). Det betyr at samme kallenavn
 // oppdaterer samme rad i stedet for å lage duplikater når poengsummen øker. To
@@ -30,7 +32,7 @@ function kallenavnTilId(kallenavn) {
  * Skriv/oppdater deltakerens rad på ledertavla med ny totalsum.
  * No-op hvis Firebase ikke er konfigurert ennå (lokal testing).
  */
-export async function oppdaterLedertavle({ kallenavn, klasse, poeng }) {
+export async function oppdaterLedertavle({ kallenavn, poeng }) {
   if (!FIREBASE_KONFIGURERT) {
     console.info("[ledertavle] Firebase ikke konfigurert — hopper over skriving.");
     return { skrevet: false };
@@ -40,7 +42,6 @@ export async function oppdaterLedertavle({ kallenavn, klasse, poeng }) {
 
   await setDoc(doc(db, "ledertavle", id), {
     kallenavn: kallenavn.trim(),
-    klasse,
     poeng,
     sistOppdatert: serverTimestamp()
   });

@@ -20,7 +20,11 @@ se `ENDRINGSLOGG.md`.
 + flere steder).
 
 **Beslutninger som er tatt (ikke åpne uten grunn):**
-- Klasser: **Barn / Voksen / Senior** (ikke Sykkel).
+- **Ingen klasser** (besluttet 2026-06-10, erstatter tidligere Barn/Voksen/Senior).
+  Alle poeng kommer fra de samme stolpene, så klasser korrigerte ikke for noe og var
+  bare friksjon. Én felles ledertavle; profil = kun kallenavn. Firestore-dokumentet er
+  `{kallenavn, poeng, sistOppdatert}` — reglene skal IKKE kreve `klasse`-felt. Der §4/§5
+  i brief-en nevner klasse, gjelder dette.
 - Kartverket WMTS: `https://cache.kartverket.no/v1/wmts/1.0.0/topo/default/webmercator/{z}/{y}/{x}.png`.
 - Firebase Firestore-prosjekt `kulturjakten-1e9a7`; regler publisert (offentlig les; skriv
   med formvalidering; **delete blokkert fra klient** → rydd testrader manuelt i konsollen).

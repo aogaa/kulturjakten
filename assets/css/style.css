@@ -273,9 +273,6 @@ button:hover, .knapp:hover { background: var(--farge-skog-mork); }
 }
 
 /* ── Ledertavle ── */
-.filter { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 1rem; }
-.filter button { background: #fff; color: var(--farge-skog-mork); border: 1px solid var(--farge-skog); padding: 0.4rem 0.9rem; }
-.filter button.aktiv { background: var(--farge-skog); color: #fff; }
 table { width: 100%; border-collapse: collapse; }
 th, td { text-align: left; padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--kant); }
 th { font-size: 0.85rem; color: var(--farge-dempet); text-transform: uppercase; letter-spacing: 0.03em; }

@@ -2,8 +2,7 @@
 
 En lokal kultur- og historiejakt: fysiske stolper med QR-koder leder til stedssider
 med lokalhistorie, kart og bilder. Brukere samler poeng og konkurrerer på en
-ledertavle, inndelt i klasser. Lav terskel – ingen innlogging, bare kallenavn og
-klasse.
+felles ledertavle. Lav terskel – ingen innlogging, bare et kallenavn.
 
 Se [`CLAUDE.md`](CLAUDE.md) for hele prosjektgrunnlaget (konsept, arkitektur,
 beslutninger).
@@ -12,8 +11,8 @@ beslutninger).
 
 - **Statisk nettsted** (HTML/CSS/vanilla JS) på GitHub Pages. Ingen byggeprosess.
 - **Kart:** Leaflet + Kartverkets gratis WMTS-cache (ingen API-nøkkel).
-- **Fremgang** (kallenavn, klasse, funne steder) lagres i `localStorage` på enheten.
-- **Firebase (Firestore)** brukes kun til ledertavla: `{kallenavn, klasse, poeng, sistOppdatert}`.
+- **Fremgang** (kallenavn, funne steder) lagres i `localStorage` på enheten.
+- **Firebase (Firestore)** brukes kun til ledertavla: `{kallenavn, poeng, sistOppdatert}`.
 - **Publisering:** eget repo + underdomene `kulturjakten.frivilligsentralen.org`
   (se `CNAME`), servert fra repo-rot.
 
@@ -103,8 +102,7 @@ store bokstaver, mellomrom og enkel «leetspeak» (`p1kk`, `p i k k`).
        match /ledertavle/{deltaker} {
          allow read: if true;
          allow write: if request.resource.data.poeng is number
-                      && request.resource.data.kallenavn is string
-                      && request.resource.data.klasse is string;
+                      && request.resource.data.kallenavn is string;
        }
      }
    }

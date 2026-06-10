@@ -7,7 +7,6 @@
 
 import { finnSted } from "./steder.js";
 import {
-  KLASSER,
   harProfil,
   settProfil,
   registrerLokalt,
@@ -77,21 +76,17 @@ function visLesemodus(boks, sted) {
     </div>`;
 }
 
-/** Vis skjemaet for å velge kallenavn + klasse, og registrer ved innsending. */
+/** Vis skjemaet for å velge kallenavn, og registrer ved innsending. */
 function visBliMedSkjema(boks, sted) {
-  const klasseValg = KLASSER.map((k) => `<option value="${k}">${k}</option>`).join("");
   boks.innerHTML = `
     <div class="reg-blimed">
       <h3>Vil du være med på jakten?</h3>
-      <p>Velg et kallenavn og en klasse for å registrere dette stedet og samle poeng.
+      <p>Velg et kallenavn for å registrere dette stedet og samle poeng.
          Du kan lese siden uansett.</p>
       <form id="reg-skjema" class="reg-skjema">
         <label>Kallenavn
           <input type="text" id="reg-kallenavn" maxlength="20" required
                  autocomplete="off" placeholder="F.eks. Turbo" />
-        </label>
-        <label>Klasse
-          <select id="reg-klasse" required>${klasseValg}</select>
         </label>
         <p class="reg-feil" id="reg-navn-feil" hidden></p>
         <button type="submit">Bli med og registrer</button>
@@ -102,7 +97,6 @@ function visBliMedSkjema(boks, sted) {
   skjema.addEventListener("submit", async (e) => {
     e.preventDefault();
     const kallenavn = boks.querySelector("#reg-kallenavn").value.trim();
-    const klasse = boks.querySelector("#reg-klasse").value;
     if (!kallenavn) return;
     const feil = boks.querySelector("#reg-navn-feil");
     if (erUpassende(kallenavn)) {
@@ -110,7 +104,7 @@ function visBliMedSkjema(boks, sted) {
       feil.hidden = false;
       return;
     }
-    settProfil(kallenavn, klasse);
+    settProfil(kallenavn);
     await registrerOgVis(boks, sted);
   });
 }
@@ -130,7 +124,6 @@ async function registrerOgVis(boks, sted) {
     try {
       await oppdaterLedertavle({
         kallenavn: t.kallenavn,
-        klasse: t.klasse,
         poeng: t.totalpoeng
       });
     } catch (err) {

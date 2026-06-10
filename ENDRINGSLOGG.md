@@ -97,7 +97,36 @@ Hele prosjektet ble bygget, verifisert og publisert live denne dagen.
 
 ---
 
-## Gjenstår (per 2026-06-09)
+## 2026-06-10 — Sted nr. 2 + klasser fjernet
+
+### Nytt sted: Frøen politistasjon (VAFS-02)
+- `steder/froen-politistasjon.html`, id `froen-politistasjon`, lat 59.939396 lng 10.703714
+  (fra UTM 260037.13,6652454.01 EPSG:25833). To bilder i `assets/img/steder/froen/` med
+  bildetekster i `<figure>`/`<figcaption>` (ny CSS: `.ingress`, `figure`, `figcaption`).
+
+### Beslutning: klassene (Barn/Voksen/Senior) fjernet
+- **Hvorfor:** alle poeng kommer fra de samme stolpene — et barn og en voksen som finner
+  de samme stedene får identisk poengsum, så klassene korrigerte ikke for noe. De ga bare
+  mening for å kåre flere vinnere, og det var ikke planlagt. Uten klasse er terskelen
+  lavere (kun kallenavn) og det er mindre å vedlikeholde.
+- **Endret:** `jakt.js` (KLASSER + `klasse` i tilstand fjernet; `settProfil(kallenavn)`),
+  `registrering.js` + `index.html` (klassevalg ut av skjemaene), `ledertavle.html`
+  (klassefilter + Klasse-kolonne fjernet), `ledertavle.js` (skriver ikke `klasse`),
+  `.filter`-CSS fjernet, tekster oppdatert (forside, `_mal.html`, begge stedssidene),
+  README + CLAUDE.md §0 + OVERSETTE.md oppdatert.
+- **Felle/migrering:** Firestore-reglene krevde `klasse is string` ved skriving — de må
+  oppdateres i Firebase-konsollen (fjern klasse-linjen, se README §Firebase) **FØR** koden
+  pushes, ellers avvises alle poeng-skrivinger stille (`console.warn`). Løsere regler
+  brekker ikke gammel kode (ekstra felt er lov uten `hasOnly`). Gamle rader/localStorage
+  med `klasse`-felt er ufarlige: feltet ignoreres ved lesing og forsvinner ved neste
+  skriving.
+
+---
+
+## Gjenstår (per 2026-06-10)
+- **Espen: oppdatere Firestore-reglene (fjerne `klasse`-kravet) — deretter pushe
+  klasse-fjerningen.**
 - Rydde testrader i Firestore-ledertavla (manuelt i konsollen).
 - Milepæl 3: generere QR-koder (med `?k=<KODE>`) til `/qr/`; fylle inn flere steder.
+- Ukrainsk oversetting av forsiden når Espen gir klarsignal (se `OVERSETTE.md`).
 - (Valgfritt) sette `MAILERLITE_URL` i `index.html` for nyhetsbrev-seksjonen.

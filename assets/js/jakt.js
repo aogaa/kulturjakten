@@ -2,16 +2,13 @@
 //
 // Følger ENHETEN, ikke personen. Ingen innlogging, ingen brukerkontoer. Dette er
 // bevisst og akseptert (se CLAUDE.md §2). Ingenting herfra sendes til noen server
-// utenom totalpoeng + kallenavn + klasse til ledertavla (se ledertavle.js).
+// utenom totalpoeng + kallenavn til ledertavla (se ledertavle.js).
 
 const NOKKEL = "vafs_jakt";
 
-/** Klasser brukeren kan velge mellom. Tillitsbasert, selvvalgt. */
-export const KLASSER = ["Barn", "Voksen", "Senior"];
-
 /** Tom standardtilstand for en ny bruker/enhet. */
 function tomTilstand() {
-  return { kallenavn: "", klasse: "", funnet: {}, totalpoeng: 0 };
+  return { kallenavn: "", funnet: {}, totalpoeng: 0 };
 }
 
 /** Les hele tilstanden fra localStorage. Returnerer alltid et gyldig objekt. */
@@ -20,10 +17,10 @@ export function lesTilstand() {
     const raa = localStorage.getItem(NOKKEL);
     if (!raa) return tomTilstand();
     const t = JSON.parse(raa);
-    // Vær defensiv mot delvis/ødelagt data.
+    // Vær defensiv mot delvis/ødelagt data. (Eldre lagrede profiler kan ha et
+    // `klasse`-felt fra før klassene ble fjernet — det ignoreres bare her.)
     return {
       kallenavn: typeof t.kallenavn === "string" ? t.kallenavn : "",
-      klasse: typeof t.klasse === "string" ? t.klasse : "",
       funnet: t.funnet && typeof t.funnet === "object" ? t.funnet : {},
       totalpoeng: Number.isFinite(t.totalpoeng) ? t.totalpoeng : 0
     };
@@ -37,17 +34,15 @@ export function lagreTilstand(t) {
   localStorage.setItem(NOKKEL, JSON.stringify(t));
 }
 
-/** Har brukeren valgt kallenavn og klasse? */
+/** Har brukeren valgt kallenavn? */
 export function harProfil() {
-  const t = lesTilstand();
-  return Boolean(t.kallenavn && t.klasse);
+  return Boolean(lesTilstand().kallenavn);
 }
 
-/** Sett (eller endre) kallenavn og klasse. */
-export function settProfil(kallenavn, klasse) {
+/** Sett (eller endre) kallenavn. */
+export function settProfil(kallenavn) {
   const t = lesTilstand();
   t.kallenavn = kallenavn.trim();
-  t.klasse = klasse;
   lagreTilstand(t);
   return t;
 }

@@ -21,8 +21,8 @@ arkitektur, slik at en ny sesjon kan gjennomføre uten å planlegge på nytt).
   (Espens maskin) — de blir bokstaver. Bruk små SVG-filer i `assets/img/ui/`.
 - **Språkkode vs landskode:** i18n-nøkkel bruker **språkkode** `uk` (ukrainsk).
   Flagg-filnavn bruker **landskode** (`no`, `ua`). Ikke bland disse.
-- **Kun visningstekst oversettes.** Lagrede verdier (kallenavn, `klasse`-verdien i
-  localStorage, koder som `VAFS-01`) forblir kanoniske og uendret.
+- **Kun visningstekst oversettes.** Lagrede verdier (kallenavn, koder som `VAFS-01`)
+  forblir kanoniske og uendret.
 - **Vanilla JS, ingen rammeverk.** Følger prosjektets enkelhetsfilosofi (CLAUDE.md §2).
 
 ---
@@ -62,7 +62,7 @@ Et lite, avhengighetsfritt i18n-lag. Innhold:
   `settSprak("nb"|"uk")`. Aktivt språk markeres.
 - I det eksisterende inline-scriptet: importer fra `i18n.js`, kjør `bruk()` ved oppstart,
   og bytt JS-genererte strenger («Hei …», «… poeng», «Klar for tur!», feilmeldinger,
-  knappetekster, klasse-etiketter) til `t(...)`. NB: `escapeHtml` og lagrede verdier
+  knappetekster) til `t(...)`. NB: `escapeHtml` og lagrede verdier
   forblir uendret — kun visningstekst.
 
 ### Steg 4 — Verifiser (preview, port 8000)

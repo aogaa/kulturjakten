@@ -19,14 +19,6 @@
   <main class="innhold">
     <section class="kort">
       <h2>Stillingen</h2>
-      <p class="dempet">Velg klasse for å filtrere.</p>
-
-      <div class="filter" id="filter">
-        <button data-klasse="Alle" class="aktiv">Alle</button>
-        <button data-klasse="Barn">Barn</button>
-        <button data-klasse="Voksen">Voksen</button>
-        <button data-klasse="Senior">Senior</button>
-      </div>
 
       <div id="ledertavle-innhold">
         <p class="dempet">Laster ledertavla …</p>
@@ -44,9 +36,7 @@
     import { erUpassende } from "./assets/js/forbudteord.js";
 
     const innhold = document.getElementById("ledertavle-innhold");
-    const filter = document.getElementById("filter");
     let alleRader = [];
-    let aktivKlasse = "Alle";
 
     function escapeHtml(t) {
       const d = document.createElement("div");
@@ -55,9 +45,7 @@
     }
 
     function tegn() {
-      const rader = aktivKlasse === "Alle"
-        ? alleRader
-        : alleRader.filter((r) => r.klasse === aktivKlasse);
+      const rader = alleRader;
 
       if (!FIREBASE_KONFIGURERT) {
         innhold.innerHTML =
@@ -66,7 +54,7 @@
         return;
       }
       if (rader.length === 0) {
-        innhold.innerHTML = '<p class="dempet">Ingen deltakere i denne klassen ennå.</p>';
+        innhold.innerHTML = '<p class="dempet">Ingen deltakere ennå. Bli den første!</p>';
         return;
       }
 
@@ -79,7 +67,6 @@
         <tr>
           <td class="plass">${i + 1}</td>
           <td>${visningsnavn}</td>
-          <td>${escapeHtml(r.klasse)}</td>
           <td class="poeng">${r.poeng}</td>
         </tr>`;
       }).join("");
@@ -87,19 +74,11 @@
       innhold.innerHTML = `
         <table>
           <thead>
-            <tr><th>#</th><th>Kallenavn</th><th>Klasse</th><th>Poeng</th></tr>
+            <tr><th>#</th><th>Kallenavn</th><th>Poeng</th></tr>
           </thead>
           <tbody>${rekker}</tbody>
         </table>`;
     }
-
-    filter.addEventListener("click", (e) => {
-      const knapp = e.target.closest("button");
-      if (!knapp) return;
-      aktivKlasse = knapp.dataset.klasse;
-      filter.querySelectorAll("button").forEach((b) => b.classList.toggle("aktiv", b === knapp));
-      tegn();
-    });
 
     try {
       alleRader = await hentLedertavle();
