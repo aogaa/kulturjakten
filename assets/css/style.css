@@ -33,12 +33,17 @@ body {
   padding: 1rem 1.1rem 3rem;
 }
 
-/* ── Språk-toggle ──
+/* ── Språk-toggle for narrativ brødtekst ──
    For lang narrativ tekst (f.eks. «Om stedet» på stedssidene) legges norsk og
    ukrainsk versjon side om side i HTML, hver i en container med data-sprak.
-   CSS-en under skjuler den som ikke matcher gjeldende <html lang>. */
-html[lang="nb"] [data-sprak="uk"] { display: none; }
-html[lang="uk"] [data-sprak="nb"] { display: none; }
+   Reglene under skjuler den som ikke matcher gjeldende <html lang>.
+
+   VIKTIG: Scope MÅ være .sted-historie (eller annen tekst-container). Uten
+   scope ville reglene også skjule flaggknappene i .sprakvelger (de bruker
+   samme attributtnavn) — og brukeren ville mistet muligheten til å bytte
+   tilbake til norsk. */
+html[lang="nb"] .sted-historie [data-sprak="uk"] { display: none; }
+html[lang="uk"] .sted-historie [data-sprak="nb"] { display: none; }
 
 /* ── Topp ── */
 .topp {
