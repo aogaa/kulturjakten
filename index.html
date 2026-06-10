@@ -210,7 +210,7 @@
       boks.innerHTML = `
         <div class="profil-hei">
           <span>${t("hei")} <strong>${escapeHtml(tilst.kallenavn)}</strong></span>
-          <span class="poeng">${tilst.totalpoeng} ${t("poeng")}</span>
+          <span class="poeng">${tilst.totalpoeng} ${plural("poeng_form", tilst.totalpoeng)}</span>
         </div>
         <p class="dempet">${t("klar_for_tur")}
           <a href="#" id="endre-profil">${t("endre_kallenavn")}</a>.</p>`;

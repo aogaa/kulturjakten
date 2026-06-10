@@ -14,12 +14,20 @@
 </head>
 <body>
   <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="../assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="../assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
     <a class="topp-logo" href="../index.html">
-      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" />
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
     </a>
-    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
     <h1>Møteplass Vinderen</h1>
-    <p><a href="../index.html">← Tilbake til kart og forside</a></p>
+    <p><a href="../index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
   </header>
 
   <main class="innhold">
@@ -27,103 +35,179 @@
     <section class="kort" id="registrering"></section>
 
     <section class="sted-historie">
-      <h2>Kultur i hverdagen</h2>
+      <h2 data-sprak="nb">Kultur i hverdagen</h2>
+      <h2 data-sprak="uk">Культура в повсякденному житті</h2>
 
-      <p>Når vi hører ordet kultur, går tankene ofte til kunst, konserter, bøker,
-         museer og gamle bygninger. Og ja, alt dette er kultur. Viktig kultur.</p>
+      <div data-sprak="nb">
+        <p>Når vi hører ordet kultur, går tankene ofte til kunst, konserter, bøker,
+           museer og gamle bygninger. Og ja, alt dette er kultur. Viktig kultur.</p>
 
-      <p>Men kultur er også noe som skjer helt vanlig, midt i hverdagen.</p>
+        <p>Men kultur er også noe som skjer helt vanlig, midt i hverdagen.</p>
 
-      <p>Det er måten vi hilser på hverandre. Hvordan vi tar imot en som kommer inn
-         døren for første gang. Hvordan vi setter på kaffe, trekker ut en stol og
-         sier: «Så hyggelig at du kom.»</p>
+        <p>Det er måten vi hilser på hverandre. Hvordan vi tar imot en som kommer inn
+           døren for første gang. Hvordan vi setter på kaffe, trekker ut en stol og
+           sier: «Så hyggelig at du kom.»</p>
 
-      <p>Derfor passer Møteplass Vinderen så godt inn i Kulturjakten i Vestre Aker.</p>
+        <p>Derfor passer Møteplass Vinderen så godt inn i Kulturjakten i Vestre Aker.</p>
 
-      <img class="sted-bilde" src="../assets/img/steder/moteplassen/moteplass1.jpg"
-           alt="Fra Møteplass Vinderen" />
+        <img class="sted-bilde" src="../assets/img/steder/moteplassen/moteplass1.jpg"
+             alt="Fra Møteplass Vinderen" />
 
-      <p>Dette er ikke et sted du må forstå før du kommer. Du trenger ikke være
-         medlem. Du trenger ikke melde deg på alt mulig. Du trenger ikke ha en plan,
-         et ærend eller en god forklaring. Du kan bare komme innom.</p>
+        <p>Dette er ikke et sted du må forstå før du kommer. Du trenger ikke være
+           medlem. Du trenger ikke melde deg på alt mulig. Du trenger ikke ha en plan,
+           et ærend eller en god forklaring. Du kan bare komme innom.</p>
 
-      <p>Kanskje tar du en kopp kaffe. Kanskje møter du noen du kjenner. Kanskje slår
-         du av en prat med noen du aldri har møtt før. Eller kanskje sitter du bare
-         litt, ser deg rundt og kjenner at dette er et sted det går an å være.</p>
+        <p>Kanskje tar du en kopp kaffe. Kanskje møter du noen du kjenner. Kanskje slår
+           du av en prat med noen du aldri har møtt før. Eller kanskje sitter du bare
+           litt, ser deg rundt og kjenner at dette er et sted det går an å være.</p>
 
-      <p>På Møteplass Vinderen skjer det mye. Her er kafé, aktiviteter, frivillighet
-         og små og store møter mellom mennesker. Men det viktigste står ikke
-         nødvendigvis på programmet. Det viktigste skjer ofte rundt bordene, ved
-         kaffekoppen, i en kort samtale i døren eller når noen spør: «Hvordan går det
-         med deg?»</p>
+        <p>På Møteplass Vinderen skjer det mye. Her er kafé, aktiviteter, frivillighet
+           og små og store møter mellom mennesker. Men det viktigste står ikke
+           nødvendigvis på programmet. Det viktigste skjer ofte rundt bordene, ved
+           kaffekoppen, i en kort samtale i døren eller når noen spør: «Hvordan går det
+           med deg?»</p>
 
-      <p>Noen kommer hit for å bidra. Noen kommer for å være med på en aktivitet.
-         Noen kommer fordi dagen blir bedre når man har et sted å gå. Mange gjør litt
-         av alt. Og det er kanskje nettopp derfor møteplassen betyr så mye.</p>
+        <p>Noen kommer hit for å bidra. Noen kommer for å være med på en aktivitet.
+           Noen kommer fordi dagen blir bedre når man har et sted å gå. Mange gjør litt
+           av alt. Og det er kanskje nettopp derfor møteplassen betyr så mye.</p>
 
-      <img class="sted-bilde" src="../assets/img/steder/moteplassen/anita.jpg"
-           alt="Møteplass Vinderen" />
+        <img class="sted-bilde" src="../assets/img/steder/moteplassen/anita.jpg"
+             alt="Møteplass Vinderen" />
 
-      <p>For frivillighet handler ikke bare om oppgaver som skal løses. Det handler om
-         folk. Om å gjøre nærmiljøet litt varmere, litt tryggere og litt mer
-         menneskelig. Når noen ønsker velkommen, dekker et bord, lager kaffe,
-         arrangerer noe hyggelig eller tar seg tid til en prat, da bygges kultur. Ikke
-         høytidelig kultur. Ikke kultur på sokkel. Men levende kultur, slik vi merker
-         den i hverdagen.</p>
+        <p>For frivillighet handler ikke bare om oppgaver som skal løses. Det handler om
+           folk. Om å gjøre nærmiljøet litt varmere, litt tryggere og litt mer
+           menneskelig. Når noen ønsker velkommen, dekker et bord, lager kaffe,
+           arrangerer noe hyggelig eller tar seg tid til en prat, da bygges kultur. Ikke
+           høytidelig kultur. Ikke kultur på sokkel. Men levende kultur, slik vi merker
+           den i hverdagen.</p>
 
-      <p>Vestre Aker har mye å være stolt av. Vi har natur, historie, skoler,
-         idrettslag, foreninger, institusjoner og mange mennesker som legger ned tid
-         og krefter for andre. Møteplass Vinderen er en del av dette. Ikke fordi
-         stedet er gammelt eller storslått, men fordi det viser noe fint om hvem vi
-         ønsker å være.</p>
+        <p>Vestre Aker har mye å være stolt av. Vi har natur, historie, skoler,
+           idrettslag, foreninger, institusjoner og mange mennesker som legger ned tid
+           og krefter for andre. Møteplass Vinderen er en del av dette. Ikke fordi
+           stedet er gammelt eller storslått, men fordi det viser noe fint om hvem vi
+           ønsker å være.</p>
 
-      <p class="sitat"><em>Et lokalsamfunn der det er plass til flere rundt bordet.</em></p>
+        <p class="sitat"><em>Et lokalsamfunn der det er plass til flere rundt bordet.</em></p>
 
-      <p>Kulturjakten handler om å oppdage nærmiljøet med nye øyne. Møteplass Vinderen
-         minner oss om at kultur ikke bare er noe vi ser på. Det er også noe vi gjør
-         sammen.</p>
+        <p>Kulturjakten handler om å oppdage nærmiljøet med nye øyne. Møteplass Vinderen
+           minner oss om at kultur ikke bare er noe vi ser på. Det er også noe vi gjør
+           sammen.</p>
 
-      <img class="sted-bilde" src="../assets/img/steder/moteplassen/moteplass2.jpg"
-           alt="Fra Møteplass Vinderen" />
+        <img class="sted-bilde" src="../assets/img/steder/moteplassen/moteplass2.jpg"
+             alt="Fra Møteplass Vinderen" />
 
-      <p>Så kom gjerne innom. Ta med en nabo, en venn eller noen som kanskje trenger
-         et sted å gå. Sett deg ned. Ta en kopp kaffe. Kjenn litt på fellesskapet.</p>
+        <p>Så kom gjerne innom. Ta med en nabo, en venn eller noen som kanskje trenger
+           et sted å gå. Sett deg ned. Ta en kopp kaffe. Kjenn litt på fellesskapet.</p>
 
-      <p>Og når du er ferdig her, fortsetter jakten. Vestre Aker har mange flere
-         steder, historier og møteplasser å oppdage.</p>
+        <p>Og når du er ferdig her, fortsetter jakten. Vestre Aker har mange flere
+           steder, historier og møteplasser å oppdage.</p>
+      </div>
+
+      <div data-sprak="uk">
+        <p>Коли ми чуємо слово «культура», ми часто думаємо про мистецтво, концерти,
+           книжки, музеї та старі будівлі. І так, усе це — культура. Важлива культура.</p>
+
+        <p>Але культура — це й те, що відбувається зовсім буденно, посеред нашого
+           повсякдення.</p>
+
+        <p>Це те, як ми вітаємось одне з одним. Як приймаємо людину, що вперше зайшла
+           в двері. Як ставимо каву, відсуваємо стілець і кажемо: «Так приємно, що ви
+           прийшли».</p>
+
+        <p>Саме тому Møteplass Vinderen так добре вписується у Полювання за культурою
+           у Вестре-Акер.</p>
+
+        <img class="sted-bilde" src="../assets/img/steder/moteplassen/moteplass1.jpg"
+             alt="Møteplass Vinderen" />
+
+        <p>Це не місце, яке потрібно зрозуміти, перш ніж приходити. Не потрібно бути
+           членом. Не треба ні на що записуватись. Не потрібно мати плану, справи чи
+           поважної причини. Можна просто зазирнути.</p>
+
+        <p>Можливо, ви візьмете чашку кави. Можливо, зустрінете когось знайомого.
+           Можливо, перекинетесь словом із тим, кого ніколи раніше не бачили. А може,
+           просто посидите трохи, роззирнетесь і відчуєте, що тут можна бути собою.</p>
+
+        <p>На Møteplass Vinderen відбувається багато всього. Тут є кафе, заняття,
+           волонтерство, малі й великі зустрічі між людьми. Але найважливіше не
+           обов’язково стоїть у програмі. Найважливіше часто відбувається за столиками,
+           біля чашки кави, у короткій розмові біля дверей чи коли хтось запитує:
+           «Як ваші справи?»</p>
+
+        <p>Хтось приходить сюди, щоб допомагати. Хтось — щоб узяти участь у занятті.
+           Хтось — тому що день стає кращим, коли є куди піти. Багато хто робить
+           потроху всього. І, можливо, саме тому ця зустрічна точка так багато значить.</p>
+
+        <img class="sted-bilde" src="../assets/img/steder/moteplassen/anita.jpg"
+             alt="Møteplass Vinderen" />
+
+        <p>Адже волонтерство — це не лише про завдання, які треба виконати. Це про
+           людей. Про те, щоб зробити район трішки теплішим, безпечнішим і більш
+           людяним. Коли хтось вітає вас, накриває на стіл, заварює каву, влаштовує
+           щось приємне чи знаходить час на розмову — тоді й будується культура. Не
+           врочиста культура. Не культура на п’єдесталі. А жива культура, яку ми
+           відчуваємо щодня.</p>
+
+        <p>Вестре-Акер має чим пишатися. У нас є природа, історія, школи, спортивні
+           клуби, об’єднання, установи та багато людей, які віддають свій час і сили
+           заради інших. Møteplass Vinderen — частина цього. Не тому, що це місце
+           старовинне чи величне, а тому, що воно показує щось хороше про те, ким ми
+           хочемо бути.</p>
+
+        <p class="sitat"><em>Громада, у якій вистачає місця багатьом за одним столом.</em></p>
+
+        <p>Полювання за культурою — про те, щоб подивитися на район новими очима.
+           Møteplass Vinderen нагадує нам, що культура — це не лише те, на що ми
+           дивимось. Це й те, що ми робимо разом.</p>
+
+        <img class="sted-bilde" src="../assets/img/steder/moteplassen/moteplass2.jpg"
+             alt="Møteplass Vinderen" />
+
+        <p>Тож заходьте. Візьміть із собою сусіда, друга чи когось, кому, можливо,
+           потрібне місце, куди прийти. Сядьте. Випийте чашку кави. Відчуйте трохи
+           спільноти.</p>
+
+        <p>А коли закінчите тут — полювання триває. У Вестре-Акер ще багато місць,
+           історій і зустрічних точок, які чекають на відкриття.</p>
+      </div>
     </section>
 
     <section>
-      <h2>Her er du</h2>
+      <h2 data-i18n="her_er_du">Her er du</h2>
       <div class="kart-utsnitt" id="kart"></div>
     </section>
 
     <section class="kort">
-      <h3>Slik blir du med på jakten</h3>
-      <p>Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+      <h3 data-i18n="bli_med_h3">Slik blir du med på jakten</h3>
+      <p data-i18n="bli_med_p">Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
          hvert sted. Velg et kallenavn – så samler du poeng for hvert
          nye sted du besøker. Ingen innlogging, ingen app.</p>
-      <a class="knapp" href="../index.html">Se kart og kom i gang</a>
+      <a class="knapp" href="../index.html" data-i18n="se_kart_kom_i_gang">Se kart og kom i gang</a>
     </section>
 
     <div class="lenkerad">
-      <a class="knapp-sekundaer knapp" href="../index.html">Til kartet</a>
-      <a class="knapp-sekundaer knapp" href="../ledertavle.html">Til ledertavla</a>
+      <a class="knapp-sekundaer knapp" href="../index.html" data-i18n="til_kartet">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html" data-i18n="til_ledertavla">Til ledertavla</a>
     </div>
   </main>
 
   <footer class="bunn">
-    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
   </footer>
 
   <script type="module">
     import { kjorRegistrering } from "../assets/js/registrering.js";
     import { lagKart } from "../assets/js/kart.js";
+    import { settSprak } from "../assets/js/i18n.js";
 
     const STED_ID = "moteplass-vinderen";
 
     kjorRegistrering(STED_ID);
     lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
   </script>
 </body>
 </html>

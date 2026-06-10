@@ -6,6 +6,7 @@
 
 import { STEDER, finnSted } from "./steder.js";
 import { erFunnet } from "./jakt.js";
+import { t } from "./i18n.js";
 
 // Kartverkets gratis WMTS-cache (topografisk norgeskart, Web Mercator/EPSG:3857).
 // Ingen API-nøkkel. Verifisert mot Geonorge — den gamle tjenesten fases ut.
@@ -21,16 +22,26 @@ const STANDARD_ZOOM = 13;
 /** Bygg HTML-innholdet i en markør-popup. */
 function popupInnhold(sted) {
   const funnetMerke = erFunnet(sted.id)
-    ? '<p class="popup-funnet">✓ Allerede besøkt</p>'
+    ? `<p class="popup-funnet">${t("kart_allerede_besokt")}</p>`
     : "";
   return `
     <div class="kart-popup">
       <strong>${sted.navn}</strong>
       <p>${sted.kortbeskrivelse}</p>
       ${funnetMerke}
-      <a href="${rotPrefiks()}${sted.side}">Les mer →</a>
+      <a href="${rotPrefiks()}${sted.side}">${t("kart_les_mer")}</a>
     </div>`;
 }
+
+// Alle markører laget med lagKart() — så popup-innholdet kan oppdateres
+// ved språkbytte. (Stedsnavn og kortbeskrivelse er foreløpig ikke oversatt
+// her; popup-en oppdateres for «Les mer» og «Allerede besøkt»-tekstene.)
+const _markorer = [];
+document.addEventListener("sprakbytte", () => {
+  for (const { marker, sted } of _markorer) {
+    marker.setPopupContent(popupInnhold(sted));
+  }
+});
 
 /**
  * Stedssidene ligger i undermappa /steder/, mens forsiden ligger i rot. Lenkene i
@@ -86,9 +97,10 @@ export function lagKart(elementId, opts = {}) {
 
   const stederSomVises = fokusSted ? [fokusSted] : STEDER;
   for (const sted of stederSomVises) {
-    L.marker([sted.lat, sted.lng], { icon: lagIkon(erFunnet(sted.id)) })
+    const marker = L.marker([sted.lat, sted.lng], { icon: lagIkon(erFunnet(sted.id)) })
       .addTo(kart)
       .bindPopup(popupInnhold(sted));
+    _markorer.push({ marker, sted });
   }
 
   return kart;

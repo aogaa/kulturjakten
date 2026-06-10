@@ -79,14 +79,25 @@ Et lite, avhengighetsfritt i18n-lag. Innhold:
 
 ---
 
-## 3. Avgrensning (med vilje, første runde)
+## 3. Hybrid arkitektur (oppdatert 2026-06-10)
 
-- **Kun forsiden.** Stedssider (`steder/*.html`) og `ledertavle.html` forblir norske.
-  Velger man ukrainsk og åpner en stedsside, vises den foreløpig på norsk. Akseptert v1.
-- Samme `i18n.js` utvides til de andre sidene senere: legg `data-i18n` på tekst + inkluder
-  scriptet + flaggvelger i deres delte header. (Stedssidenes lange brødtekst er den store
-  jobben og tas i eget tempo, sted for sted.)
-- `<title>`/meta oversettes ikke utover synlig innhold i denne runden.
+- **UI-tekst i ordboken (`assets/js/i18n.js`):** alle korte strenger som går igjen —
+  header, footer, knapper, skjemaer, feilmeldinger, kart-popup, registreringsflyten.
+  Settes via `data-i18n` / `data-i18n-html` / `data-i18n-attr` eller `t("nokkel")`
+  i JS. Pluralform-arrays (`plural("nokkel", n)`) brukes der tallet styrer formen
+  (ukrainsk «бал/бали/балів»).
+- **Lang narrativ brødtekst inline i sidens HTML:** stedssidenes «Om stedet»-tekst
+  legges som to søsken-blokker — `<div data-sprak="nb">…</div>` og
+  `<div data-sprak="uk">…</div>` — i samme fil. CSS i `style.css` skjuler den
+  som ikke matcher gjeldende `<html lang>`. Ingen JS, ingen flimring, og hver
+  stedsside har sin tekst samlet ett sted. (Mangler ukrainsk for en stedsside?
+  Behold bare norsk-blokken — siden viser norsk for alle inntil oversettelsen er
+  skrevet.) Stedsnavn (`<h1>` i headeren) og `<title>` er foreløpig holdt på norsk
+  for enkelhet; bytt ut `<h1>` med to `data-sprak`-blokker hvis det skal oversettes.
+- **Stedsspesifikke felt i `steder.js` (`navn`, `kortbeskrivelse`)** brukes også
+  i kart-popup. De er foreløpig norske; oversetting krever utvidelse av datamodellen
+  (f.eks. `navn_uk`, `kortbeskrivelse_uk`) — ikke gjort enda.
+- `<title>`/meta-tagger oversettes ikke utover synlig innhold.
 
 ---
 
@@ -95,9 +106,11 @@ Et lite, avhengighetsfritt i18n-lag. Innhold:
 | Språk | Kode | Flagg-fil | Forside | Stedssider | Ledertavle |
 |-------|------|-----------|---------|------------|------------|
 | Norsk (bokmål) | `nb` | `flag-no.svg` | ✅ original | ✅ | ✅ |
-| Ukrainsk | `uk` | `flag-ua.svg` | ✅ implementert (2026-06-10) | ⛔ ikke ennå | ⛔ ikke ennå |
+| Ukrainsk | `uk` | `flag-ua.svg` | ✅ implementert (2026-06-10) | ✅ implementert (2026-06-10) | ✅ implementert (2026-06-10) |
 
-**Neste handling:** korrektur av ukrainsk tekst (åpent punkt §5) + utvid til stedssider/ledertavle når Espen sier fra.
+**Neste handling:** ukrainsk korrektur av en native taler — UI-strenger ligger i
+`assets/js/i18n.js` (`OVERSETTELSER.uk`), stedssidenes brødtekst ligger inline i
+hver stedsside under `<div data-sprak="uk">`.
 
 ### Notater fra første implementering (2026-06-10)
 

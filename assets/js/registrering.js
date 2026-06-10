@@ -15,12 +15,24 @@ import {
 } from "./jakt.js";
 import { oppdaterLedertavle } from "./ledertavle.js";
 import { erUpassende } from "./forbudteord.js";
+import { t, plural } from "./i18n.js";
 
 /** Enkel HTML-escape for brukerinput (kallenavn vises tilbake i DOM). */
 function escape(tekst) {
   const div = document.createElement("div");
   div.textContent = tekst;
   return div.innerHTML;
+}
+
+// Siste rendrede tilstand for den aktive registreringsboksen. Brukt for å
+// tegne på nytt når brukeren bytter språk (CustomEvent `sprakbytte`).
+let _boks = null;
+let _sted = null;
+let _tegn = null;
+
+function setTegn(fn) {
+  _tegn = fn;
+  fn();
 }
 
 /**
@@ -31,11 +43,14 @@ function escape(tekst) {
 export async function kjorRegistrering(stedId, boksId = "registrering") {
   const boks = document.getElementById(boksId);
   const sted = finnSted(stedId);
+  _boks = boks;
+  _sted = sted;
 
   if (!boks) return;
   if (!sted) {
-    boks.innerHTML =
-      '<p class="reg-feil">Ukjent sted. Sjekk at id-en stemmer med steder.js.</p>';
+    setTegn(() => {
+      boks.innerHTML = `<p class="reg-feil">${t("reg_ukjent_sted")}</p>`;
+    });
     return;
   }
 
@@ -46,94 +61,119 @@ export async function kjorRegistrering(stedId, boksId = "registrering") {
   const harGyldigKode = Boolean(kodeFraUrl) && kodeFraUrl === sted.kode.toUpperCase();
 
   if (!harGyldigKode) {
-    visLesemodus(boks, sted);
+    visLesemodus();
     return;
   }
 
   if (!harProfil()) {
-    visBliMedSkjema(boks, sted);
+    visBliMedSkjema();
     return;
   }
 
-  await registrerOgVis(boks, sted);
+  await registrerOgVis();
 }
 
 /** Lesemodus: nådd siden uten gyldig kode (f.eks. via kartet). Ingen poeng. */
-function visLesemodus(boks, sted) {
-  if (erFunnet(sted.id)) {
-    boks.innerHTML = `
-      <div class="reg-besokt">
-        <p>✓ Du har allerede besøkt dette stedet.</p>
+function visLesemodus() {
+  setTegn(() => {
+    if (erFunnet(_sted.id)) {
+      _boks.innerHTML = `
+        <div class="reg-besokt">
+          <p>${t("reg_allerede_besokt_kort")}</p>
+        </div>`;
+      return;
+    }
+    _boks.innerHTML = `
+      <div class="reg-lesemodus">
+        <p>${t("reg_lesemodus_html")}</p>
+        <a class="knapp knapp-sekundaer" href="../index.html">${t("til_forsiden")}</a>
       </div>`;
-    return;
-  }
-  boks.innerHTML = `
-    <div class="reg-lesemodus">
-      <p>Du leser om dette stedet. For å registrere besøket og få poeng må du
-         <strong>skanne QR-koden på stolpen</strong> – eller taste inn koden fra
-         stolpen på forsiden.</p>
-      <a class="knapp knapp-sekundaer" href="../index.html">Til forsiden</a>
-    </div>`;
+  });
 }
 
 /** Vis skjemaet for å velge kallenavn, og registrer ved innsending. */
-function visBliMedSkjema(boks, sted) {
-  boks.innerHTML = `
-    <div class="reg-blimed">
-      <h3>Vil du være med på jakten?</h3>
-      <p>Velg et kallenavn for å registrere dette stedet og samle poeng.
-         Du kan lese siden uansett.</p>
-      <form id="reg-skjema" class="reg-skjema">
-        <label>Kallenavn
-          <input type="text" id="reg-kallenavn" maxlength="20" required
-                 autocomplete="off" placeholder="F.eks. Turbo" />
-        </label>
-        <p class="reg-feil" id="reg-navn-feil" hidden></p>
-        <button type="submit">Bli med og registrer</button>
-      </form>
-    </div>`;
+function visBliMedSkjema() {
+  setTegn(() => {
+    _boks.innerHTML = `
+      <div class="reg-blimed">
+        <h3>${t("reg_vil_du_bli_med")}</h3>
+        <p>${t("reg_velg_navn")}</p>
+        <form id="reg-skjema" class="reg-skjema">
+          <label><span>${t("profil_label")}</span>
+            <input type="text" id="reg-kallenavn" maxlength="20" required
+                   autocomplete="off" placeholder="${t("profil_placeholder")}" />
+          </label>
+          <p class="reg-feil" id="reg-navn-feil" hidden></p>
+          <button type="submit">${t("reg_skjema_knapp")}</button>
+        </form>`;
 
-  const skjema = boks.querySelector("#reg-skjema");
-  skjema.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const kallenavn = boks.querySelector("#reg-kallenavn").value.trim();
-    if (!kallenavn) return;
-    const feil = boks.querySelector("#reg-navn-feil");
-    if (erUpassende(kallenavn)) {
-      feil.textContent = "Velg et vennligere kallenavn 🙂";
-      feil.hidden = false;
-      return;
-    }
-    settProfil(kallenavn);
-    await registrerOgVis(boks, sted);
+    const skjema = _boks.querySelector("#reg-skjema");
+    skjema.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const kallenavn = _boks.querySelector("#reg-kallenavn").value.trim();
+      if (!kallenavn) return;
+      const feil = _boks.querySelector("#reg-navn-feil");
+      if (erUpassende(kallenavn)) {
+        feil.textContent = t("feil_navn");
+        feil.hidden = false;
+        return;
+      }
+      settProfil(kallenavn);
+      await registrerOgVis();
+    });
   });
 }
 
 /** Registrer stedet (idempotent), oppdater ledertavla, og vis resultatet. */
-async function registrerOgVis(boks, sted) {
-  const { nytt } = registrerLokalt(sted.id, sted.poeng);
-  const t = lesTilstand();
+async function registrerOgVis() {
+  const { nytt } = registrerLokalt(_sted.id, _sted.poeng);
 
   if (nytt) {
-    boks.innerHTML = `
-      <div class="reg-nytt">
-        <h3>🎉 Nytt sted funnet!</h3>
-        <p class="reg-poeng">+${sted.poeng} poeng</p>
-        <p>Hei ${escape(t.kallenavn)} — du har nå <strong>${t.totalpoeng} poeng</strong> totalt.</p>
-      </div>`;
+    visNyttFunnet();
     try {
+      const tilst = lesTilstand();
       await oppdaterLedertavle({
-        kallenavn: t.kallenavn,
-        poeng: t.totalpoeng
+        kallenavn: tilst.kallenavn,
+        poeng: tilst.totalpoeng
       });
     } catch (err) {
       console.warn("[registrering] Kunne ikke oppdatere ledertavla:", err);
     }
   } else {
-    boks.innerHTML = `
-      <div class="reg-besokt">
-        <p>✓ Du har allerede besøkt dette stedet. Ingen nye poeng denne gangen.</p>
-        <p>Du har <strong>${t.totalpoeng} poeng</strong> totalt.</p>
-      </div>`;
+    visAlleredeBesokt();
   }
 }
+
+function visNyttFunnet() {
+  setTegn(() => {
+    const tilst = lesTilstand();
+    const poengsum = `${tilst.totalpoeng} ${plural("poeng_form", tilst.totalpoeng)}`;
+    const linje = t("reg_nytt_du_har_html")
+      .replace("{navn}", escape(tilst.kallenavn))
+      .replace("{poeng}", poengsum);
+    _boks.innerHTML = `
+      <div class="reg-nytt">
+        <h3>${t("reg_nytt_tittel")}</h3>
+        <p class="reg-poeng">+${_sted.poeng} ${plural("poeng_form", _sted.poeng)}</p>
+        <p>${linje}</p>
+      </div>`;
+  });
+}
+
+function visAlleredeBesokt() {
+  setTegn(() => {
+    const tilst = lesTilstand();
+    const poengsum = `${tilst.totalpoeng} ${plural("poeng_form", tilst.totalpoeng)}`;
+    const linje = t("reg_du_har_totalt_html").replace("{poeng}", poengsum);
+    _boks.innerHTML = `
+      <div class="reg-besokt">
+        <p>${t("reg_besokt_ingen_nye")}</p>
+        <p>${linje}</p>
+      </div>`;
+  });
+}
+
+// Re-tegn ved språkbytte (tegner alt unntatt evt. brukerinput i skjemafeltet).
+document.addEventListener("sprakbytte", () => {
+  if (_tegn) _tegn();
+});

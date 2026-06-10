@@ -176,11 +176,81 @@ kompleksiteten merkbart på norsk siden.
 
 ---
 
+## 2026-06-10 — Ukrainsk utvidet til alle sider
+
+Andre fase av flerspråkjobben: ledertavle, stedssider og JS-flyten (registrering,
+kart-popup) er nå oversatt. `OVERSETTE.md` §3 har den oppdaterte arkitekturen.
+
+### Lagt til i ordboken (`assets/js/i18n.js`)
+- Felles UI-nøkler: `tilbake_til_forside`, `om_stedet`, `her_er_du`, `bli_med_h3`,
+  `bli_med_p`, `se_kart_kom_i_gang`, `til_kartet`, `til_ledertavla`, `til_forsiden`.
+- Ledertavle: `ledertavle_tittel`, `stillingen_tittel`, `laster_ledertavla`,
+  `ledertavla_ingen_firebase_html`, `ledertavla_ingen_deltakere`,
+  `ledertavla_skjult_navn`, `ledertavla_kol_kallenavn`, `ledertavla_kol_poeng`.
+- Registrering (`registrering.js`): `reg_ukjent_sted`, `reg_allerede_besokt_kort`,
+  `reg_lesemodus_html`, `reg_vil_du_bli_med`, `reg_velg_navn`, `reg_skjema_knapp`,
+  `reg_nytt_tittel`, `reg_nytt_du_har_html`, `reg_besokt_ingen_nye`,
+  `reg_du_har_totalt_html`. De to *_html-nøklene bruker token-substitusjon
+  (`{navn}`, `{poeng}`) som settes i JS — gir riktig ordstilling per språk.
+- Kart-popup (`kart.js`): `kart_les_mer`, `kart_allerede_besokt`.
+- `poeng_form` (pluralarray) gir korrekt grammatikk for tall + «poeng»/«бал/бали/балів».
+  Brukt i forsidens profil-stripe, i registreringsboksen og «+X poeng».
+
+### Hybrid arkitektur for stedssider
+Korte/gjentatte UI-strenger ligger i ordboken (`data-i18n`). Lang historisk
+brødtekst legges inline i stedssidens HTML i to søsken-blokker:
+`<div data-sprak="nb">…</div>` og `<div data-sprak="uk">…</div>`. CSS i
+`style.css` skjuler den som ikke matcher gjeldende `<html lang>`:
+
+```css
+html[lang="nb"] [data-sprak="uk"] { display: none; }
+html[lang="uk"] [data-sprak="nb"] { display: none; }
+```
+
+Hvorfor ikke i18n.js for brødteksten? To grunner: den narrative teksten er
+naturlig fortelling — å kutte den i «sted_avsnitt_3»-nøkler ville være masete
+uten gevinst. Og hver stedsside har bare sin egen tekst — å samle dem i én
+ordbok ville oppblåst `i18n.js` og redusert oversikt. Hver sides tekst holdes
+nær der den vises.
+
+### JS-moduler oppdatert
+- `registrering.js`: alle synlige strenger via `t()`. Lagrer siste rendrings-
+  funksjon (`_tegn`) og kaller den på nytt ved CustomEvent `sprakbytte`. Brukerinput
+  i bli-med-skjemaet går tapt ved språkbytte — akseptert, samme som på forsiden.
+- `kart.js`: popup-innhold via `t()`. Markørene lagres i en modulvariabel og
+  oppdateres med `marker.setPopupContent()` ved språkbytte (slik at en allerede
+  åpen popup også reflekterer det nye språket).
+- `index.html`: profil-stripens «X poeng» bytter til `plural("poeng_form", n)` så
+  ukrainsk får riktig bal/бали/балів.
+
+### Oversatt
+- `ledertavle.html` + `_mal.html` + `moteplass-vinderen.html` + `froen-politistasjon.html`.
+  Alle har fått språkvelger i headeren. Stedssidenes brødtekst er oversatt til
+  ukrainsk i sin helhet. Stedsnavnet (`<h1>`) er holdt på norsk for nå — bytt ut
+  med to `data-sprak`-blokker hvis det skal oversettes per sted.
+
+### Verifisert ende-til-ende
+Norsk default + bytte til ukrainsk + tilbake. Stedssidens registreringsflyt
+(lesemodus → bli-med-skjema → nytt sted funnet → allerede besøkt) renders på
+valgt språk og re-rendrer ved språkbytte. Kart-popup oppdateres når brukeren
+bytter språk og åpner den på nytt — og når den er åpen blir innholdet også
+oppdatert via `setPopupContent`. Ingen konsollfeil. Pluralisering bekreftet:
+«100 балів», «2 місця», «5 місць».
+
+### Åpent
+- Ukrainsk korrektur av native taler. UI: `OVERSETTELSER.uk` i i18n.js. Brødtekst:
+  `<div data-sprak="uk">` i hver stedsside.
+- Stedsspesifikke felt i `steder.js` (`navn`, `kortbeskrivelse`) er fortsatt norske
+  i kart-popup. Oversetting krever utvidelse av datamodellen (f.eks. `navn_uk`,
+  `kortbeskrivelse_uk`) — tas hvis behovet melder seg.
+
+---
+
 ## Gjenstår (per 2026-06-10)
 - **Espen: oppdatere Firestore-reglene (fjerne `klasse`-kravet) — deretter pushe
   klasse-fjerningen.**
 - Rydde testrader i Firestore-ledertavla (manuelt i konsollen).
 - Milepæl 3: generere QR-koder (med `?k=<KODE>`) til `/qr/`; fylle inn flere steder.
-- Ukrainsk korrekturlesing av forsiden (`OVERSETTELSER.uk` i `assets/js/i18n.js`).
-- Senere: utvide ukrainsk til stedssider + ledertavle.
+- Ukrainsk korrekturlesing av all tekst (UI i `i18n.js`, brødtekst i stedssidene).
+- (Senere) oversette stedsspesifikke felt i `steder.js` hvis ønskelig.
 - (Valgfritt) sette `MAILERLITE_URL` i `index.html` for nyhetsbrev-seksjonen.

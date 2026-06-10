@@ -81,6 +81,9 @@ export const OVERSETTELSER = {
     // Profil / dynamisk tekst
     hei: "Hei",
     poeng: "poeng",
+    // Pluralform brukt sammen med et tall (på norsk er begge former like;
+    // ukrainsk skiller 1 / 2-4 / 5+).
+    poeng_form: ["poeng", "poeng"],
     klar_for_tur: "Klar for tur! Finn en stolpe og skann QR-koden.",
     endre_kallenavn: "Endre kallenavn",
     profil_label: "Kallenavn",
@@ -95,6 +98,46 @@ export const OVERSETTELSER = {
     // Feilmeldinger
     feil_navn: "Velg et vennligere kallenavn 🙂",
     feil_kode: "Fant ingen stolpe med den koden. Sjekk at du har skrevet den riktig.",
+
+    // Felles UI på tvers av sider
+    tilbake_til_forside: "← Tilbake til kart og forside",
+
+    // Stedssider — standardbokser
+    om_stedet: "Om stedet",
+    her_er_du: "Her er du",
+    bli_med_h3: "Slik blir du med på jakten",
+    bli_med_p: "Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om hvert sted. Velg et kallenavn – så samler du poeng for hvert nye sted du besøker. Ingen innlogging, ingen app.",
+    se_kart_kom_i_gang: "Se kart og kom i gang",
+    til_kartet: "Til kartet",
+    til_ledertavla: "Til ledertavla",
+    til_forsiden: "Til forsiden",
+
+    // Ledertavle
+    ledertavle_tittel: "Ledertavle",
+    stillingen_tittel: "Stillingen",
+    laster_ledertavla: "Laster ledertavla …",
+    ledertavla_ingen_firebase_html: 'Ledertavla er ikke koblet til Firebase ennå. Lim inn Firebase-config i <code>assets/js/firebase-config.js</code> for å se resultater.',
+    ledertavla_ingen_deltakere: "Ingen deltakere ennå. Bli den første!",
+    ledertavla_skjult_navn: "(skjult navn)",
+    ledertavla_kol_kallenavn: "Kallenavn",
+    ledertavla_kol_poeng: "Poeng",
+
+    // Registrering (registrering.js — dynamisk innhold på stedssider)
+    reg_ukjent_sted: "Ukjent sted. Sjekk at id-en stemmer med steder.js.",
+    reg_allerede_besokt_kort: "✓ Du har allerede besøkt dette stedet.",
+    reg_lesemodus_html: 'Du leser om dette stedet. For å registrere besøket og få poeng må du <strong>skanne QR-koden på stolpen</strong> – eller taste inn koden fra stolpen på forsiden.',
+    reg_vil_du_bli_med: "Vil du være med på jakten?",
+    reg_velg_navn: "Velg et kallenavn for å registrere dette stedet og samle poeng. Du kan lese siden uansett.",
+    reg_skjema_knapp: "Bli med og registrer",
+    reg_nytt_tittel: "🎉 Nytt sted funnet!",
+    // Token-substitusjon ({navn} og {poeng}) gjøres i registrering.js.
+    reg_nytt_du_har_html: "Hei {navn} — du har nå <strong>{poeng}</strong> totalt.",
+    reg_besokt_ingen_nye: "✓ Du har allerede besøkt dette stedet. Ingen nye poeng denne gangen.",
+    reg_du_har_totalt_html: "Du har <strong>{poeng}</strong> totalt.",
+
+    // Kart-popup
+    kart_les_mer: "Les mer →",
+    kart_allerede_besokt: "✓ Allerede besøkt",
   },
 
   uk: {
@@ -157,6 +200,8 @@ export const OVERSETTELSER = {
     // Profil / dynamisk tekst
     hei: "Привіт",
     poeng: "балів",
+    // 1 → бал, 2-4 → бали, 5+ → балів (slavisk pluralisering — se pluralKategori).
+    poeng_form: ["бал", "бали", "балів"],
     klar_for_tur: "Готові вирушати! Знайдіть стовпчик і відскануйте QR-код.",
     endre_kallenavn: "Змінити прізвисько",
     profil_label: "Прізвисько",
@@ -171,6 +216,45 @@ export const OVERSETTELSER = {
     // Feilmeldinger
     feil_navn: "Оберіть, будь ласка, доброзичливіше прізвисько 🙂",
     feil_kode: "Стовпчика з таким кодом не знайдено. Перевірте, чи правильно ви ввели його.",
+
+    // Felles UI på tvers av sider
+    tilbake_til_forside: "← Назад до карти й головної",
+
+    // Stedssider — standardbokser
+    om_stedet: "Про місце",
+    her_er_du: "Ви тут",
+    bli_med_h3: "Як долучитися до полювання",
+    bli_med_p: "Знаходьте стовпчики у Вестре-Акер, скануйте QR-код і читайте історію кожного місця. Оберіть прізвисько — і збирайте бали за кожне нове відвідане місце. Без реєстрації, без застосунку.",
+    se_kart_kom_i_gang: "До карти та початку",
+    til_kartet: "До карти",
+    til_ledertavla: "До таблиці лідерів",
+    til_forsiden: "На головну",
+
+    // Ledertavle
+    ledertavle_tittel: "Таблиця лідерів",
+    stillingen_tittel: "Поточний результат",
+    laster_ledertavla: "Завантажуємо таблицю лідерів…",
+    ledertavla_ingen_firebase_html: 'Таблицю лідерів ще не підключено до Firebase. Вставте конфігурацію Firebase у <code>assets/js/firebase-config.js</code>, щоб побачити результати.',
+    ledertavla_ingen_deltakere: "Учасників ще немає. Станьте першим!",
+    ledertavla_skjult_navn: "(прізвисько приховано)",
+    ledertavla_kol_kallenavn: "Прізвисько",
+    ledertavla_kol_poeng: "Бали",
+
+    // Registrering
+    reg_ukjent_sted: "Невідоме місце. Перевірте, чи відповідає id у steder.js.",
+    reg_allerede_besokt_kort: "✓ Ви вже відвідали це місце.",
+    reg_lesemodus_html: 'Ви читаєте про це місце. Щоб зареєструвати відвідування й отримати бали, потрібно <strong>відсканувати QR-код на стовпчику</strong> — або ввести код зі стовпчика на головній сторінці.',
+    reg_vil_du_bli_med: "Хочете долучитися до полювання?",
+    reg_velg_navn: "Оберіть прізвисько, щоб зареєструвати це місце та збирати бали. Сторінку можна читати в будь-якому разі.",
+    reg_skjema_knapp: "Долучитися та зареєструвати",
+    reg_nytt_tittel: "🎉 Знайдено нове місце!",
+    reg_nytt_du_har_html: "Привіт {navn} — тепер у вас <strong>{poeng}</strong> загалом.",
+    reg_besokt_ingen_nye: "✓ Ви вже відвідали це місце. Цього разу нових балів не буде.",
+    reg_du_har_totalt_html: "У вас <strong>{poeng}</strong> загалом.",
+
+    // Kart-popup
+    kart_les_mer: "Дізнатися більше →",
+    kart_allerede_besokt: "✓ Уже відвідано",
   },
 };
 

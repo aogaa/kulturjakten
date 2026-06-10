@@ -9,6 +9,11 @@
     2. Bytt ut alt merket med [[ ... ]] nedenfor med ekte innhold.
     3. Sett STED_ID nederst lik stedets id, og legg til raden i assets/js/steder.js.
   Ikke noe mer. Resten (kart, registrering, poeng, ledertavle) skjer automatisk.
+
+  FLERSPRÅK: Stedets historiske brødtekst legges i to versjoner side om side —
+  én i [data-sprak="nb"] og én i [data-sprak="uk"]. CSS i style.css skjuler den
+  som ikke matcher gjeldende <html lang>. Mangler ukrainsk tekst ennå? Behold
+  bare den norske blokken — den ukrainske kan legges til senere.
   ════════════════════════════════════════════════════════════════════════
 -->
 <head>
@@ -26,12 +31,22 @@
 </head>
 <body>
   <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="../assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="../assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
     <a class="topp-logo" href="../index.html">
-      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" />
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
     </a>
-    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <!-- Stedsnavnet er stedsspesifikt og foreløpig kun på norsk. Skal stedsnavnet
+         oversettes til ukrainsk, bytt ut <h1> med to <h1 data-sprak="…">-blokker. -->
     <h1>[[Stedets navn]]</h1>
-    <p><a href="../index.html">← Tilbake til kart og forside</a></p>
+    <p><a href="../index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
   </header>
 
   <main class="innhold">
@@ -39,45 +54,58 @@
     <!-- Registreringsstatus (fylles av skriptet: nytt sted / allerede besøkt / bli med) -->
     <section class="kort" id="registrering"></section>
 
-    <!-- Historisk tekst -->
+    <!-- Historisk tekst — gjentas én gang per språk; CSS viser kun den aktive. -->
     <section class="sted-historie">
-      <h2>Om stedet</h2>
-      <!-- [[ Lim inn historisk tekst her. Flere <p>-avsnitt etter behov. ]] -->
-      <p>[[ Historisk tekst om stedet kommer her. ]]</p>
+      <h2 data-i18n="om_stedet">Om stedet</h2>
 
-      <!-- Bilde(r). Legg bildefil i assets/img/steder/ og pek på den under. -->
-      <img class="sted-bilde" src="../assets/img/steder/[[bildefil.jpg]]"
-           alt="[[Beskrivende alt-tekst for bildet]]" />
+      <div data-sprak="nb">
+        <!-- [[ Lim inn historisk tekst her. Flere <p>-avsnitt etter behov. ]] -->
+        <p>[[ Historisk tekst om stedet kommer her. ]]</p>
+
+        <!-- Bilde(r). Legg bildefil i assets/img/steder/ og pek på den under. -->
+        <img class="sted-bilde" src="../assets/img/steder/[[bildefil.jpg]]"
+             alt="[[Beskrivende alt-tekst for bildet]]" />
+      </div>
+
+      <div data-sprak="uk">
+        <!-- [[ Ukrainsk oversettelse av samme innhold. Slett denne blokken hvis
+             ukrainsk oversettelse ikke finnes ennå — siden viser da norsk for
+             alle. ]] -->
+        <p>[[ Ukrainsk tekst kommer her. ]]</p>
+        <img class="sted-bilde" src="../assets/img/steder/[[bildefil.jpg]]"
+             alt="[[Опис зображення]]" />
+      </div>
     </section>
 
     <!-- Lite kartutsnitt som viser hvor stedet er -->
     <section>
-      <h2>Her er du</h2>
+      <h2 data-i18n="her_er_du">Her er du</h2>
       <div class="kart-utsnitt" id="kart"></div>
     </section>
 
     <!-- «Slik blir du med»-boks for nysgjerrige som ikke deltar ennå -->
     <section class="kort">
-      <h3>Slik blir du med på jakten</h3>
-      <p>Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+      <h3 data-i18n="bli_med_h3">Slik blir du med på jakten</h3>
+      <p data-i18n="bli_med_p">Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
          hvert sted. Velg et kallenavn – så samler du poeng for hvert
          nye sted du besøker. Ingen innlogging, ingen app.</p>
-      <a class="knapp" href="../index.html">Se kart og kom i gang</a>
+      <a class="knapp" href="../index.html" data-i18n="se_kart_kom_i_gang">Se kart og kom i gang</a>
     </section>
 
     <div class="lenkerad">
-      <a class="knapp-sekundaer knapp" href="../index.html">Til kartet</a>
-      <a class="knapp-sekundaer knapp" href="../ledertavle.html">Til ledertavla</a>
+      <a class="knapp-sekundaer knapp" href="../index.html" data-i18n="til_kartet">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html" data-i18n="til_ledertavla">Til ledertavla</a>
     </div>
   </main>
 
   <footer class="bunn">
-    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
   </footer>
 
   <script type="module">
     import { kjorRegistrering } from "../assets/js/registrering.js";
     import { lagKart } from "../assets/js/kart.js";
+    import { settSprak } from "../assets/js/i18n.js";
 
     // ── SETT denne lik stedets id (samme som i steder.js) ──
     // Merk: poeng gis kun når siden åpnes med koden i URL-en (?k=<kode>).
@@ -86,6 +114,11 @@
 
     kjorRegistrering(STED_ID);
     lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+
+    // Koble språkvelgeren.
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
   </script>
 </body>
 </html>

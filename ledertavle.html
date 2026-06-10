@@ -8,39 +8,48 @@
 </head>
 <body>
   <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
     <a class="topp-logo" href="index.html">
-      <img src="assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" />
+      <img src="assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
     </a>
-    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a>
-    <h1>Ledertavle</h1>
-    <p><a href="index.html">← Tilbake til kart og forside</a></p>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1 data-i18n="ledertavle_tittel">Ledertavle</h1>
+    <p><a href="index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
   </header>
 
   <main class="innhold">
     <section class="kort">
-      <h2>Stillingen</h2>
+      <h2 data-i18n="stillingen_tittel">Stillingen</h2>
 
       <div id="ledertavle-innhold">
-        <p class="dempet">Laster ledertavla …</p>
+        <p class="dempet" data-i18n="laster_ledertavla">Laster ledertavla …</p>
       </div>
     </section>
   </main>
 
   <footer class="bunn">
-    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
   </footer>
 
   <script type="module">
     import { hentLedertavle } from "./assets/js/ledertavle.js";
     import { FIREBASE_KONFIGURERT } from "./assets/js/firebase-config.js";
     import { erUpassende } from "./assets/js/forbudteord.js";
+    import { t, settSprak } from "./assets/js/i18n.js";
 
     const innhold = document.getElementById("ledertavle-innhold");
     let alleRader = [];
 
-    function escapeHtml(t) {
+    function escapeHtml(tekst) {
       const d = document.createElement("div");
-      d.textContent = t;
+      d.textContent = tekst;
       return d.innerHTML;
     }
 
@@ -48,20 +57,18 @@
       const rader = alleRader;
 
       if (!FIREBASE_KONFIGURERT) {
-        innhold.innerHTML =
-          '<p class="dempet">Ledertavla er ikke koblet til Firebase ennå. ' +
-          'Lim inn Firebase-config i <code>assets/js/firebase-config.js</code> for å se resultater.</p>';
+        innhold.innerHTML = `<p class="dempet">${t("ledertavla_ingen_firebase_html")}</p>`;
         return;
       }
       if (rader.length === 0) {
-        innhold.innerHTML = '<p class="dempet">Ingen deltakere ennå. Bli den første!</p>';
+        innhold.innerHTML = `<p class="dempet">${t("ledertavla_ingen_deltakere")}</p>`;
         return;
       }
 
       const rekker = rader.map((r, i) => {
         // Lag 2: masker navn som slipper gjennom inntastingsfilteret.
         const visningsnavn = erUpassende(r.kallenavn)
-          ? '<span class="dempet">(skjult navn)</span>'
+          ? `<span class="dempet">${t("ledertavla_skjult_navn")}</span>`
           : escapeHtml(r.kallenavn);
         return `
         <tr>
@@ -74,7 +81,7 @@
       innhold.innerHTML = `
         <table>
           <thead>
-            <tr><th>#</th><th>Kallenavn</th><th>Poeng</th></tr>
+            <tr><th>#</th><th>${t("ledertavla_kol_kallenavn")}</th><th>${t("ledertavla_kol_poeng")}</th></tr>
           </thead>
           <tbody>${rekker}</tbody>
         </table>`;
@@ -86,6 +93,12 @@
       console.warn("[ledertavle] Klarte ikke å hente data:", err);
     }
     tegn();
+
+    // Koble språkvelgeren + re-tegn ved språkbytte.
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
+    document.addEventListener("sprakbytte", () => tegn());
   </script>
 </body>
 </html>
