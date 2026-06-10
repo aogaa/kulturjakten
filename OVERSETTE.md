@@ -69,7 +69,10 @@ Et lite, avhengighetsfritt i18n-lag. Innhold:
 - `index.html` på norsk (default): uendret forside.
 - Klikk ukrainsk flagg → hero, seksjoner, steg, skjema-etiketter og knapper er ukrainske;
   `<html lang>` = `uk`.
-- Klikk norsk flagg → tilbake til norsk. Last på nytt → valget huskes (localStorage).
+- **Klikk norsk flagg → tilbake til norsk.** Begge flaggene MÅ være synlige før og etter
+  bytte (begge retninger). Hvis det ene flagget forsvinner: CSS-en som skjuler `data-sprak`
+  er ikke scopet riktig — se §3-advarselen og §6-fellen.
+- Last på nytt → valget huskes (localStorage `vafs_sprak`).
 - Ingen konsollfeil. «Kom i gang»-skjema + kode-skjema virker på begge språk.
 - Mobil 375px: flaggene får plass i headeren uten overflyt.
 
@@ -88,12 +91,24 @@ Et lite, avhengighetsfritt i18n-lag. Innhold:
   (ukrainsk «бал/бали/балів»).
 - **Lang narrativ brødtekst inline i sidens HTML:** stedssidenes «Om stedet»-tekst
   legges som to søsken-blokker — `<div data-sprak="nb">…</div>` og
-  `<div data-sprak="uk">…</div>` — i samme fil. CSS i `style.css` skjuler den
-  som ikke matcher gjeldende `<html lang>`. Ingen JS, ingen flimring, og hver
-  stedsside har sin tekst samlet ett sted. (Mangler ukrainsk for en stedsside?
-  Behold bare norsk-blokken — siden viser norsk for alle inntil oversettelsen er
-  skrevet.) Stedsnavn (`<h1>` i headeren) og `<title>` er foreløpig holdt på norsk
-  for enkelhet; bytt ut `<h1>` med to `data-sprak`-blokker hvis det skal oversettes.
+  `<div data-sprak="uk">…</div>` — inne i en `<section class="sted-historie">`-
+  wrapper. CSS i `style.css` skjuler den som ikke matcher gjeldende `<html lang>`.
+  Ingen JS, ingen flimring, og hver stedsside har sin tekst samlet ett sted.
+  (Mangler ukrainsk for en stedsside? Behold bare norsk-blokken — siden viser
+  norsk for alle inntil oversettelsen er skrevet.) Stedsnavn (`<h1>` i headeren)
+  og `<title>` er foreløpig holdt på norsk for enkelhet; bytt ut `<h1>` med to
+  `data-sprak`-blokker hvis det skal oversettes.
+
+  > ⚠️ **CSS-en MÅ scopes til `.sted-historie` (eller annen tekst-container).**
+  > Attributtet `data-sprak` brukes også på flaggknappene i `.sprakvelger`. En
+  > uskopet regel (`html[lang="nb"] [data-sprak="uk"] { display: none; }`) skjuler
+  > flaggknappen for det andre språket → brukeren blir låst inne. Riktig:
+  > ```css
+  > html[lang="nb"] .sted-historie [data-sprak="uk"] { display: none; }
+  > html[lang="uk"] .sted-historie [data-sprak="nb"] { display: none; }
+  > ```
+  > Hvis du innfører en ny tekst-container (f.eks. `.artikkel`, `.lang-tekst`),
+  > legg til tilsvarende scopete regler — ikke fjern scopet.
 - **Stedsspesifikke felt i `steder.js` (`navn`, `kortbeskrivelse`)** brukes også
   i kart-popup. De er foreløpig norske; oversetting krever utvidelse av datamodellen
   (f.eks. `navn_uk`, `kortbeskrivelse_uk`) — ikke gjort enda.
@@ -125,7 +140,81 @@ hver stedsside under `<div data-sprak="uk">`.
 
 ---
 
-## 5. Åpent punkt
+## 5. Sjekkliste for nytt språk (kort)
+
+Legg til kolonne i `OVERSETTELSER` (`i18n.js`), inkl. pluralarrays (`poeng_form`,
+`hva_steder_navn`, `hva_tekst_post` osv.). For slaviske/komplekse språk: verifiser
+at `pluralKategori(n, sprak)` dekker språket — utvid hvis ikke.
+
+1. Flagg-SVG i `assets/img/ui/flag-<land>.svg` (NB: landskode, ikke språkkode — se §1).
+2. Knapp i `.sprakvelger` på **alle** sider med språkvelger (`index.html`, `ledertavle.html`,
+   `_mal.html` + alle eksisterende stedssider). Glem du én side, blir den låst på forrige
+   språk når brukeren navigerer dit.
+3. Hvis du legger til ny CSS-regel for narrativ tekst (§3-toggle): scope den til
+   `.sted-historie` (eller annen tekst-container). Aldri til `[data-sprak]` direkte.
+4. Test full løype på alle sider: bytte fram og tilbake, reload, mobil 375px,
+   pluralisering for `n = 1, 2, 5, 11, 21`, registreringsflyten på stedsside
+   (`?k=VAFS-01`), kart-popup oppdateres ved språkbytte.
+5. Kjør korrektur med native taler før bred lansering. UI i `i18n.js`
+   (`OVERSETTELSER.<kode>`); brødtekst i `<div data-sprak="<kode>">` i hver stedsside.
+
+## 6. Feller å unngå (historisk)
+
+Lærdom fra ukrainsk-implementeringen (2026-06-10). Les før du gjentar mønstrene
+for et nytt språk eller en ny sidetype.
+
+### F1 — `data-sprak` attributtkollisjon (CSS-felle)
+**Symptom:** Etter bytte til språk X forsvinner flagget for språk Y. Brukeren kan ikke
+bytte tilbake.
+**Årsak:** Attributtet `data-sprak` brukes både på flaggknappene i `.sprakvelger` og
+på brødtekstblokkene i `.sted-historie`. En uskopet CSS-regel traff begge.
+**Fiks:** Scope toggle-CSS til `.sted-historie [data-sprak]` — aldri til
+`[data-sprak]` alene. Se §3-advarselen for kodeeksempel. (Commit `2a8418a`.)
+**Generalisering:** Hver gang du innfører en ny CSS-regel som matcher
+`[data-sprak="…"]`, sjekk at scopet utelukker `.sprakvelger`.
+
+### F2 — Pluralisering bakt inn i HTML (i18n-felle)
+**Symptom:** «2 місць чекають» i stedet for «2 місця чекають» (feil flertallsform).
+**Årsak:** Hele paragrafen lå som ferdig HTML i én ordboknøkkel (`data-i18n-html`),
+så tallet kunne ikke styre grammatikken.
+**Fiks:** Splitt paragrafen i pre/plural/post-nøkler og bygg den i JS via
+`plural("nokkel", n)`. Helperen i `i18n.js` (`pluralKategori` + `plural`) håndterer
+slavisk regel (1 / 2–4 / 5+ med 11–14-unntak). Verifiser med `n = 1, 2, 5, 11, 21, 22, 25`.
+**Generalisering:** Hver gang et **tall** styrer en setning, bruk pluralarray. Også
+for norsk (selv om regelen er triviell) — gir symmetri og er klart når et tredje
+språk legges til. Pluralarrays i dag: `poeng_form`, `hva_steder_navn`, `hva_tekst_post`.
+
+### F3 — Re-render mangler ved språkbytte (JS-felle)
+**Symptom:** Statisk tekst byttes ved klikk, men dynamisk JS-generert innhold
+(profil-stripe, registreringsstatus, kart-popup) blir stående på forrige språk
+til neste reload.
+**Fiks:** `settSprak()` sender CustomEvent `sprakbytte`. Hver side/modul som
+rendrer dynamisk innhold må:
+- lagre sin tegne-funksjon (`_tegn`) og kalle den på nytt i en `sprakbytte`-lytter,
+- for åpne Leaflet-popups: oppdater med `marker.setPopupContent()` (lagre markørene
+  i en modulvariabel — det er gjort i `kart.js`).
+**Generalisering:** Når du innfører ny dynamisk-tekst-kilde, koble den til
+`sprakbytte`-eventet samtidig. Brukerinput i åpne skjemaer går tapt ved språkbytte —
+akseptert, dokumenter hvis brukeren kan miste mye.
+
+### F4 — Glemt språkvelger på én side (navigasjons-felle)
+**Symptom:** Brukeren navigerer til en side som mangler språkvelgeren og blir
+låst på forrige språk uten mulighet til å bytte.
+**Fiks:** Hver side med delt header må ha `<div class="sprakvelger">` med begge
+(alle) flaggene + koble dem til `settSprak()` i side-skriptet. Sjekkliste når du
+legger til et språk: gå gjennom **alle** HTML-filer som har `.topp`-headeren.
+**Generalisering:** Når en ny sidetype lages (kopi av `_mal.html` eller annet),
+sjekk at språkvelgeren er med før commit.
+
+### F5 — Stedsspesifikke felt i `steder.js` er ikke oversettbare
+**Symptom:** Kart-popup viser norsk `navn` og `kortbeskrivelse` selv på ukrainsk UI.
+**Status:** Ikke fikset. Krever utvidelse av datamodellen (f.eks. `navn_uk`,
+`kortbeskrivelse_uk`) + oppslag basert på `gjeldendeSprak()` i `kart.js`.
+**Når dette tas:** Legg `navn_<kode>` / `kortbeskrivelse_<kode>` valgfritt; fall
+tilbake til `navn` hvis ukrainsk mangler. Ikke gjør feltene obligatoriske — det
+ville brutt eksisterende rader.
+
+## 7. Åpent punkt
 
 - Claude lager en god ukrainsk førsteversjon, men en **ukrainsktalende bør lese korrektur**
   før bred lansering. All tekst ligger samlet i `assets/js/i18n.js` (ett sted å rette).
