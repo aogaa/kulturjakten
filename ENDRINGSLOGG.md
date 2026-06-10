@@ -123,10 +123,64 @@ Hele prosjektet ble bygget, verifisert og publisert live denne dagen.
 
 ---
 
+## 2026-06-10 — Forsiden oversatt til ukrainsk (`uk`)
+
+Første implementering av flerspråk per `OVERSETTE.md`. Omfang: kun `index.html`.
+
+### Hva som ble lagt til
+- `assets/js/i18n.js` — ordbok med kolonner `nb` og `uk`, og funksjonene
+  `gjeldendeSprak()`, `settSprak(kode)`, `t(nokkel)`, `bruk(rot)` samt
+  `pluralKategori(n, sprak)` + `plural(nokkel, n)` for språk med flere flertallsformer.
+  Initialiseres ved import (setter `<html lang>` og kjører `bruk()`) og sender
+  CustomEvent `sprakbytte` ved språkendring så side-skript kan re-rendre dynamisk
+  innhold.
+- `assets/img/ui/flag-no.svg` + `flag-ua.svg` — flagg som SVG (emoji-flagg vises
+  som bokstaver på Windows).
+- `.sprakvelger`-stiler i `style.css` (to flaggknapper øverst til høyre i den
+  grønne headeren, markert `.aktiv`). `.topp` fikk `position: relative` for å huse
+  den absolutt-posisjonerte velgeren.
+- `index.html`: `data-i18n` (textContent), `data-i18n-html` (innerHTML),
+  `data-i18n-attr="placeholder:nokkel"` (attributter) på all synlig tekst.
+  Inline-skriptet bruker `t(...)` for JS-genererte strenger (hilsen, knapper,
+  feilmeldinger) og lytter på `sprakbytte` for å re-rendre profil-seksjon og
+  «Hva»-paragraf.
+
+### Pluraliseringen (Hva-paragrafen)
+Slavisk grammatikk krever at både substantiv og verb stemmer med tallet:
+1 → entall, 2–4 → få, 5+ → mange (med 11–14-unntak). Løsning: dele paragrafen i
+tre nøkler — `hva_tekst_pre` + `plural("hva_steder_navn", n)` + `plural("hva_tekst_post", n)`
+— og bygge HTML-en i side-skriptet. Verifisert for `n` = 1, 2, 5, 11, 21, 22, 25, 101, 102:
+- uk 2 → «2 місця чекають на відкриття.» (entall verb «чекає» for n=1)
+- uk 5 → «5 місць чекають на відкриття.»
+
+### Verifisert
+- Norsk default + bytte til ukrainsk + bytte tilbake. Språkvalg vedvarer over
+  reload (localStorage `vafs_sprak`).
+- Hero, alle seksjoner, steg, skjema, knapper, feilmeldinger (kode-skjema og
+  profil-skjema) oversettes. `<html lang>` følger valget.
+- Mobil 375px: språkvelgeren får plass uten visuell kollisjon med logo.
+- Ingen konsollfeil.
+
+### Felle som ble unngått
+Første utkast la hele paragrafen i ordboknøkkelen som ferdig HTML
+(`data-i18n-html="hva_tekst"`). Det gjorde at «2 місць чекають» kom ut feil
+(skulle vært «2 місця чекають»). Løsningen var å splitte teksten og legge til en
+pluraliseringshjelper — gjør i18n-laget korrekt for slaviske språk uten å øke
+kompleksiteten merkbart på norsk siden.
+
+### Åpent
+- Ukrainsk korrektur av en native taler — alt ligger samlet i `i18n.js`-objektet
+  `OVERSETTELSER.uk`, ett sted å rette.
+- Stedssider + ledertavle ikke oversatt enda; samme `i18n.js` utvides senere
+  (legg `data-i18n` + inkluder script + flaggvelger i delt header).
+
+---
+
 ## Gjenstår (per 2026-06-10)
 - **Espen: oppdatere Firestore-reglene (fjerne `klasse`-kravet) — deretter pushe
   klasse-fjerningen.**
 - Rydde testrader i Firestore-ledertavla (manuelt i konsollen).
 - Milepæl 3: generere QR-koder (med `?k=<KODE>`) til `/qr/`; fylle inn flere steder.
-- Ukrainsk oversetting av forsiden når Espen gir klarsignal (se `OVERSETTE.md`).
+- Ukrainsk korrekturlesing av forsiden (`OVERSETTELSER.uk` i `assets/js/i18n.js`).
+- Senere: utvide ukrainsk til stedssider + ledertavle.
 - (Valgfritt) sette `MAILERLITE_URL` i `index.html` for nyhetsbrev-seksjonen.

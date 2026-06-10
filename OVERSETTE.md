@@ -95,9 +95,20 @@ Et lite, avhengighetsfritt i18n-lag. Innhold:
 | Språk | Kode | Flagg-fil | Forside | Stedssider | Ledertavle |
 |-------|------|-----------|---------|------------|------------|
 | Norsk (bokmål) | `nb` | `flag-no.svg` | ✅ original | ✅ | ✅ |
-| Ukrainsk | `uk` | `flag-ua.svg` | ⏳ planlagt (ikke implementert) | ⛔ ikke ennå | ⛔ ikke ennå |
+| Ukrainsk | `uk` | `flag-ua.svg` | ✅ implementert (2026-06-10) | ⛔ ikke ennå | ⛔ ikke ennå |
 
-**Neste handling:** når Espen sier fra, gjennomfør §2 for forsiden på ukrainsk.
+**Neste handling:** korrektur av ukrainsk tekst (åpent punkt §5) + utvid til stedssider/ledertavle når Espen sier fra.
+
+### Notater fra første implementering (2026-06-10)
+
+- Pluraliseringshjelper lagt til i `i18n.js`: `pluralKategori(n, sprak)` + `plural(nokkel, n)`.
+  Slavisk regel for `uk` (1 → entall, 2–4 → få, 5+ → mange, med 11–14-unntak).
+  «Hva vi har laget»-paragrafen bygges i `index.html` med tre nøkler:
+  `hva_tekst_pre` + `plural("hva_steder_navn", n)` + `plural("hva_tekst_post", n)`,
+  så ukrainsk får riktig grammatikk uansett antall stolper (f.eks. «2 місця чекають»,
+  «5 місць чекають»).
+- Norsk har samme oppsett (1 → «sted», ellers «steder»). Trivielt i dag, men gir
+  symmetri og gjør det rett å legge til andre språk senere.
 
 ---
 

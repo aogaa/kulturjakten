@@ -35,10 +35,44 @@ body {
 
 /* ── Topp ── */
 .topp {
+  position: relative;
   background: var(--farge-skog);
   color: #fff;
   padding: 1.2rem 1.1rem;
   text-align: center;
+}
+
+/* Språkvelger — to flaggknapper i øvre høyre hjørne av headeren. */
+.sprakvelger {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  display: flex;
+  gap: 0.35rem;
+  z-index: 1;
+}
+.sprakvelger button {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 4px;
+  padding: 3px;
+  cursor: pointer;
+  line-height: 0;
+  opacity: 0.65;
+  transition: opacity 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.sprakvelger button:hover { opacity: 1; background: rgba(255, 255, 255, 0.3); }
+.sprakvelger button.aktiv {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #fff;
+}
+.sprakvelger img {
+  display: block;
+  width: 26px;
+  height: 18px;
+  border-radius: 2px;
+  object-fit: cover;
 }
 .topp h1 { margin: 0; font-size: 1.4rem; }
 .topp p { margin: 0.3rem 0 0; opacity: 0.9; font-size: 0.95rem; }

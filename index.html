@@ -30,18 +30,26 @@
 </head>
 <body>
   <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
     <a class="topp-logo" href="index.html">
-      <img src="assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" />
+      <img src="assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
     </a>
-    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a>
-    <h1>Kultur- og historiejakt</h1>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1 data-i18n="topp_tittel">Kultur- og historiejakt</h1>
   </header>
 
   <!-- Hero: fullbredde stemningsbilde + den emosjonelle kroken (golden circle: hvorfor) -->
   <section class="hero">
     <div class="hero-innhold">
-      <h2>Oppdag historien rett rundt hjørnet</h2>
-      <p>Vestre Aker er fullt av historier. Gå på tur, finn stolpene og bli kjent
+      <h2 data-i18n="hero_tittel">Oppdag historien rett rundt hjørnet</h2>
+      <p data-i18n="hero_tekst">Vestre Aker er fullt av historier. Gå på tur, finn stolpene og bli kjent
          med nabolaget på en helt ny måte.</p>
     </div>
   </section>
@@ -49,8 +57,8 @@
   <main class="innhold">
     <!-- HVORFOR -->
     <section>
-      <h2>Hvorfor kulturjakt?</h2>
-      <p class="seksjon-intro">Vi tror nærmiljøets historie fortjener å bli oppdaget –
+      <h2 data-i18n="hvorfor_tittel">Hvorfor kulturjakt?</h2>
+      <p class="seksjon-intro" data-i18n="hvorfor_tekst">Vi tror nærmiljøets historie fortjener å bli oppdaget –
         til fots, sammen og ute i frisk luft. Kulturjakten er en gratis tur- og
         historieopplevelse for hele Vestre Aker: god for beina, hjertet og
         nysgjerrigheten.</p>
@@ -58,76 +66,74 @@
 
     <!-- HVA -->
     <section>
-      <h2>Hva vi har laget</h2>
-      <p class="seksjon-intro">Rundt om har vi satt ut stolper på steder med
-        lokalhistorisk verdi. Hver stolpe har en QR-kode som tar deg til en side med
-        historien om stedet, bilder og kart. Ingen app, ingen innlogging – bare et
-        kallenavn. <span class="uthev"><span id="antall-steder">…</span>
-        steder</span> venter på å bli oppdaget.</p>
+      <h2 data-i18n="hva_tittel">Hva vi har laget</h2>
+      <!-- innholdet bygges av side-skriptet (bruker plural() for språk med
+           pluraliseringsregler, f.eks. ukrainsk: 1 місце / 2–4 місця / 5+ місць). -->
+      <p class="seksjon-intro" id="hva-tekst"></p>
     </section>
 
     <!-- HVORDAN -->
     <section>
-      <h2>Slik bruker du det</h2>
+      <h2 data-i18n="hvordan_tittel">Slik bruker du det</h2>
       <ol class="steg-liste">
         <li class="steg">
           <div>
-            <h3>Velg et kallenavn</h3>
-            <p>Helt enkelt – ingen innlogging. Alt er helt anonymt, perfekt for
+            <h3 data-i18n="steg1_tittel">Velg et kallenavn</h3>
+            <p data-i18n="steg1_tekst">Helt enkelt – ingen innlogging. Alt er helt anonymt, perfekt for
                deg som bare vil ha det hyggelig.</p>
           </div>
         </li>
         <li class="steg">
           <div>
-            <h3>Gå på tur og finn en stolpe</h3>
-            <p>Bruk kartet under for å se hvor stolpene står.</p>
+            <h3 data-i18n="steg2_tittel">Gå på tur og finn en stolpe</h3>
+            <p data-i18n="steg2_tekst">Bruk kartet under for å se hvor stolpene står.</p>
           </div>
         </li>
         <li class="steg">
           <div>
-            <h3>Skann QR-koden</h3>
-            <p>Da åpnes stedssiden med historien, bilder og kart.</p>
+            <h3 data-i18n="steg3_tittel">Skann QR-koden</h3>
+            <p data-i18n="steg3_tekst">Da åpnes stedssiden med historien, bilder og kart.</p>
           </div>
         </li>
         <li class="steg">
           <div>
-            <h3>Samle poeng</h3>
-            <p>Nye steder gir poeng. Følg med på ledertavla!</p>
+            <h3 data-i18n="steg4_tittel">Samle poeng</h3>
+            <p data-i18n="steg4_tekst">Nye steder gir poeng. Følg med på ledertavla!</p>
           </div>
         </li>
       </ol>
       <div class="steg-cta">
-        <a class="knapp" href="#start">Kom i gang</a>
+        <a class="knapp" href="#start" data-i18n="kom_i_gang_knapp">Kom i gang</a>
       </div>
     </section>
 
     <!-- KOM I GANG (hero-knappen scroller hit) -->
     <section class="kort" id="start">
-      <h2>Bli med på jakten</h2>
-      <p>Velg et kallenavn, så er du i gang. Du kan endre det når som helst.</p>
+      <h2 data-i18n="bli_med_tittel">Bli med på jakten</h2>
+      <p data-i18n="bli_med_tekst">Velg et kallenavn, så er du i gang. Du kan endre det når som helst.</p>
       <!-- Profil/«kom i gang» fylles inn av skriptet under -->
       <div id="kom-i-gang"></div>
     </section>
 
     <section>
-      <h2>Utforsk stolpene på kartet</h2>
-      <p class="dempet">Trykk på en markør for å lese mer om stedet.</p>
+      <h2 data-i18n="kart_tittel">Utforsk stolpene på kartet</h2>
+      <p class="dempet" data-i18n="kart_tekst">Trykk på en markør for å lese mer om stedet.</p>
       <div id="kart"></div>
       <div class="tegnforklaring">
-        <span><span class="prikk prikk-ny"></span> Ikke besøkt ennå</span>
-        <span><span class="prikk prikk-funnet"></span> Besøkt</span>
+        <span><span class="prikk prikk-ny"></span> <span data-i18n="tegnforklaring_ny">Ikke besøkt ennå</span></span>
+        <span><span class="prikk prikk-funnet"></span> <span data-i18n="tegnforklaring_funnet">Besøkt</span></span>
       </div>
     </section>
 
     <section class="kort">
-      <h2>Fikk du ikke skannet QR-koden?</h2>
-      <p>Skriv inn koden som står på stolpen, så tar vi deg til stedet.</p>
+      <h2 data-i18n="kode_tittel">Fikk du ikke skannet QR-koden?</h2>
+      <p data-i18n="kode_tekst">Skriv inn koden som står på stolpen, så tar vi deg til stedet.</p>
       <form id="kode-skjema" class="skjema">
-        <label>Kode
-          <input type="text" id="kode" autocomplete="off" placeholder="F.eks. VAFS-A7" />
+        <label><span data-i18n="kode_label">Kode</span>
+          <input type="text" id="kode" autocomplete="off" placeholder="F.eks. VAFS-A7" data-i18n-attr="placeholder:kode_placeholder" />
         </label>
         <p class="reg-feil" id="kode-feil" hidden></p>
-        <button type="submit">Gå til stedet</button>
+        <button type="submit" data-i18n="kode_knapp">Gå til stedet</button>
       </form>
     </section>
 
@@ -135,12 +141,12 @@
     <section class="kort" id="nyhetsbrev" hidden></section>
 
     <div class="lenkerad">
-      <a class="knapp" href="ledertavle.html">Se ledertavla</a>
+      <a class="knapp" href="ledertavle.html" data-i18n="se_ledertavla">Se ledertavla</a>
     </div>
   </main>
 
   <footer class="bunn">
-    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
   </footer>
 
   <script type="module">
@@ -148,29 +154,39 @@
     import { lesTilstand, settProfil, harProfil } from "./assets/js/jakt.js";
     import { erUpassende } from "./assets/js/forbudteord.js";
     import { finnStedMedKode, STEDER } from "./assets/js/steder.js";
+    import { t, settSprak, plural } from "./assets/js/i18n.js";
 
     lagKart("kart");
 
-    // Dynamisk antall steder i «Hva vi har laget»-seksjonen.
-    const antallSteder = document.getElementById("antall-steder");
-    if (antallSteder) antallSteder.textContent = String(STEDER.length);
+    // Bygg «Hva vi har laget»-paragrafen. Tallet på steder + pluralform settes
+    // her, så slaviske språk får korrekt grammatikk uansett antall.
+    function rendreHvaTekst() {
+      const el = document.getElementById("hva-tekst");
+      if (!el) return;
+      const n = STEDER.length;
+      el.innerHTML =
+        t("hva_tekst_pre") +
+        `<span class="uthev"><span id="antall-steder">${n}</span> ${plural("hva_steder_navn", n)}</span>` +
+        plural("hva_tekst_post", n);
+    }
+    rendreHvaTekst();
 
     // ── Valgfri nyhetsbrev-påmelding (MailerLite) ──
     // Lim inn URL-en til VAFS sitt MailerLite-skjema her. Seksjonen er skjult så
     // lenge denne er tom, så ingen død lenke vises før den er konfigurert.
     const MAILERLITE_URL = "";
-    if (MAILERLITE_URL) {
+    function rendreNyhetsbrev() {
+      if (!MAILERLITE_URL) return;
       const nb = document.getElementById("nyhetsbrev");
       nb.innerHTML = `
-        <h2>Vil du høre om nye stolper?</h2>
-        <p>Meld deg på VAFS sitt nyhetsbrev for å få beskjed når vi setter ut nye
-           stolper og arrangerer turer. Helt frivillig — du kan delta i jakten uten.
-           En voksen melder på e-post på vegne av familien.</p>
+        <h2>${t("nyhetsbrev_tittel")}</h2>
+        <p>${t("nyhetsbrev_tekst")}</p>
         <a class="knapp" href="${MAILERLITE_URL}" target="_blank" rel="noopener">
-          Meld meg på (åpnes hos MailerLite)
+          ${t("nyhetsbrev_knapp")}
         </a>`;
       nb.hidden = false;
     }
+    rendreNyhetsbrev();
 
     // Manuell kode-inntasting (reserve hvis QR ikke virker).
     document.getElementById("kode-skjema").addEventListener("submit", (e) => {
@@ -179,7 +195,7 @@
       const feil = document.getElementById("kode-feil");
       const sted = finnStedMedKode(kode);
       if (!sted) {
-        feil.textContent = "Fant ingen stolpe med den koden. Sjekk at du har skrevet den riktig.";
+        feil.textContent = t("feil_kode");
         feil.hidden = false;
         return;
       }
@@ -190,14 +206,14 @@
     const boks = document.getElementById("kom-i-gang");
 
     function visProfil() {
-      const t = lesTilstand();
+      const tilst = lesTilstand();
       boks.innerHTML = `
         <div class="profil-hei">
-          <span>Hei <strong>${escapeHtml(t.kallenavn)}</strong></span>
-          <span class="poeng">${t.totalpoeng} poeng</span>
+          <span>${t("hei")} <strong>${escapeHtml(tilst.kallenavn)}</strong></span>
+          <span class="poeng">${tilst.totalpoeng} ${t("poeng")}</span>
         </div>
-        <p class="dempet">Klar for tur! Finn en stolpe og skann QR-koden.
-          <a href="#" id="endre-profil">Endre kallenavn</a>.</p>`;
+        <p class="dempet">${t("klar_for_tur")}
+          <a href="#" id="endre-profil">${t("endre_kallenavn")}</a>.</p>`;
       boks.querySelector("#endre-profil").addEventListener("click", (e) => {
         e.preventDefault();
         visSkjema();
@@ -207,12 +223,12 @@
     function visSkjema() {
       boks.innerHTML = `
         <form id="profil-skjema" class="skjema">
-          <label>Kallenavn
+          <label><span>${t("profil_label")}</span>
             <input type="text" id="kallenavn" maxlength="20" required
-                   autocomplete="off" placeholder="F.eks. Turbo" />
+                   autocomplete="off" placeholder="${t("profil_placeholder")}" />
           </label>
           <p class="reg-feil" id="navn-feil" hidden></p>
-          <button type="submit">Kom i gang</button>
+          <button type="submit">${t("profil_knapp")}</button>
         </form>`;
       boks.querySelector("#profil-skjema").addEventListener("submit", (e) => {
         e.preventDefault();
@@ -220,7 +236,7 @@
         if (!kallenavn) return;
         const feil = boks.querySelector("#navn-feil");
         if (erUpassende(kallenavn)) {
-          feil.textContent = "Velg et vennligere kallenavn 🙂";
+          feil.textContent = t("feil_navn");
           feil.hidden = false;
           return;
         }
@@ -235,8 +251,23 @@
       return d.innerHTML;
     }
 
-    if (harProfil()) visProfil();
-    else visSkjema();
+    function rendreProfilseksjon() {
+      if (harProfil()) visProfil();
+      else visSkjema();
+    }
+    rendreProfilseksjon();
+
+    // Koble språkvelgeren.
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
+
+    // Ved språkbytte: re-rendre dynamisk innhold (profil + «Hva»-paragraf + nyhetsbrev).
+    document.addEventListener("sprakbytte", () => {
+      rendreHvaTekst();
+      rendreProfilseksjon();
+      rendreNyhetsbrev();
+    });
   </script>
 </body>
 </html>
