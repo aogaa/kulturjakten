@@ -105,6 +105,7 @@ export const OVERSETTELSER = {
     // Stedssider — standardbokser
     om_stedet: "Om stedet",
     her_er_du: "Her er du",
+    kilder_h3: "Kilder",
     bli_med_h3: "Slik blir du med på jakten",
     bli_med_p: "Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om hvert sted. Velg et kallenavn – så samler du poeng for hvert nye sted du besøker. Ingen innlogging, ingen app.",
     se_kart_kom_i_gang: "Se kart og kom i gang",
@@ -223,6 +224,7 @@ export const OVERSETTELSER = {
     // Stedssider — standardbokser
     om_stedet: "Про місце",
     her_er_du: "Ви тут",
+    kilder_h3: "Джерела",
     bli_med_h3: "Як долучитися до полювання",
     bli_med_p: "Знаходьте стовпчики у Вестре-Акер, скануйте QR-код і читайте історію кожного місця. Оберіть прізвисько — і збирайте бали за кожне нове відвідане місце. Без реєстрації, без застосунку.",
     se_kart_kom_i_gang: "До карти та початку",

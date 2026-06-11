@@ -228,6 +228,21 @@ a { color: var(--farge-skog-mork); }
   margin: 1rem 0;
 }
 
+/* ── Kildebox på stedssider ──
+   Brukes som <section class="kort kilder"> mellom brødtekst og kart.
+   Listeinnholdet står på originalspråk (kildenavn/-titler oversettes ikke);
+   kun overskriften byttes via i18n. Boksen skjules automatisk når <ul> er
+   tom — slik at en stedsside uten registrerte kilder ikke viser en tom boks. */
+.kilder h3 { margin: 0 0 0.4rem; }
+.kilder ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+.kilder li {
+  margin: 0.35rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere; /* lange URL-er bryter pent på mobil */
+}
+.kort.kilder:not(:has(li)) { display: none; }
+
 /* ── Skjema ── */
 .skjema { display: flex; flex-direction: column; gap: 0.8rem; }
 .skjema label { display: flex; flex-direction: column; gap: 0.25rem; font-weight: 600; font-size: 0.95rem; }

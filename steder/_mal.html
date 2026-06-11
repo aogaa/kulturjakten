@@ -77,6 +77,20 @@
       </div>
     </section>
 
+    <!-- Kildebox.
+         Listeinnholdet står på originalspråk (kildenavn/-titler oversettes
+         ikke); kun overskriften byttes via i18n. Klikkbart navn der kilden har
+         URL — samme mønster som fotograf-lenkene i <figcaption>:
+           <li><a href="https://..." target="_blank" rel="noopener">Navn</a></li>
+         Uten URL: bare ren tekst i <li>. Tom <ul> = boksen skjules helt
+         (CSS-regel .kort.kilder:not(:has(li))), så det er trygt å la stå tom. -->
+    <section class="kort kilder">
+      <h3 data-i18n="kilder_h3">Kilder</h3>
+      <ul>
+        <!-- [[ Fyll inn kilder her ]] -->
+      </ul>
+    </section>
+
     <!-- Lite kartutsnitt som viser hvor stedet er -->
     <section>
       <h2 data-i18n="her_er_du">Her er du</h2>

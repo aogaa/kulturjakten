@@ -28,7 +28,16 @@ For hvert nytt sted, gi meg:
      (f.eks. `assets/img/steder/holmenkollen/`), og send meg **filnavnene** + en kort
      beskrivelse av hvert bilde (brukes som alt-tekst).
    - Si gjerne hvor i teksten hvert bilde skal stå (ellers fordeler jeg dem fornuftig).
-5. **Valgfritt:**
+5. **Kilder** — liste over kildene du har brukt for det historiske stoffet.
+   - Send hver kilde som **navn + URL der det finnes** (jeg gjør navnet klikkbart).
+     Format: én kilde per linje. Ingen ekstra beskrivelse nødvendig.
+   - Eksempler: «Akersposten — Heftyevillaen, 2022 https://akersposten.no/…»,
+     «Vestre Aker historielag, samtale med X», «Store norske leksikon — Thomas
+     Heftye https://snl.no/Thomas_Heftye».
+   - Kildelista vises i en egen pent formatert boks rett under brødteksten på
+     stedssiden. Står oversetjeren bommer du ingenting: kildenavn og titler
+     oversettes ikke (akademisk konvensjon), kun overskriften «Kilder» / «Джерела».
+6. **Valgfritt:**
    - **Poeng** for stedet (standard er **100** hvis du ikke sier noe).
    - **Kort kart-tekst** (1 setning som vises i kart-popup). Lager jeg ellers selv fra teksten.
 
@@ -62,6 +71,12 @@ Du trenger **ikke** finne på stolpekode eller id — det gjør jeg, så de blir
    - Ber om ukrainsk versjon kun hvis du sender den. Du kan be om
      oversettelse i etterkant — da legges en `<div data-sprak="uk">`-blokk
      parallelt med nb-blokken (samme struktur + figcaptions oversatt).
+   - **Kilder** fra ditt steg §1.5 settes inn i en `<section class="kort kilder">`
+     mellom brødteksten og kart-utsnittet. Hvert navn med URL gjøres klikkbart
+     (`<a href="…" target="_blank" rel="noopener">`). Boksen skjules
+     automatisk så lenge `<ul>` er tom (CSS-regel `:not(:has(li))`), så en
+     stedsside uten kilder ennå viser ingen «Kilder»-boks. Mønsteret står i
+     [`steder/_mal.html`](steder/_mal.html) og er likt for alle sider.
 5. Legger til raden i `assets/js/steder.js` (`id`, `navn`, `kode`, `poeng`, `lat`, `lng`,
    `side`, `kortbeskrivelse`). Hvis du har sendt ukrainsk variant av navn/kortbeskrivelse,
    legges de inn som valgfrie `navn_uk` / `kortbeskrivelse_uk` ved siden av — mangler de
