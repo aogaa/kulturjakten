@@ -67,6 +67,18 @@ export const STEDER = [
     side: "steder/heftyevillaen.html",         // relativ lenke til stedssiden
     kortbeskrivelse: "Thomas Heftyes villa fra 1867 ved Frognerseteren – DNTs vugge, presidenter på besøk og spiren til Osloavtalen.", // vises i kart-popup
     kortbeskrivelse_uk: "Вілла Thomas Heftye 1867 року біля Frognerseteren — колиска Норвезького туристичного товариства, гості-президенти й паросток Ословської угоди."
+  },
+  {
+    id: "bogstadleiren",                       // unik nøkkel — IKKE endre etter publisering
+    navn: "Bogstadleiren",
+    navn_uk: "Табір Bogstad",
+    kode: "VAFS-05",                           // lesbar reservekode på stolpen
+    poeng: 100,                                // poeng for å finne stedet
+    lat: 59.965661,                            // fra UTM 256822,6655598 (EPSG:25833)
+    lng: 10.642643,
+    side: "steder/bogstadleiren.html",         // relativ lenke til stedssiden
+    kortbeskrivelse: "Tysk militærleir, brakkeby for husløse familier, og i dag Bogstad Camping – tre liv på samme jorde.", // vises i kart-popup
+    kortbeskrivelse_uk: "Німецький військовий табір, бараки для безпритульних родин, а сьогодні Bogstad Camping — три життя на одному полі."
   }
   // ── Legg til flere steder her ──
 ];

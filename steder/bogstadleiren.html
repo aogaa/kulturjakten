@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bogstadleiren – Kultur- og historiejakt</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="../assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="../assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
+    <a class="topp-logo" href="../index.html">
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>Bogstadleiren</h1>
+    <p><a href="../index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
+  </header>
+
+  <main class="innhold">
+
+    <section class="kort" id="registrering"></section>
+
+    <section class="sted-historie">
+      <h2 data-sprak="nb">Fra militærleir til brakkeby og campingplass</h2>
+
+      <div data-sprak="nb">
+        <p class="ingress">Der Bogstad Camping ligger i dag, lå en gang en av de største
+           tyske militærleirene i Oslo-området. Senere ble soldatbrakkene hjem for
+           husløse familier, og området fikk både barn, barnehage, fabrikk og
+           campinggjester.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Bogstadleieren/bog2.jpg"
+               alt="Brakkene i Bogstadleiren, 1947" />
+          <figcaption>Brakkene i 1947. Foto: ukjent /
+            <a href="https://digitaltmuseum.org/arbark" target="_blank" rel="noopener">Arbeiderbevegelsens arkiv og bibliotek</a>
+            (<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.no" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>).</figcaption>
+        </figure>
+
+        <p>Før krigen var dette et åkerlandskap som ble kalt Himstadjordet, etter
+           husmannsplassen Himstad. Området tilhørte opprinnelig Voksen gård, men ble
+           solgt til Bogstad gård i 1917. Under okkupasjonen bygde tyskerne en stor
+           militærleir her, kjent som Lager Bogstad.</p>
+
+        <h3>Inne i Lager Bogstad</h3>
+        <p>Leiren ble anlagt for et pansergrenaderregiment med bil- og
+           forsyningsavdelinger og ble også brukt til opplæring av rekrutter og yngre
+           soldater. Kildene varierer mellom 34 og 36 bygninger. Her fantes elleve
+           mannskapsbrakker med plass til 90 personer i hver, offisersbrakker,
+           spisebrakker, kontor, vaktbygning, garasjer, staller, latriner,
+           lagerbygninger og verksteder. Stallene hadde plass til 100 hester, mens
+           garasjene kunne romme 40 kjøretøy.</p>
+
+        <p>Fra inngangen ved Ankerveien gikk to leirgater nordover mellom brakkene.
+           Omtrent midt i leiren lå en stor, åpen plass. Lenger nord lå lager- og
+           verkstedsbygningene, mens andre bygninger lå spredt i skråningen ned mot
+           området ved dagens badeplass.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Bogstadleieren/bog4.png"
+               alt="Flyfoto av Bogstadleiren, 1947" />
+          <figcaption>Flyfoto fra 1947. Kilde:
+            <a href="https://www.norgeibilder.no/?x=256822&amp;y=6655598&amp;level=14&amp;utm=33&amp;projects=4612&amp;layers=&amp;plannedOmlop=0&amp;plannedGeovekst=0"
+               target="_blank" rel="noopener">norgeibilder.no</a>.</figcaption>
+        </figure>
+
+        <h3>Skytebane, miner og sportsfest</h3>
+        <p>Leiren hadde også skytebane, med skytetrening fire dager i uken. Rundt
+           leirområdet var det gravd ned landminer. Langs skogkanten sørover mot
+           Jarbakken var det laget skjulte plasser der militære kjøretøy kunne stå
+           kamuflert.</p>
+
+        <p>I månedsskiftet juli–august 1943 ble det arrangert en todagers sportsfest.
+           Deltakerne konkurrerte i svømming i Bogstadvannet, skyting og friidrett.
+           Det stod også håndgranatkasting på programmet. En marsj- og
+           orienteringskonkurranse startet ved Røa-krysset og endte inne i leiren.</p>
+
+        <h3>Sovjetiske krigsfanger</h3>
+        <p>Bogstadleiren hadde dessuten en avdeling med sovjetiske krigsfanger. Den 1.
+           april 1945 var 44 sovjetiske fanger registrert her. Det er ikke kjent
+           nøyaktig hvor i leiren de bodde.</p>
+
+        <h3>Etter frigjøringen</h3>
+        <p>I mai 1945 var 958 soldater forlagt på Bogstad. Etter frigjøringen ble
+           området brukt som interneringsleir for tyske soldater som ventet på å bli
+           sendt hjem. Leiren fikk navnet Reservation 46 Bogstad. Da det ble for trangt
+           i brakkene, bygde soldatene 40–50 enkle plankehytter i lia ovenfor leiren.
+           Ifølge
+           <a href="https://www.nb.no/items/a8a7234025c6d52fff2310f763c9d21d?page=1&amp;searchText=dagbladet"
+              target="_blank" rel="noopener">Dagbladet</a>
+           oppholdt så mange som 15 000 tyske soldater seg her i februar 1946 mens de
+           ventet på hjemreise.</p>
+
+        <h3>Brakkeby for husløse familier</h3>
+        <p>Høsten 1946 overtok Oslo kommune det meste av området. Åtte mannskapsbrakker
+           ble delt inn i ti leiligheter hver, slik at 80 husløse familier fikk et sted
+           å bo. Brakkene var kalde, krevde mye fyring og var plaget av små skogmus.
+           Mange bekvemmeligheter måtte deles, og beboerne dannet sin egen velforening
+           for å få forbedret forholdene.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Bogstadleieren/bog3.jpg"
+               alt="Familier som skal flytte inn i Bogstadleiren samlet til møte, oktober 1947" />
+          <figcaption>Familier som skal flytte inn i leiren, samlet til møte, oktober 1947.
+            Foto: ukjent /
+            <a href="https://digitaltmuseum.org/arbark" target="_blank" rel="noopener">Arbeiderbevegelsens arkiv og bibliotek</a>
+            (<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.no" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>).</figcaption>
+        </figure>
+
+        <p>Det bodde så mange barn på Himstadjordet at det i 1947 ble åpnet en egen
+           barnehage i en av brakkene. Terje Paulsen var blant barna som bodde her;
+           han tilbrakte sine første leveår i brakkebyen fra 1947 til 1949.</p>
+
+        <h3>Bogstad Camping i dag</h3>
+        <p>Bogstad Camping åpnet i 1959. Flere av leirbygningene stod fortsatt, og en
+           tidligere mannskapsbrakke ble gjort om til restaurant. I dag er bare enkelte
+           verkstedsbygninger, to bølgeblikksgarasjer, en offisershytte og de murte
+           portinnrammingene ved Ankerveien bevart. Likevel viser området fortsatt
+           hvor stor Bogstadleiren en gang var.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Bogstadleieren/bog1.jpg"
+               alt="Brakkene i Bogstadleiren, 1955" />
+          <figcaption>Brakkene i 1955. Foto: ukjent /
+            <a href="https://digitaltmuseum.org/arbark" target="_blank" rel="noopener">Arbeiderbevegelsens arkiv og bibliotek</a>
+            (<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.no" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>).</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="kort kilder">
+      <h3 data-i18n="kilder_h3">Kilder</h3>
+      <ul>
+        <li><a href="https://www.nb.no/items/eed91aeb385823b8c5ead5a730cff194?page=25&amp;searchText=bogstadleieren"
+               target="_blank" rel="noopener">På stubben – Sørkedalen historielag, 2021, vol. 26 nr. 1, s. 87</a></li>
+        <li><a href="https://digitaltmuseum.no/search?q=Bogstadleiren&amp;mode=text"
+               target="_blank" rel="noopener">DigitaltMuseum – søk «Bogstadleiren»</a></li>
+        <li><a href="https://www.akersposten.no/bogstadleiren-i-svart-darlig-forfatning/o/5-142-35479"
+               target="_blank" rel="noopener">Akersposten – «Bogstadleiren i svært dårlig forfatning»</a></li>
+        <li><a href="https://www.nb.no/items/a8a7234025c6d52fff2310f763c9d21d?page=1&amp;searchText=dagbladet"
+               target="_blank" rel="noopener">Dagbladet, 15. februar 1946</a></li>
+        <li>Medlemsblad for Ullern, Røa og Bygdøy historielag, 2023, s. 83</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-i18n="her_er_du">Her er du</h2>
+      <div class="kart-utsnitt" id="kart"></div>
+    </section>
+
+    <section class="kort">
+      <h3 data-i18n="bli_med_h3">Slik blir du med på jakten</h3>
+      <p data-i18n="bli_med_p">Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+         hvert sted. Velg et kallenavn – så samler du poeng for hvert
+         nye sted du besøker. Ingen innlogging, ingen app.</p>
+      <a class="knapp" href="../index.html" data-i18n="se_kart_kom_i_gang">Se kart og kom i gang</a>
+    </section>
+
+    <div class="lenkerad">
+      <a class="knapp-sekundaer knapp" href="../index.html" data-i18n="til_kartet">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html" data-i18n="til_ledertavla">Til ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { kjorRegistrering } from "../assets/js/registrering.js";
+    import { lagKart } from "../assets/js/kart.js";
+    import { settSprak } from "../assets/js/i18n.js";
+
+    const STED_ID = "bogstadleiren";
+
+    kjorRegistrering(STED_ID);
+    lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
+  </script>
+</body>
+</html>
