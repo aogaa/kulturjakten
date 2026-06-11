@@ -74,8 +74,8 @@ export const STEDER = [
     navn_uk: "Табір Bogstad",
     kode: "VAFS-05",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
-    lat: 59.965661,                            // fra UTM 256822,6655598 (EPSG:25833)
-    lng: 10.642643,
+    lat: 59.961952,                            // fra UTM 256670,6655193.74 (EPSG:25833)
+    lng: 10.640405,
     side: "steder/bogstadleiren.html",         // relativ lenke til stedssiden
     kortbeskrivelse: "Tysk militærleir, brakkeby for husløse familier, og i dag Bogstad Camping – tre liv på samme jorde.", // vises i kart-popup
     kortbeskrivelse_uk: "Німецький військовий табір, бараки для безпритульних родин, а сьогодні Bogstad Camping — три життя на одному полі."
