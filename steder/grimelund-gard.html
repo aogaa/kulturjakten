@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grimelund gård – Kultur- og historiejakt</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="../assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="../assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
+    <a class="topp-logo" href="../index.html">
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>Grimelund gård</h1>
+    <p><a href="../index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
+  </header>
+
+  <main class="innhold">
+
+    <section class="kort" id="registrering"></section>
+
+    <section class="sted-historie">
+      <h2 data-sprak="nb">En 700 år gammel gård midt i byen</h2>
+
+      <div data-sprak="nb">
+        <p class="ingress">På Grimelundshaugen 12 står en gård som har vært her i minst
+           700 år – kanskje siden vikingtiden. Låve, stabbur, smie, sidebygning og det
+           hvite hovedhuset deler fortsatt samme tun, med et eldgammelt asketre som
+           midtpunkt.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Grimelund/Gri1.jpg"
+               alt="Hagen på Grimelund gård i 1905" />
+          <figcaption>Hagen på Grimelund gård, 1905. Foto: Per Adolf Thorén.</figcaption>
+        </figure>
+
+        <p>I dag er det lett å gå forbi og bare se et boligstrøk. Men en gang strakte
+           Grimelunds marker seg som et langt belte fra Smestad i sør og helt opp mot
+           Nordmarka og Vettakollen. Mellom Ris gård i øst, Holmen gård i vest og
+           Smestad gård i sør lå Grimelund som en av Vestre Akers største eiendommer.
+           I folketellingen fra 1865 var hele 34 personer registrert som bosatt og i
+           arbeid på gården. På Grimelunds grunn ble Sophies Minde reist i Skådalen i
+           1902, og Vettakollen turisthotell sto også her – i bygningen som i dag huser
+           Oslo Montessoriskole.</p>
+
+        <h3>Hva betyr navnet?</h3>
+        <p>Ingen vet sikkert hvor navnet kommer fra. Kanskje fra kvinnenavnet Grima,
+           kjent fra Island helt tilbake til landnåmstiden. Kanskje fra Grimelundbekken
+           eller Skådalsbekken som renner forbi. En tredje mulighet er at norrønt
+           <em>gríma</em> – som kan bety «grime», «maske» eller «hjelm», men også
+           «stripe» eller «merke» – ga navn til en liten løvskog der noen hadde hogd
+           grensemerker inn i trærne.</p>
+
+        <h3>Eierne gjennom 700 år</h3>
+        <p>Oslo domkirke eide gården sent på 1300-tallet. Så overtok Nonneseter
+           kloster, og senere Hovedøen kloster. I 1617 tok kronen over, før Grimelund
+           gikk videre til private hender: borgermester Nils Lauritssønn, zahlkasserer
+           Christian Petersen, og Hans Hansen Mørk – som senere tok navnet Grimelund.
+           I 1847 kjøpte en av sønnene på Huseby gård eiendommen, og familien Husebye
+           bor der fortsatt.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Grimelund/Gri2.jpg"
+               alt="Hovedhuset på Grimelund i 1930" />
+          <figcaption>Hovedhuset i 1930. Foto: Anders Beer Wilse.</figcaption>
+        </figure>
+
+        <h3>Tunet</h3>
+        <p>Selve tunet er godt bevart. Den avlange låven, det lille stabburet, smia,
+           sidebygningen og det hvite hovedhuset står fortsatt samlet. Inngangen til
+           hovedhuset er i Louis-seize-stil; resten i tidlig empire. I midten av
+           gårdsplassen står tuntreet – et stort, gammelt asketre som har sett alle
+           eierne komme og gå.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Grimelund/gri3.jpg"
+               alt="Lastebil fra Grimelund gård i 1940" />
+          <figcaption>Lastebil fra Grimelund, 1940. Foto: Esther Langberg.</figcaption>
+        </figure>
+
+        <h3>Hoppbakke og hemmelige møter</h3>
+        <p>Vest for gården lå Grimelundsbakken, en av de tidligste hoppbakkene i Oslo
+           og Aker. Allerede i 1865 ble det arrangert gutterenn her, og i 1881 viste
+           skipionerene Mikkjel og Torjus Hemmestveit ferdighetene sine i bakken.</p>
+
+        <p>Sommeren 1941 fikk Grimelund en helt annen rolle. Da ble det holdt flere
+           hemmelige møter på gården i en gruppe som senere ble kalt «Kretsen» – en
+           del av motstandsarbeidet under andre verdenskrig. Det første møtet skulle
+           se ut som et helt vanlig middagsselskap, og deltakerne kom med noen minutters
+           mellomrom for ikke å vekke mistanke.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Grimelund/gri4.jpg"
+               alt="Luftfoto av Grimelund gård i 1951" />
+          <figcaption>Luftfoto fra 1951. Foto: Widerøes Flyveselskap / Vilhelm Skappel.</figcaption>
+        </figure>
+
+        <p>I dag drives Grimelund ikke lenger som gård. Men hver gang du går forbi det
+           hvite hovedhuset og det gamle asketreet, står du på et tun som har vært i
+           bruk siden middelalderen – og kanskje siden vikingtiden.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="her_er_du">Her er du</h2>
+      <div class="kart-utsnitt" id="kart"></div>
+    </section>
+
+    <section class="kort">
+      <h3 data-i18n="bli_med_h3">Slik blir du med på jakten</h3>
+      <p data-i18n="bli_med_p">Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+         hvert sted. Velg et kallenavn – så samler du poeng for hvert
+         nye sted du besøker. Ingen innlogging, ingen app.</p>
+      <a class="knapp" href="../index.html" data-i18n="se_kart_kom_i_gang">Se kart og kom i gang</a>
+    </section>
+
+    <div class="lenkerad">
+      <a class="knapp-sekundaer knapp" href="../index.html" data-i18n="til_kartet">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html" data-i18n="til_ledertavla">Til ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { kjorRegistrering } from "../assets/js/registrering.js";
+    import { lagKart } from "../assets/js/kart.js";
+    import { settSprak } from "../assets/js/i18n.js";
+
+    const STED_ID = "grimelund-gard";
+
+    kjorRegistrering(STED_ID);
+    lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
+  </script>
+</body>
+</html>
