@@ -15,8 +15,9 @@ const KARTVERKET_URL =
 const KARTVERKET_ATTRIBUSJON =
   '&copy; <a href="https://www.kartverket.no/">Kartverket</a>';
 
-// Vestre Aker / Vinderen-området som standard midtpunkt.
-const STANDARD_SENTER = [59.962, 10.682];
+// Forsidekartet sentreres på Møteplass Vinderen (VAFS' base) som standard.
+// Koordinaten valgt av Espen: UTM 260092.14, 6652873.60 (EPSG:25833).
+const STANDARD_SENTER = [59.943185, 10.704209];
 const STANDARD_ZOOM = 13;
 
 /**

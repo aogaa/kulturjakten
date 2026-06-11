@@ -204,8 +204,6 @@ html[lang="uk"] .sted-historie [data-sprak="nb"] { display: none; }
 .steg p { margin: 0; font-size: 0.95rem; color: var(--farge-dempet); }
 
 /* CTA under steg-lista */
-.steg-cta { text-align: center; margin-top: 1.2rem; }
-.steg-cta .knapp { font-size: 1.05rem; padding: 0.8rem 1.8rem; }
 
 @media (min-width: 640px) {
   .hero { padding: 4.5rem 1.2rem; }
