@@ -40,7 +40,9 @@ Du trenger **ikke** finne på stolpekode eller id — det gjør jeg, så de blir
 3. Kopierer `steder/_mal.html` → `steder/<id>.html`, fyller inn navn, tekst og bilder,
    setter `STED_ID`.
 4. Legger til raden i `assets/js/steder.js` (`id`, `navn`, `kode`, `poeng`, `lat`, `lng`,
-   `side`, `kortbeskrivelse`).
+   `side`, `kortbeskrivelse`). Hvis du har sendt ukrainsk variant av navn/kortbeskrivelse,
+   legges de inn som valgfrie `navn_uk` / `kortbeskrivelse_uk` ved siden av — mangler de
+   viser kart-popupen norsk fallback.
 5. Tester lokalt (kart-markør, lesemodus uten kode, registrering med `?k=`).
 6. `git commit` + `git push` til `main` → GitHub Pages bygger automatisk.
 7. Oppdaterer **kode-registeret** nederst i denne fila.

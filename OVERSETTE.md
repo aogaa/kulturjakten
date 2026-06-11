@@ -110,8 +110,11 @@ Et lite, avhengighetsfritt i18n-lag. Innhold:
   > Hvis du innfører en ny tekst-container (f.eks. `.artikkel`, `.lang-tekst`),
   > legg til tilsvarende scopete regler — ikke fjern scopet.
 - **Stedsspesifikke felt i `steder.js` (`navn`, `kortbeskrivelse`)** brukes også
-  i kart-popup. De er foreløpig norske; oversetting krever utvidelse av datamodellen
-  (f.eks. `navn_uk`, `kortbeskrivelse_uk`) — ikke gjort enda.
+  i kart-popup. Disse oversettes ved å legge til valgfrie `navn_<sprak>` /
+  `kortbeskrivelse_<sprak>`-felt ved siden av de norske (f.eks. `navn_uk`).
+  `kart.js` har en `feltMedSprak(sted, felt)`-helper som plukker språkvariant
+  hvis den finnes, ellers faller tilbake til norsk. Eksisterende rader uten
+  `_<sprak>`-felt fortsetter å vise norsk.
 - `<title>`/meta-tagger oversettes ikke utover synlig innhold.
 
 ---
@@ -206,13 +209,18 @@ legger til et språk: gå gjennom **alle** HTML-filer som har `.topp`-headeren.
 **Generalisering:** Når en ny sidetype lages (kopi av `_mal.html` eller annet),
 sjekk at språkvelgeren er med før commit.
 
-### F5 — Stedsspesifikke felt i `steder.js` er ikke oversettbare
-**Symptom:** Kart-popup viser norsk `navn` og `kortbeskrivelse` selv på ukrainsk UI.
-**Status:** Ikke fikset. Krever utvidelse av datamodellen (f.eks. `navn_uk`,
-`kortbeskrivelse_uk`) + oppslag basert på `gjeldendeSprak()` i `kart.js`.
-**Når dette tas:** Legg `navn_<kode>` / `kortbeskrivelse_<kode>` valgfritt; fall
-tilbake til `navn` hvis ukrainsk mangler. Ikke gjør feltene obligatoriske — det
-ville brutt eksisterende rader.
+### F5 — Stedsspesifikke felt i `steder.js` (mønster, 2026-06-11)
+**Symptom (historisk):** Kart-popup viste norsk `navn` og `kortbeskrivelse` selv på
+ukrainsk UI.
+**Fiks:** Valgfrie `navn_<sprak>` / `kortbeskrivelse_<sprak>`-felt på hvert sted i
+`steder.js` (f.eks. `navn_uk`). `kart.js` har en helper
+`feltMedSprak(sted, felt)` som returnerer `sted[felt + "_" + sprak] ?? sted[felt]` —
+faller tilbake til norsk hvis varianten mangler, så rader uten oversettelse
+fortsatt virker. Re-render av åpen popup ved språkbytte er allerede dekket av
+`sprakbytte`-lytteren i `kart.js` (F3).
+**Generalisering:** Når en ny stedsspesifikk streng dukker opp i `steder.js`
+(f.eks. `lengrekobling`, `kategori`): bruk samme `feltMedSprak`-mønster i stedet
+for å hardkode språkoppslag.
 
 ## 7. Åpent punkt
 

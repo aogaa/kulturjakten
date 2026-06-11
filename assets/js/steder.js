@@ -13,27 +13,36 @@
 // (?k=<kode>). QR-koden på stolpen MÅ derfor peke til f.eks.
 //   steder/moteplass-vinderen.html?k=VAFS-01
 // Uten ?k= blir siden ren lesemodus (ingen poeng). Se README for detaljer.
+//
+// Flerspråk (valgfritt): legg til `navn_<sprak>` og/eller `kortbeskrivelse_<sprak>`
+// ved siden av de norske feltene, f.eks. `navn_uk` og `kortbeskrivelse_uk`. Disse
+// brukes i kart-popup når brukeren har valgt det språket; mangler de, faller
+// popupen tilbake til norsk. Norsk (`navn`, `kortbeskrivelse`) er alltid påkrevd.
 
 export const STEDER = [
   {
     id: "moteplass-vinderen",                  // unik nøkkel — IKKE endre etter publisering
     navn: "Møteplass Vinderen",
+    navn_uk: "Місце зустрічі Vinderen",
     kode: "VAFS-01",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.943133,                            // fra UTM 260093.04,6652867.77 (EPSG:25833)
     lng: 10.704232,
     side: "steder/moteplass-vinderen.html",    // relativ lenke til stedssiden
-    kortbeskrivelse: "Kafé, frivillighet og varme møter mellom mennesker – kultur i hverdagen." // vises i kart-popup
+    kortbeskrivelse: "Kafé, frivillighet og varme møter mellom mennesker – kultur i hverdagen.", // vises i kart-popup
+    kortbeskrivelse_uk: "Кафе, волонтерство і теплі зустрічі між людьми — культура у повсякденні."
   },
   {
     id: "froen-politistasjon",                 // unik nøkkel — IKKE endre etter publisering
     navn: "Frøen politistasjon",
+    navn_uk: "Поліцейський відділок Frøen",
     kode: "VAFS-02",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.939396,                            // fra UTM 260037.13,6652454.01 (EPSG:25833)
     lng: 10.703714,
     side: "steder/froen-politistasjon.html",   // relativ lenke til stedssiden
-    kortbeskrivelse: "Slemdalsveien 54 A – bolig, venterom og politistasjon med celler i sokkelen." // vises i kart-popup
+    kortbeskrivelse: "Slemdalsveien 54 A – bolig, venterom og politistasjon med celler i sokkelen.", // vises i kart-popup
+    kortbeskrivelse_uk: "Slemdalsveien 54 A — житло, кімната очікування та поліцейський відділок з камерами в цоколі."
   }
   // ── Legg til flere steder her ──
 ];

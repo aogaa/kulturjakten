@@ -6,7 +6,7 @@
 
 import { STEDER, finnSted } from "./steder.js";
 import { erFunnet } from "./jakt.js";
-import { t } from "./i18n.js";
+import { t, gjeldendeSprak } from "./i18n.js";
 
 // Kartverkets gratis WMTS-cache (topografisk norgeskart, Web Mercator/EPSG:3857).
 // Ingen API-nøkkel. Verifisert mot Geonorge — den gamle tjenesten fases ut.
@@ -19,6 +19,16 @@ const KARTVERKET_ATTRIBUSJON =
 const STANDARD_SENTER = [59.962, 10.682];
 const STANDARD_ZOOM = 13;
 
+/**
+ * Plukk språk-variant av et stedsfelt («navn», «kortbeskrivelse» osv.) hvis den
+ * finnes for gjeldende språk. Faller tilbake til norsk-feltet hvis _<sprak>-varianten
+ * mangler — slik at gamle rader uten oversettelse fortsatt virker.
+ */
+function feltMedSprak(sted, felt) {
+  const sprak = gjeldendeSprak();
+  return sted[`${felt}_${sprak}`] ?? sted[felt];
+}
+
 /** Bygg HTML-innholdet i en markør-popup. */
 function popupInnhold(sted) {
   const funnetMerke = erFunnet(sted.id)
@@ -26,16 +36,16 @@ function popupInnhold(sted) {
     : "";
   return `
     <div class="kart-popup">
-      <strong>${sted.navn}</strong>
-      <p>${sted.kortbeskrivelse}</p>
+      <strong>${feltMedSprak(sted, "navn")}</strong>
+      <p>${feltMedSprak(sted, "kortbeskrivelse")}</p>
       ${funnetMerke}
       <a href="${rotPrefiks()}${sted.side}">${t("kart_les_mer")}</a>
     </div>`;
 }
 
-// Alle markører laget med lagKart() — så popup-innholdet kan oppdateres
-// ved språkbytte. (Stedsnavn og kortbeskrivelse er foreløpig ikke oversatt
-// her; popup-en oppdateres for «Les mer» og «Allerede besøkt»-tekstene.)
+// Alle markører laget med lagKart() — så popup-innholdet kan oppdateres ved
+// språkbytte (både «Les mer»/«Allerede besøkt» og stedsnavn/kortbeskrivelse via
+// `_<sprak>`-varianter i steder.js).
 const _markorer = [];
 document.addEventListener("sprakbytte", () => {
   for (const { marker, sted } of _markorer) {
