@@ -55,6 +55,18 @@ export const STEDER = [
     side: "steder/grimelund-gard.html",        // relativ lenke til stedssiden
     kortbeskrivelse: "En 700 år gammel gård midt i byen – med smie, stabbur, hoppbakke-historie og hemmelige krigsmøter.", // vises i kart-popup
     kortbeskrivelse_uk: "700-річна садиба посеред міста — з кузнею, коморою, історією лижного трампліна і таємними зустрічами часів війни."
+  },
+  {
+    id: "heftyevillaen",                       // unik nøkkel — IKKE endre etter publisering
+    navn: "Heftyevillaen",
+    navn_uk: "Вілла Heftye",
+    kode: "VAFS-04",                           // lesbar reservekode på stolpen
+    poeng: 100,                                // poeng for å finne stedet
+    lat: 59.976896,                            // fra UTM 258905.80,6656715.86 (EPSG:25833)
+    lng: 10.678551,
+    side: "steder/heftyevillaen.html",         // relativ lenke til stedssiden
+    kortbeskrivelse: "Thomas Heftyes villa fra 1867 ved Frognerseteren – DNTs vugge, presidenter på besøk og spiren til Osloavtalen.", // vises i kart-popup
+    kortbeskrivelse_uk: "Вілла Thomas Heftye 1867 року біля Frognerseteren — колиска Норвезького туристичного товариства, гості-президенти й паросток Ословської угоди."
   }
   // ── Legg til flere steder her ──
 ];

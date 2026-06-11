@@ -112,5 +112,6 @@ Hver stolpe har en unik, lesbar kode `VAFS-NN`. Neste ledige nummer brukes for n
 | VAFS-01 | Møteplass Vinderen | `moteplass-vinderen` | ✅ live |
 | VAFS-02 | Frøen politistasjon | `froen-politistasjon` | ✅ live |
 | VAFS-03 | Grimelund gård | `grimelund-gard` | ✅ live |
+| VAFS-04 | Heftyevillaen | `heftyevillaen` | ✅ live |
 
-**Neste ledige kode: `VAFS-04`.**
+**Neste ledige kode: `VAFS-05`.**

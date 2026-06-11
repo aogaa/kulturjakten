@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heftyevillaen – Kultur- og historiejakt</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="../assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="../assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
+    <a class="topp-logo" href="../index.html">
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>Heftyevillaen</h1>
+    <p><a href="../index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
+  </header>
+
+  <main class="innhold">
+
+    <section class="kort" id="registrering"></section>
+
+    <section class="sted-historie">
+      <h2 data-sprak="nb">Villaen som åpnet veien til naturen</h2>
+
+      <div data-sprak="nb">
+        <p class="ingress">Like nedenfor Frognerseteren Restaurant ligger et tun mange
+           turgåere passerer uten å kjenne historien bak. Her bodde og tok Thomas Heftye
+           imot gjester – en rik bankmann som ville gjøre skogen og fjellet tilgjengelig
+           for langt flere.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Heftyevillaen/heftye1.jpg"
+               alt="Heftyevillaen omkring 1895" />
+          <figcaption>Heftyevillaen ca. 1895. Foto:
+            <a href="https://digitaltmuseum.no/021036008662/skoien-marthinius-1849-1916"
+               target="_blank" rel="noopener">Marthinius Skøien</a>.</figcaption>
+        </figure>
+
+        <p>Heftyetunet består av fem bygninger og har utsikt over Oslo og fjorden.
+           Hovedbygningen er Heftyevillaen, oppført i 1867. Thomas Heftye fikk også
+           bygget stabburet, mens tre eldre hus ble fraktet hit fra Hallingdal og
+           Telemark.</p>
+
+        <h3>Bankmannen som tok skogen til folket</h3>
+        <p>Thomas Heftye levde fra 1822 til 1886. Familien hadde tjent seg rik på blant
+           annet bank og finans, men Heftye var også opptatt av kunst, natur og
+           friluftsliv. På midten av 1800-tallet var mange av områdene rundt byen
+           vanskelige å nå for folk flest. Heftye kjøpte skogområder ved blant annet
+           Tryvann og Frognerseteren og arbeidet for at flere skulle få oppleve naturen.</p>
+
+        <p>Tanken hans var enkel: det skulle være lett og rimelig for mange å komme seg
+           ut og se det vakre i landet. Heftye var en viktig drivkraft da Den Norske
+           Turistforening ble stiftet i 1868, og han ble foreningens første formann.
+           Han var også opptatt av merkede stier og åpne hytter.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Heftyevillaen/heftye2.jpg"
+               alt="Heftyevillaen omkring 1905" />
+          <figcaption>Heftyevillaen ca. 1905. Foto:
+            <a href="https://digitaltmuseum.no/search?name=54589a28-9f2f-480c-9d9c-974177e70b80"
+               target="_blank" rel="noopener">Vilhelm Haffner</a>.</figcaption>
+        </figure>
+
+        <h3>Tryvann og veien opp</h3>
+        <p>Ved Tryvann fikk Heftye reist det første utsiktstårnet – en forløper til
+           dagens Tryvannstårn. Før tårnet kunne tas i bruk, måtte det også bygges vei
+           opp. Veien het først Keiser Wilhelms vei og heter i dag Holmenkollveien.</p>
+
+        <h3>Berømte gjester</h3>
+        <p>Heftyevillaen har hatt flere berømte gjester. USAs tidligere president
+           Ulysses S. Grant besøkte Thomas Heftye her i 1878. I 1948 kom Winston
+           Churchill, som både hadde vært og senere igjen skulle bli britisk
+           statsminister. Et møte i villaen i mars 1990 ble dessuten starten på
+           fredsprosessen som førte fram til Osloavtalen mellom Israel og PLO.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Heftyevillaen/heftye5.avif"
+               alt="Stue i Heftyevillaen med utsikt og dramglass" />
+          <figcaption>Mange celebre gjester har sittet her og nytt en dram og utsikten.
+            Foto: Fredrik Eckhoff – Akersposten.</figcaption>
+        </figure>
+
+        <h3>Tre flyttede tømmerhus</h3>
+        <p>De tre småhusene på tunet har også sine egne historier. <strong>Gulsvikstuen</strong>
+           ble hentet fra Flå i Hallingdal. Inne er den dekorert med malerier av geiter
+           og kalles derfor også Geitestuen. <strong>Nyhusstuen</strong> fra Torpo ble
+           bygd på 1740-tallet av Torkild Villand, som hadde hentet inspirasjon fra
+           europeisk arkitektur under et opphold i København. <strong>Årestuen</strong>
+           kommer fra Gransherad i Telemark og kan være fra 1700-tallet eller enda
+           eldre.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Heftyevillaen/heftye6.avif"
+               alt="Den dekorerte peisen i Heftyevillaen" />
+          <figcaption>Peisen er et kunstverk. Foto: Fredrik Eckhoff – Akersposten.</figcaption>
+        </figure>
+
+        <h3>Heftyetunet i dag</h3>
+        <p>Kristiania kommune kjøpte eiendommen i 1889. Heftyetunet ble Norges første
+           friluftsmuseum, men er i dag stengt for vanlig publikum. Villaen brukes
+           hovedsakelig til møter og representasjon for Oslo kommune. Under skirenn går
+           løypene rett nedenfor skigarden – slik mange har sett under de berømte
+           femmilene i Holmenkollen.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Heftyevillaen/heftye4.avif"
+               alt="Heftyevillaen i 2022" />
+          <figcaption>Heftyevillaen, 2022. Foto: Fredrik Eckhoff – Akersposten.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="her_er_du">Her er du</h2>
+      <div class="kart-utsnitt" id="kart"></div>
+    </section>
+
+    <section class="kort">
+      <h3 data-i18n="bli_med_h3">Slik blir du med på jakten</h3>
+      <p data-i18n="bli_med_p">Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+         hvert sted. Velg et kallenavn – så samler du poeng for hvert
+         nye sted du besøker. Ingen innlogging, ingen app.</p>
+      <a class="knapp" href="../index.html" data-i18n="se_kart_kom_i_gang">Se kart og kom i gang</a>
+    </section>
+
+    <div class="lenkerad">
+      <a class="knapp-sekundaer knapp" href="../index.html" data-i18n="til_kartet">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html" data-i18n="til_ledertavla">Til ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { kjorRegistrering } from "../assets/js/registrering.js";
+    import { lagKart } from "../assets/js/kart.js";
+    import { settSprak } from "../assets/js/i18n.js";
+
+    const STED_ID = "heftyevillaen";
+
+    kjorRegistrering(STED_ID);
+    lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
+  </script>
+</body>
+</html>
