@@ -129,5 +129,6 @@ Hver stolpe har en unik, lesbar kode `VAFS-NN`. Neste ledige nummer brukes for n
 | VAFS-03 | Grimelund gård | `grimelund-gard` | ✅ live |
 | VAFS-04 | Heftyevillaen | `heftyevillaen` | ✅ live |
 | VAFS-05 | Bogstadleiren | `bogstadleiren` | ✅ live |
+| VAFS-06 | Holmendammen | `holmendammen` | ✅ live |
 
-**Neste ledige kode: `VAFS-06`.**
+**Neste ledige kode: `VAFS-07`.**

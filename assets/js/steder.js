@@ -79,6 +79,18 @@ export const STEDER = [
     side: "steder/bogstadleiren.html",         // relativ lenke til stedssiden
     kortbeskrivelse: "Tysk militærleir, brakkeby for husløse familier, og i dag Bogstad Camping – tre liv på samme jorde.", // vises i kart-popup
     kortbeskrivelse_uk: "Німецький військовий табір, бараки для безпритульних родин, а сьогодні Bogstad Camping — три життя на одному полі."
+  },
+  {
+    id: "holmendammen",                        // unik nøkkel — IKKE endre etter publisering
+    navn: "Holmendammen",
+    navn_uk: "Ставок Holmendammen",
+    kode: "VAFS-06",                           // lesbar reservekode på stolpen
+    poeng: 100,                                // poeng for å finne stedet
+    lat: 59.944847,                            // fra UTM 258769.53,6653145.46 (EPSG:25833)
+    lng: 10.680287,
+    side: "steder/holmendammen.html",          // relativ lenke til stedssiden
+    kortbeskrivelse: "Da isen herfra holdt bryggeri-Kristiania kald – hester, sleder og en elleveåring som kjørte for brødskiver.", // vises i kart-popup
+    kortbeskrivelse_uk: "Колись лід звідси охолоджував Крістіанію — коні, сани та одинадцятирічний хлопчина, що возив лід за окрайці хліба."
   }
   // ── Legg til flere steder her ──
 ];

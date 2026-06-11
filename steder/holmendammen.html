@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holmendammen – Kultur- og historiejakt</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="../assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="../assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
+    <a class="topp-logo" href="../index.html">
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>Holmendammen</h1>
+    <p><a href="../index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
+  </header>
+
+  <main class="innhold">
+
+    <section class="kort" id="registrering"></section>
+
+    <section class="sted-historie">
+      <h2 data-sprak="nb">Da Holmendammen leverte kulde til byen</h2>
+      <h2 data-sprak="uk">Коли Holmendammen постачав місту холод</h2>
+
+      <div data-sprak="nb">
+        <p class="ingress">I dag er Holmendammen et grønt og fredelig sted mellom Østre og
+           Vestre Holmen. For litt over hundre år siden var vinteren her fylt av hester,
+           sleder, sager og tungt arbeid. Isen fra dammen ble skåret i store blokker og
+           fraktet helt ned til Kristiania.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmendammen/holm4.jpg"
+               alt="Holmendammen i 1902" />
+          <figcaption>Holmendammen, 1902. Foto:
+            <a href="https://digitaltmuseum.no/021035449336/wilse-anders-beer-1865-1949" target="_blank" rel="noopener">Anders Beer Wilse</a> /
+            <a href="https://digitaltmuseum.no/owners/NF" target="_blank" rel="noopener">Norsk Folkemuseum</a>
+            (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.no" target="_blank" rel="noopener">CC0 1.0</a>).</figcaption>
+        </figure>
+
+        <p>Holmendammen tilhørte opprinnelig Holmen gård, og etter delingen i 1820 lå den
+           til Vestre Holmen. Hilmar Holmen på Vestre Holmen fikk i 1907 bygget demningen,
+           og dammen ble anlagt som isskjæringsdam.</p>
+
+        <h3>Tungt og kaldt arbeid</h3>
+        <p>Isskjæringen foregikk i den kaldeste delen av året. Før motorsagen kom, brukte
+           arbeiderne lange og brede håndsager med et tverrtre som håndtak. Det var tungt
+           og kaldt arbeid. En kvinne som kom ned på isen, spurte en gang om det ikke var
+           kaldt å stå der og sage. Faren til fortelleren svarte at det nok var enda
+           kaldere for mannen som sto under isen og dro. Kvinnen trodde ham visst, for hun
+           grøsset og gikk sin vei.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmendammen/holm2.jpg"
+               alt="Isskjæring på Holmendammen, 22. januar 1906" />
+          <figcaption>Isskjæring på Holmendammen, 22. januar 1906 — tungt og farlig arbeid.
+            Foto:
+            <a href="https://digitaltmuseum.no/021035449336/wilse-anders-beer-1865-1949" target="_blank" rel="noopener">Anders Beer Wilse</a> /
+            <a href="https://digitaltmuseum.no/owners/NF" target="_blank" rel="noopener">Norsk Folkemuseum</a>
+            (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.no" target="_blank" rel="noopener">CC0 1.0</a>).</figcaption>
+        </figure>
+
+        <h3>Snørydding med hester</h3>
+        <p>Før isen kunne skjæres, måtte dammen holdes fri for snø. Store skuffer ble
+           trukket av hester over isen, og opptil fjorten hester kunne være med på
+           snøryddingen. I januar kunne isen være over én meter tykk.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmendammen/holm3.jpg"
+               alt="Hester på isen ved Holmendammen, 22. januar 1906" />
+          <figcaption>Hestene var essensielle for å få isen frem til kundene, 22. januar 1906.
+            Foto:
+            <a href="https://digitaltmuseum.no/021035449336/wilse-anders-beer-1865-1949" target="_blank" rel="noopener">Anders Beer Wilse</a> /
+            <a href="https://digitaltmuseum.no/owners/NF" target="_blank" rel="noopener">Norsk Folkemuseum</a>
+            (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.no" target="_blank" rel="noopener">CC0 1.0</a>).</figcaption>
+        </figure>
+
+        <h3>Fra dam til bryggeri</h3>
+        <p>Isen ble saget opp i blokker og trukket opp på sledene med ispigger. Seks til
+           åtte blokker var et vanlig lass. Det kunne stå åtte eller ti sleder ved dammen
+           samtidig, og enkelte kjørte to eller tre lass på én dag. Da motorsagen senere
+           ble tatt i bruk, gikk arbeidet raskere.</p>
+
+        <p>Mye av isen ble fraktet til bryggerier i Kristiania. Derfra ble den sendt
+           videre til blant annet melkeforretninger og andre kunder. På den tiden fantes
+           det ikke elektriske kjøleskap slik vi kjenner dem i dag, og isen var viktig for
+           å holde varer kalde.</p>
+
+        <h3>En guttunges hverdag</h3>
+        <p>En gutt begynte å kjøre is fra Holmendammen til Frydenlunds bryggeri da han
+           bare var elleve år. Han kjørte med hest og slede, mens en ekstra hest fulgte
+           etter. Arbeidet var hardt, vinden kunne være fæl, og tjue minusgrader var ikke
+           uvanlig. Som betaling fikk han bare noen brødskiver. Samtidig gikk han i tredje
+           klasse på Majorstua skole.</p>
+
+        <p>Gutten arbeidet med iskjøringen i tre år. Senere ble han visergutt for en
+           kjøpmann på Majorstua. Det syntes han var rene ferien sammenlignet med turene
+           mellom Holmendammen og byen.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmendammen/holm5.jpg"
+               alt="Holmendammen med Holmenkollåsen i bakgrunnen, 1929" />
+          <figcaption>Holmendammen med Holmenkollåsen i bakgrunnen, 1929. Foto:
+            <a href="https://digitaltmuseum.no/021035449336/wilse-anders-beer-1865-1949" target="_blank" rel="noopener">Anders Beer Wilse</a> /
+            <a href="https://digitaltmuseum.no/owners/NF" target="_blank" rel="noopener">Norsk Folkemuseum</a>
+            (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.no" target="_blank" rel="noopener">CC0 1.0</a>).</figcaption>
+        </figure>
+
+        <h3>Holmendammen i dag</h3>
+        <p>Isskjæringen fortsatte fram til rundt 1923. I dag brukes området på helt andre
+           måter. Om vinteren prepareres det rundløype, og det arrangeres skiskole og
+           barneskirenn. Om sommeren trener sportsfiskere på presisjons- og lengdekast fra
+           kastebryggene ved dammen. Slemdal Lions arrangerer også sankthansfeiring ved
+           Holmendammen.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmendammen/holm6.jpg"
+               alt="Holmendammen i 2013" />
+          <figcaption>Holmendammen, 2013. Foto:
+            <a href="https://commons.wikimedia.org/w/index.php?curid=27182857" target="_blank" rel="noopener">Ole Anders Flatmo</a>
+            (<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.no" target="_blank" rel="noopener">CC BY-SA 3.0</a>).</figcaption>
+        </figure>
+      </div>
+
+      <div data-sprak="uk">
+        <p class="ingress">Сьогодні Holmendammen — це зелене й тихе місце між Östre
+           Holmen і Vestre Holmen. Трохи більш ніж сто років тому зима тут була повна
+           коней, саней, пил і важкої праці. Лід зі ставка нарізали великими брилами
+           й везли аж до Крістіанії.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmendammen/holm4.jpg"
+               alt="Holmendammen у 1902 році" />
+          <figcaption>Holmendammen, 1902 рік. Фото:
+            <a href="https://digitaltmuseum.no/021035449336/wilse-anders-beer-1865-1949" target="_blank" rel="noopener">Anders Beer Wilse</a> /
+            <a href="https://digitaltmuseum.no/owners/NF" target="_blank" rel="noopener">Norsk Folkemuseum</a>
+            (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.no" target="_blank" rel="noopener">CC0 1.0</a>).</figcaption>
+        </figure>
+
+        <p>Спершу Holmendammen належав садибі Holmen, а після поділу садиби у 1820
+           році відійшов до Vestre Holmen. У 1907 році Hilmar Holmen з Vestre Holmen
+           збудував греблю, і ставок було влаштовано як водойму для заготівлі льоду.</p>
+
+        <h3>Важка й холодна робота</h3>
+        <p>Лід заготовляли в найхолоднішу пору року. До появи бензопил робітники
+           користувалися довгими широкими ручними пилами з поперечною рукояткою.
+           Робота була важка й холодна. Якось одна жінка, що спустилася на лід,
+           запитала, чи не холодно стояти й пиляти. Батько оповідача відповів, що ще
+           холодніше тому, хто стоїть під льодом і тягне пилу знизу. Жінка, мабуть,
+           повірила: здригнулася і пішла.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmendammen/holm2.jpg"
+               alt="Заготівля льоду на Holmendammen, 22 січня 1906 року" />
+          <figcaption>Заготівля льоду на Holmendammen, 22 січня 1906 року — важка й
+            небезпечна робота. Фото:
+            <a href="https://digitaltmuseum.no/021035449336/wilse-anders-beer-1865-1949" target="_blank" rel="noopener">Anders Beer Wilse</a> /
+            <a href="https://digitaltmuseum.no/owners/NF" target="_blank" rel="noopener">Norsk Folkemuseum</a>
+            (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.no" target="_blank" rel="noopener">CC0 1.0</a>).</figcaption>
+        </figure>
+
+        <h3>Прибирання снігу кіньми</h3>
+        <p>Перш ніж розпочати заготівлю льоду, ставок треба було очистити від снігу.
+           Великі ковші тягнули кіньми по льоду, і в прибиранні снігу могло брати
+           участь до чотирнадцяти коней. У січні товщина льоду перевищувала метр.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmendammen/holm3.jpg"
+               alt="Коні на льоду біля Holmendammen, 22 січня 1906 року" />
+          <figcaption>Без коней привезти лід замовникам було неможливо, 22 січня 1906
+            року. Фото:
+            <a href="https://digitaltmuseum.no/021035449336/wilse-anders-beer-1865-1949" target="_blank" rel="noopener">Anders Beer Wilse</a> /
+            <a href="https://digitaltmuseum.no/owners/NF" target="_blank" rel="noopener">Norsk Folkemuseum</a>
+            (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.no" target="_blank" rel="noopener">CC0 1.0</a>).</figcaption>
+        </figure>
+
+        <h3>Від ставка до броварні</h3>
+        <p>Лід розпилювали на брили й затягували на сани крижаними гаками. Звичайний
+           вантаж становив шість-вісім брил. Біля ставка водночас могло стояти вісім
+           чи десять саней, а декотрі візники встигали зробити дві-три ходки за день.
+           Згодом, коли почали використовувати бензопили, робота пішла швидше.</p>
+
+        <p>Значну частину льоду везли на броварні у Крістіанію. Звідти він ішов далі,
+           зокрема, до молочних магазинів та інших замовників. У ті часи ще не було
+           електричних холодильників у нашому розумінні, і лід був важливий, щоб
+           тримати продукти холодними.</p>
+
+        <h3>Будні хлопчака</h3>
+        <p>Один хлопчик почав возити лід з Holmendammen до броварні Frydenlund, коли
+           йому було лише одинадцять років. Він їздив із конем і саньми, а ще один
+           кінь біг позаду. Робота була важка, вітер міг бути лютий, а двадцять
+           градусів нижче нуля — звичайна справа. За свою працю він отримував лише
+           кілька шматків хліба. Водночас він навчався у третьому класі школи
+           Majorstua.</p>
+
+        <p>Хлопчик возив лід три роки. Згодом він став посильним у крамаря на
+           Majorstua. Це він вважав справжніми канікулами порівняно з поїздками між
+           Holmendammen і містом.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmendammen/holm5.jpg"
+               alt="Holmendammen з Holmenkollåsen на задньому плані, 1929 рік" />
+          <figcaption>Holmendammen з Holmenkollåsen на задньому плані, 1929 рік. Фото:
+            <a href="https://digitaltmuseum.no/021035449336/wilse-anders-beer-1865-1949" target="_blank" rel="noopener">Anders Beer Wilse</a> /
+            <a href="https://digitaltmuseum.no/owners/NF" target="_blank" rel="noopener">Norsk Folkemuseum</a>
+            (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.no" target="_blank" rel="noopener">CC0 1.0</a>).</figcaption>
+        </figure>
+
+        <h3>Holmendammen сьогодні</h3>
+        <p>Заготівлю льоду продовжували приблизно до 1923 року. Сьогодні цей район
+           використовують зовсім по-іншому. Узимку тут готують лижне коло, проводять
+           лижну школу й дитячі лижні змагання. Улітку спортивні рибалки тренують
+           точність і дальність закидання з причалів біля ставка. Slemdal Lions також
+           влаштовують свято Іванова дня (sankthans) біля Holmendammen.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmendammen/holm6.jpg"
+               alt="Holmendammen у 2013 році" />
+          <figcaption>Holmendammen, 2013 рік. Фото:
+            <a href="https://commons.wikimedia.org/w/index.php?curid=27182857" target="_blank" rel="noopener">Ole Anders Flatmo</a>
+            (<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.no" target="_blank" rel="noopener">CC BY-SA 3.0</a>).</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="kort kilder">
+      <h3 data-i18n="kilder_h3">Kilder</h3>
+      <ul>
+        <li><a href="https://digitaltmuseum.no/search?q=holmendammen&amp;mode=text"
+               target="_blank" rel="noopener">DigitaltMuseum – søk «Holmendammen»</a></li>
+        <li><a href="https://urn.nb.no/URN:NBN:no-nb_digibok_2013121005096"
+               target="_blank" rel="noopener">Eivind Heide – «Bydel 36 gjennom tidene»</a></li>
+        <li><a href="https://lokalhistoriewiki.no/Holmendammen_(Oslo)"
+               target="_blank" rel="noopener">Lokalhistoriewiki – Holmendammen (Oslo)</a></li>
+        <li><a href="https://www.skiforeningen.no/utimarka/omrader/nordmarka-syd/steder/holmendammen/"
+               target="_blank" rel="noopener">Skiforeningen – Holmendammen</a></li>
+        <li><a href="https://no.wikipedia.org/wiki/Holmendammen"
+               target="_blank" rel="noopener">Wikipedia – Holmendammen</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-i18n="her_er_du">Her er du</h2>
+      <div class="kart-utsnitt" id="kart"></div>
+    </section>
+
+    <section class="kort">
+      <h3 data-i18n="bli_med_h3">Slik blir du med på jakten</h3>
+      <p data-i18n="bli_med_p">Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+         hvert sted. Velg et kallenavn – så samler du poeng for hvert
+         nye sted du besøker. Ingen innlogging, ingen app.</p>
+      <a class="knapp" href="../index.html" data-i18n="se_kart_kom_i_gang">Se kart og kom i gang</a>
+    </section>
+
+    <div class="lenkerad">
+      <a class="knapp-sekundaer knapp" href="../index.html" data-i18n="til_kartet">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html" data-i18n="til_ledertavla">Til ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { kjorRegistrering } from "../assets/js/registrering.js";
+    import { lagKart } from "../assets/js/kart.js";
+    import { settSprak } from "../assets/js/i18n.js";
+
+    const STED_ID = "holmendammen";
+
+    kjorRegistrering(STED_ID);
+    lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
+  </script>
+</body>
+</html>
