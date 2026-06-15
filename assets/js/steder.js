@@ -103,6 +103,18 @@ export const STEDER = [
     side: "steder/holmenkollen-kapell.html",   // relativ lenke til stedssiden
     kortbeskrivelse: "Stavkirkelignende sportskapell fra 1903 – brant ned i 1992, gjenreist i 1996 som landemerke over byen.", // vises i kart-popup
     kortbeskrivelse_uk: "Спортивна каплиця 1903 року у стилі ставкірки — згоріла 1992-го, відбудована 1996-го як прикмета над містом."
+  },
+  {
+    id: "flyulykken-voksenkollen",             // unik nøkkel — IKKE endre etter publisering
+    navn: "Flyulykken på Voksenkollen",
+    navn_uk: "Авіакатастрофа на Voksenkollen",
+    kode: "VAFS-08",                           // lesbar reservekode på stolpen
+    poeng: 100,                                // poeng for å finne stedet
+    lat: 59.970000,                            // fra 59°58′12″N (DMS → desimal)
+    lng: 10.661667,                            // fra 10°39′42″Ø (DMS → desimal)
+    side: "steder/flyulykken-voksenkollen.html", // relativ lenke til stedssiden
+    kortbeskrivelse: "Her styrtet et kanadisk militærfly 18. desember 1945 – ising tok løftet fra vingene, og bare to av dem om bord overlevde.", // vises i kart-popup
+    kortbeskrivelse_uk: "Тут 18 грудня 1945 року розбився канадський військовий літак — обмерзання позбавило крила підйомної сили, і з тих, хто був на борту, вижили лише двоє."
   }
   // ── Legg til flere steder her ──
 ];
