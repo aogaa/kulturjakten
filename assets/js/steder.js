@@ -95,12 +95,14 @@ export const STEDER = [
   {
     id: "holmenkollen-kapell",                 // unik nøkkel — IKKE endre etter publisering
     navn: "Holmenkollen kapell",
+    navn_uk: "Каплиця Holmenkollen",
     kode: "VAFS-07",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.96542027,                          // GPS-posisjon (EU89 / WGS84)
     lng: 10.67226674,
     side: "steder/holmenkollen-kapell.html",   // relativ lenke til stedssiden
-    kortbeskrivelse: "Stavkirkelignende sportskapell fra 1903 – brant ned i 1992, gjenreist i 1996 som landemerke over byen." // vises i kart-popup
+    kortbeskrivelse: "Stavkirkelignende sportskapell fra 1903 – brant ned i 1992, gjenreist i 1996 som landemerke over byen.", // vises i kart-popup
+    kortbeskrivelse_uk: "Спортивна каплиця 1903 року у стилі ставкірки — згоріла 1992-го, відбудована 1996-го як прикмета над містом."
   }
   // ── Legg til flere steder her ──
 ];
