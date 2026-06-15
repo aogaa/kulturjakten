@@ -240,6 +240,12 @@ a { color: var(--farge-skog-mork); }
   overflow-wrap: anywhere; /* lange URL-er bryter pent på mobil */
 }
 .kort.kilder:not(:has(li)) { display: none; }
+.kilder .bilde-kreditt {
+  margin: 0.8rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
 
 /* ── Skjema ── */
 .skjema { display: flex; flex-direction: column; gap: 0.8rem; }

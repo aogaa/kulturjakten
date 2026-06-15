@@ -130,5 +130,6 @@ Hver stolpe har en unik, lesbar kode `VAFS-NN`. Neste ledige nummer brukes for n
 | VAFS-04 | Heftyevillaen | `heftyevillaen` | ✅ live |
 | VAFS-05 | Bogstadleiren | `bogstadleiren` | ✅ live |
 | VAFS-06 | Holmendammen | `holmendammen` | ✅ live |
+| VAFS-07 | Holmenkollen kapell | `holmenkollen-kapell` | ✅ live |
 
-**Neste ledige kode: `VAFS-07`.**
+**Neste ledige kode: `VAFS-08`.**

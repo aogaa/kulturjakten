@@ -91,6 +91,16 @@ export const STEDER = [
     side: "steder/holmendammen.html",          // relativ lenke til stedssiden
     kortbeskrivelse: "Da isen herfra holdt bryggeri-Kristiania kald – hester, sleder og en elleveåring som kjørte for brødskiver.", // vises i kart-popup
     kortbeskrivelse_uk: "Колись лід звідси охолоджував Крістіанію — коні, сани та одинадцятирічний хлопчина, що возив лід за окрайці хліба."
+  },
+  {
+    id: "holmenkollen-kapell",                 // unik nøkkel — IKKE endre etter publisering
+    navn: "Holmenkollen kapell",
+    kode: "VAFS-07",                           // lesbar reservekode på stolpen
+    poeng: 100,                                // poeng for å finne stedet
+    lat: 59.96542027,                          // GPS-posisjon (EU89 / WGS84)
+    lng: 10.67226674,
+    side: "steder/holmenkollen-kapell.html",   // relativ lenke til stedssiden
+    kortbeskrivelse: "Stavkirkelignende sportskapell fra 1903 – brant ned i 1992, gjenreist i 1996 som landemerke over byen." // vises i kart-popup
   }
   // ── Legg til flere steder her ──
 ];

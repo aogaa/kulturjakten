@@ -114,5 +114,17 @@ export function lagKart(elementId, opts = {}) {
     _markorer.push({ marker, sted });
   }
 
+  // Forsidekartet (alle steder): zoom ut så alle markørene får plass. Padding gir
+  // luft til markørene som er anker-sentrert (slik at de ikke klippes mot kanten).
+  // Hopper over hvis det bare er ett sted — da er STANDARD_ZOOM bedre enn maks-zoom.
+  if (!fokusSted && stederSomVises.length > 1) {
+    const grenser = L.latLngBounds(stederSomVises.map(s => [s.lat, s.lng]));
+    // Sett senter + zoom manuelt (fitBounds alene ble overstyrt av L.map()-init i
+    // enkelte nettlesere — sannsynligvis pga. asynk render). getBoundsZoom regner
+    // ut det høyeste heltallszoomet som rommer bbox, gitt nåværende kart-størrelse.
+    const zoomGrenser = kart.getBoundsZoom(grenser, false, [40, 40]);
+    kart.setView(grenser.getCenter(), Math.min(zoomGrenser, 15), { animate: false });
+  }
+
   return kart;
 }
