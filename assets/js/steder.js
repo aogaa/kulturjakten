@@ -115,6 +115,18 @@ export const STEDER = [
     side: "steder/flyulykken-voksenkollen.html", // relativ lenke til stedssiden
     kortbeskrivelse: "Her styrtet et kanadisk militærfly 18. desember 1945 – ising tok løftet fra vingene, og bare to av dem om bord overlevde.", // vises i kart-popup
     kortbeskrivelse_uk: "Тут 18 грудня 1945 року розбився канадський військовий літак — обмерзання позбавило крила підйомної сили, і з тих, хто був на борту, вижили лише двоє."
+  },
+  {
+    id: "huseby-skole",                        // unik nøkkel — IKKE endre etter publisering
+    navn: "Huseby skole",
+    navn_uk: "Школа Huseby",
+    kode: "VAFS-09",                           // lesbar reservekode på stolpen
+    poeng: 100,                                // poeng for å finne stedet
+    lat: 59.946020,                            // fra UTM 257260.18,6653375.45 (EPSG:25833)
+    lng: 10.653080,
+    side: "steder/huseby-skole.html",          // relativ lenke til stedssiden
+    kortbeskrivelse: "Skole siden 1862 – fra ett tømret hus med 56 elever til et helt kvartal med bygninger fra fem tidsaldre.", // vises i kart-popup
+    kortbeskrivelse_uk: "Школа від 1862 року — від одного зрубного будинку з 56 учнями до цілого кварталу будівель п’яти епох."
   }
   // ── Legg til flere steder her ──
 ];

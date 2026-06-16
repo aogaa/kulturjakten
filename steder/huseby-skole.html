@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huseby skole – Kultur- og historiejakt</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="../assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="../assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
+    <a class="topp-logo" href="../index.html">
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>Huseby skole</h1>
+    <p><a href="../index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
+  </header>
+
+  <main class="innhold">
+
+    <section class="kort" id="registrering"></section>
+
+    <section class="sted-historie">
+      <h2 data-sprak="nb">Et skolehus som ble til et helt kvartal</h2>
+      <h2 data-sprak="uk">Шкільний будинок, що виріс у цілий квартал</h2>
+
+      <div data-sprak="nb">
+        <p class="ingress">Det var morgen, 10. februar 1862, da 56 barn for første gang gikk
+           inn dørene til et nytt, tømret skolehus ved Sørkedalsveien. To skolerom, to
+           lærerleiligheter, loft og kjeller – det var hele Huseby skole den gangen. I dag,
+           over 160 år senere, står skolen fortsatt på samme sted, men er vokst til et helt
+           kvartal med bygninger fra fem ulike tidsaldre.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Huseby/huseby-skole.jpg"
+               alt="Huseby skole fotografert i 1957" />
+          <figcaption>Huseby skole i 1957, med fløyene fra 1935 og 1948. Foto: Leif Ørnelund / Oslo Museum (CC BY-SA).</figcaption>
+        </figure>
+
+        <h3>Et tømret skolehus fra 1861</h3>
+        <p>Bakgrunnen var et vedtak i Aker kommunestyre 3. november 1858 om å bygge 14 nye,
+           faste skoler i herredet. Huseby var en av dem. Skolehuset ble reist i 1860–61 etter
+           tegninger av sivilingeniør Oluf Nicolai Roll – et laftet trehus i sveitserstil med
+           ett plan, loft og kjeller. Inne var det to skolerom på 42 og 28 kvadratmeter og to
+           leiligheter til lærerne. Den første skoledagen, 10. februar 1862, møtte 56 elever
+           fordelt på to klasser. Ole Christian Hansen var skolens første lærer (1862–1866),
+           og fra 1882 fikk skolen sin første kvinnelige lærer, Dina Larsen Hovind.</p>
+
+        <h3>Navnet kommer fra gården over veien</h3>
+        <p>Skolen har navnet sitt fra Nordre Huseby gård, som lå rett over Sørkedalsveien.
+           Huseby er ett av de eldste gårdsnavnene vi har – det norrøne <em>husabýr</em> ble
+           ofte brukt om gamle administrasjons- eller kongsgårder. Selve gårdsbygningene ble
+           revet i 1984, da området ble gjort om til Huseby leir, men navnet lever videre i
+           skolen, i T-banestasjonen og i hele strøket.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Huseby/sorkedalsveien.jpg"
+               alt="Sørkedalsveien om vinteren i 1914" />
+          <figcaption>Sørkedalsveien om vinteren, 1914 – ennå en landlig vei forbi gårdene. Foto: Anders Beer Wilse / Oslo Museum (CC0).</figcaption>
+        </figure>
+
+        <h3>Murbygg, gymsal og stadig flere barn</h3>
+        <p>Trehuset ble fort for lite. I 1907 var elevtallet steget til 134, og i 1910 sto et
+           nytt murbygg ferdig, tegnet av kommunens bygningssjef Harald Bødtker, med fire
+           klasserom, skolekjøkken og håndarbeidsrom. Barna fortsatte å strømme til: i 1933
+           var de 205. To år senere, i 1935, ble 1910-fløyen kraftig bygget om av arkitekt
+           Georg Greve, som føyde til gymnastikksal, vestibyle og legekontor. Etter krigen, i
+           1948, kom en ny midtfløy og østfløy i funksjonalistisk stil. Elevtallet nådde
+           toppen i 1957 med hele 1404 barn på skolen. I 1951 fikk Huseby et eget
+           skolebibliotek i samarbeid med Deichmanske bibliotek, med lesesal og åpent to dager
+           i uka. Skolen hadde ungdomstrinn i årene 1968–84, og senest i 2016 kom
+           «Superkubebygget» med sju nye klasserom.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Huseby/huseby-flyfoto.jpg"
+               alt="Flyfoto av Huseby skole i 1964" />
+          <figcaption>Flyfoto av Huseby skole i 1964, med Sørkedalsveien og Røabanen tett på. Foto: Widerøes Flyveselskap / Vilhelm Skappel / Oslo byarkiv (CC BY-SA).</figcaption>
+        </figure>
+
+        <h3>Skolen under krigen</h3>
+        <p>Den 9. april 1940 ble skolen stengt, men den åpnet igjen alt to dager senere. Verre
+           ble det da tysk militær tok over bygningen i mai 1941, og fra januar 1942 var hele
+           skolen rekvirert og brukt som kaserne. Undervisningen måtte gå skiftvis og i lånte
+           lokaler – blant annet på Fossum skole i Bærum og i Røa menighetshus. Under
+           lærerstriden, da okkupasjonsmakten forsøkte å tvinge lærerne inn i en nazistisk
+           lærerorganisasjon, ble flere av skolens mannlige lærere arrestert; en av dem, Erik
+           Gaupås, ble deportert. Da freden kom i 1945, var skolen så overfylt at 20 klasser
+           måtte dele åtte klasserom.</p>
+
+        <h3>Et levende skolemiljø</h3>
+        <p>Huseby har alltid vært mer enn klasserom. Allerede 6. juni 1921 ble Huseby Skoles
+           Musikkorps stiftet, og generasjoner av elever har gått ut herfra – blant dem
+           komiker Jonna Støme, skuespiller Marianne Westby og langrennsløper Martin Johnsrud
+           Sundby. De eldste bygningene er i dag listeført som verneverdige i Verneplan for
+           Osloskolene. Står du ved Sørkedalsveien 167 i dag, ser du derfor ikke bare en
+           skole, men et stykke Vestre Aker-historie som har vært i sammenhengende bruk i over
+           160 år.</p>
+      </div>
+
+      <div data-sprak="uk">
+        <p class="ingress">Був ранок 10 лютого 1862 року, коли 56 дітей уперше зайшли у двері
+           нового зрубного шкільного будинку біля Sørkedalsveien. Дві класні кімнати, дві
+           вчительські квартири, горище й підвал — оце й була вся школа Huseby на той час.
+           Сьогодні, понад 160 років по тому, школа стоїть на тому самому місці, але
+           розрослася в цілий квартал будівель п’яти різних епох.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Huseby/huseby-skole.jpg"
+               alt="Школа Huseby, сфотографована у 1957 році" />
+          <figcaption>Школа Huseby у 1957 році, з корпусами 1935 і 1948 років. Фото: Leif Ørnelund / Oslo Museum (CC BY-SA).</figcaption>
+        </figure>
+
+        <h3>Зрубний шкільний будинок 1861 року</h3>
+        <p>Передумовою стало рішення муніципальної ради Aker від 3 листопада 1858 року
+           збудувати в окрузі 14 нових постійних шкіл. Huseby була однією з них. Шкільний
+           будинок звели у 1860–61 роках за проєктом цивільного інженера Oluf Nicolai Roll —
+           зрубну дерев’яну споруду у швейцарському стилі з одним поверхом, горищем і
+           підвалом. Усередині були дві класні кімнати площею 42 і 28 квадратних метрів та
+           дві вчительські квартири. Першого навчального дня, 10 лютого 1862 року, прийшло
+           56 учнів, поділених на два класи. Ole Christian Hansen був першим учителем школи
+           (1862–1866), а з 1882 року школа отримала першу вчительку — Dina Larsen Hovind.</p>
+
+        <h3>Назва походить від садиби через дорогу</h3>
+        <p>Свою назву школа отримала від садиби Nordre Huseby gård, що стояла прямо через
+           Sørkedalsveien. Huseby — одна з найдавніших назв садиб, які ми маємо:
+           давньоскандинавське <em>husabýr</em> часто позначало старі адміністративні або
+           королівські садиби. Самі будівлі садиби знесли у 1984 році, коли територію
+           перетворили на військовий табір Huseby leir, але назва живе далі — у школі, у
+           станції метро та в усьому районі.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Huseby/sorkedalsveien.jpg"
+               alt="Sørkedalsveien узимку 1914 року" />
+          <figcaption>Sørkedalsveien узимку 1914 року — ще сільська дорога повз садиби. Фото: Anders Beer Wilse / Oslo Museum (CC0).</figcaption>
+        </figure>
+
+        <h3>Цегляний корпус, спортзал і дедалі більше дітей</h3>
+        <p>Дерев’яний будинок швидко став затісним. У 1907 році кількість учнів зросла до
+           134, а в 1910 році постав новий цегляний корпус за проєктом міського будівничого
+           Harald Bødtker — із чотирма класними кімнатами, шкільною кухнею та кімнатою для
+           рукоділля. Дітей більшало: у 1933 році їх було 205. Через два роки, у 1935-му,
+           корпус 1910 року суттєво перебудував архітектор Georg Greve, додавши спортзал,
+           вестибюль і лікарський кабінет. Після війни, у 1948 році, з’явилися нові
+           центральний і східний корпуси у функціоналістичному стилі. Кількість учнів сягнула
+           піку в 1957 році — аж 1404 дитини. У 1951 році Huseby отримала власну шкільну
+           бібліотеку у співпраці з бібліотекою Deichman, із читальною залою, відкритою двічі
+           на тиждень. У 1968–84 роках у школі був і середній ступінь, а вже у 2016 році
+           з’явився «Superkubebygget» із сімома новими класами.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/Huseby/huseby-flyfoto.jpg"
+               alt="Аерофотозйомка школи Huseby у 1964 році" />
+          <figcaption>Аерофотозйомка школи Huseby у 1964 році, з Sørkedalsveien і Røabanen поруч. Фото: Widerøes Flyveselskap / Vilhelm Skappel / Oslo byarkiv (CC BY-SA).</figcaption>
+        </figure>
+
+        <h3>Школа під час війни</h3>
+        <p>9 квітня 1940 року школу зачинили, але вже за два дні вона знову відчинилася. Гірше
+           стало, коли в травні 1941 року будівлю зайняли німецькі військові, а з січня 1942
+           року всю школу реквізували й використовували як казарму. Навчання доводилося вести
+           позмінно та в позичених приміщеннях — зокрема в школі Fossum у Bærum і в
+           парафіяльному домі Røa. Під час «вчительського спротиву» (Lærerstriden), коли
+           окупаційна влада намагалася змусити вчителів вступити до нацистської вчительської
+           організації, кількох учителів-чоловіків школи заарештували; одного з них, Erik
+           Gaupås, депортували. Коли в 1945 році настав мир, школа була така переповнена, що
+           20 класів мусили ділити вісім класних кімнат.</p>
+
+        <h3>Живе шкільне середовище</h3>
+        <p>Huseby завжди була чимось більшим за класні кімнати. Ще 6 червня 1921 року тут
+           заснували духовий оркестр школи (Huseby Skoles Musikkorps), і покоління учнів
+           вийшли звідси у світ — серед них комік Jonna Støme, акторка Marianne Westby та
+           лижник Martin Johnsrud Sundby. Найстаріші будівлі сьогодні внесені до переліку
+           охоронюваних у Плані охорони шкіл Осло (Verneplan for Osloskolene). Тож, стоячи
+           біля Sørkedalsveien 167 сьогодні, ви бачите не просто школу, а частку історії
+           Вестре-Акер, яка безперервно діє вже понад 160 років.</p>
+      </div>
+    </section>
+
+    <section class="kort kilder">
+      <h3 data-i18n="kilder_h3">Kilder</h3>
+      <ul>
+        <li><a href="https://oslobyleksikon.no/side/Huseby_skole" target="_blank" rel="noopener">Oslo byleksikon – Huseby skole</a></li>
+        <li><a href="https://lokalhistoriewiki.no/wiki/Huseby_skole_(Oslo)" target="_blank" rel="noopener">lokalhistoriewiki.no – Huseby skole (Oslo)</a></li>
+        <li><a href="https://no.wikipedia.org/wiki/Huseby_skole_(Oslo)" target="_blank" rel="noopener">Wikipedia – Huseby skole (Oslo)</a></li>
+        <li><a href="https://huseby.osloskolen.no/om-skolen/om-oss/skolens-historie/" target="_blank" rel="noopener">Huseby skole (Osloskolen) – Skolens historie</a></li>
+        <li><a href="https://digitaltmuseum.no/011012616904/oslo-huseby-skole" target="_blank" rel="noopener">DigitaltMuseum – historiske foto (Oslo byarkiv og Oslo Museum)</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-i18n="her_er_du">Her er du</h2>
+      <div class="kart-utsnitt" id="kart"></div>
+    </section>
+
+    <section class="kort">
+      <h3 data-i18n="bli_med_h3">Slik blir du med på jakten</h3>
+      <p data-i18n="bli_med_p">Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+         hvert sted. Velg et kallenavn – så samler du poeng for hvert
+         nye sted du besøker. Ingen innlogging, ingen app.</p>
+      <a class="knapp" href="../index.html" data-i18n="se_kart_kom_i_gang">Se kart og kom i gang</a>
+    </section>
+
+    <div class="lenkerad">
+      <a class="knapp-sekundaer knapp" href="../index.html" data-i18n="til_kartet">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html" data-i18n="til_ledertavla">Til ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { kjorRegistrering } from "../assets/js/registrering.js";
+    import { lagKart } from "../assets/js/kart.js";
+    import { settSprak } from "../assets/js/i18n.js";
+
+    const STED_ID = "huseby-skole";
+
+    kjorRegistrering(STED_ID);
+    lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
+  </script>
+</body>
+</html>
