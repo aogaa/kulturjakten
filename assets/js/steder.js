@@ -44,18 +44,21 @@ export const STEDER = [
     kortbeskrivelse: "Slemdalsveien 54 A – bolig, venterom og politistasjon med celler i sokkelen.", // vises i kart-popup
     kortbeskrivelse_uk: "Slemdalsveien 54 A — житло, кімната очікування та поліцейський відділок з камерами в цоколі."
   },
-  {
-    id: "grimelund-gard",                      // unik nøkkel — IKKE endre etter publisering
-    navn: "Grimelund gård",
-    navn_uk: "Садиба Grimelund",
-    kode: "VAFS-03",                           // lesbar reservekode på stolpen
-    poeng: 100,                                // poeng for å finne stedet
-    lat: 59.942646,                            // fra UTM 259450.83,6652855.14 (EPSG:25833)
-    lng: 10.692785,
-    side: "steder/grimelund-gard.html",        // relativ lenke til stedssiden
-    kortbeskrivelse: "En 700 år gammel gård midt i byen – med smie, stabbur, hoppbakke-historie og hemmelige krigsmøter.", // vises i kart-popup
-    kortbeskrivelse_uk: "700-річна садиба посеред міста — з кузнею, коморою, історією лижного трампліна і таємними зустрічами часів війни."
-  },
+  // ── AVPUBLISERT 2026-06-18 (Espen): Grimelund gård er midlertidig tatt ut av
+  //    kartet og jakten. HTML-sida (steder/grimelund-gard.html) og koden VAFS-03
+  //    er bevart. Fjern kommentaren under for å publisere stedet igjen. ──
+  // {
+  //   id: "grimelund-gard",                      // unik nøkkel — IKKE endre etter publisering
+  //   navn: "Grimelund gård",
+  //   navn_uk: "Садиба Grimelund",
+  //   kode: "VAFS-03",                           // lesbar reservekode på stolpen
+  //   poeng: 100,                                // poeng for å finne stedet
+  //   lat: 59.942646,                            // fra UTM 259450.83,6652855.14 (EPSG:25833)
+  //   lng: 10.692785,
+  //   side: "steder/grimelund-gard.html",        // relativ lenke til stedssiden
+  //   kortbeskrivelse: "En 700 år gammel gård midt i byen – med smie, stabbur, hoppbakke-historie og hemmelige krigsmøter.", // vises i kart-popup
+  //   kortbeskrivelse_uk: "700-річна садиба посеред міста — з кузнею, коморою, історією лижного трампліна і таємними зустрічами часів війни."
+  // },
   {
     id: "heftyevillaen",                       // unik nøkkel — IKKE endre etter publisering
     navn: "Heftyevillaen",

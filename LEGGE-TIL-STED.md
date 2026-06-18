@@ -126,7 +126,7 @@ Hver stolpe har en unik, lesbar kode `VAFS-NN`. Neste ledige nummer brukes for n
 |------|------|----|--------|
 | VAFS-01 | Møteplass Vinderen | `moteplass-vinderen` | ✅ live |
 | VAFS-02 | Frøen politistasjon | `froen-politistasjon` | ✅ live |
-| VAFS-03 | Grimelund gård | `grimelund-gard` | ✅ live |
+| VAFS-03 | Grimelund gård | `grimelund-gard` | ⏸️ avpublisert (2026-06-18) – ute av kart/jakt, side bevart |
 | VAFS-04 | Heftyevillaen | `heftyevillaen` | ✅ live |
 | VAFS-05 | Bogstadleiren | `bogstadleiren` | ✅ live |
 | VAFS-06 | Holmendammen | `holmendammen` | ✅ live |
