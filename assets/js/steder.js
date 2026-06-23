@@ -130,6 +130,16 @@ export const STEDER = [
     side: "steder/huseby-skole.html",          // relativ lenke til stedssiden
     kortbeskrivelse: "Skole siden 1862 – fra ett tømret hus med 56 elever til et helt kvartal med bygninger fra fem tidsaldre.", // vises i kart-popup
     kortbeskrivelse_uk: "Школа від 1862 року — від одного зрубного будинку з 56 учнями до цілого кварталу будівель п’яти епох."
+  },
+  {
+    id: "holmenkollbakken",                    // unik nøkkel — IKKE endre etter publisering
+    navn: "Holmenkollbakken",
+    kode: "VAFS-10",                           // lesbar reservekode på stolpen
+    poeng: 100,                                // poeng for å finne stedet
+    lat: 59.963541,                            // fra UTM 258203.24,6655270.42 (EPSG:25833)
+    lng: 10.667694,
+    side: "steder/holmenkollbakken.html",      // relativ lenke til stedssiden
+    kortbeskrivelse: "Verdens mest tradisjonsrike hoppbakke – fra 21,5 meter på snø og kvist i 1892 til stålbakken og Holmenkollrennene i dag." // vises i kart-popup
   }
   // ── Legg til flere steder her ──
 ];

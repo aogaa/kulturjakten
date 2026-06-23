@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holmenkollbakken – Kultur- og historiejakt</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="../assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="../assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
+    <a class="topp-logo" href="../index.html">
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>Holmenkollbakken</h1>
+    <p><a href="../index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
+  </header>
+
+  <main class="innhold">
+
+    <section class="kort" id="registrering"></section>
+
+    <section class="sted-historie">
+      <h2>Bakken som ble verdenskjent</h2>
+
+      <div data-sprak="nb">
+        <p class="ingress">21,5 meter. Så langt fløy Arne Ustvedt i det aller første rennet i
+           Holmenkollen i 1892, fra et hopp av snø og kvist midt i bakken. Det var nok til
+           bakkerekord. I dag, godt over hundre år senere, svever de beste forbi 140 meter fra
+           et stålstillas i østskråningen av Holmenkollåsen – og hele veien har bakken vært
+           åstedet for noe av det mest folkekjære norsk idrett har å by på.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmenkollbakken/holmbak1.jpg"
+               alt="Folkemengde samlet i Holmenkollen under et skirenn i 1895" />
+          <figcaption>Folkefest i Holmenkollen, 1895 – allerede da en av byens store begivenheter. Foto: Anders Beer Wilse.</figcaption>
+        </figure>
+
+        <h3>Fra Husebybakken til Holmenkollen</h3>
+        <p>Forløperen het Husebyrennet og ble arrangert fra 1879. Men Husebybakken lå lavt og
+           led ofte under dårlig vær og lite snø, og i 1892 bestemte Foreningen til
+           Ski-Idrettens Fremme – Skiforeningen – seg for å flytte rennet opp i høyden, til
+           Holmenkollen. Blant initiativtakerne var veidirektør Hans Krag, som hadde stått for
+           den første veien opp til Holmenkollen i 1887, og Fritz Huitfeldt. Det første hoppet
+           ble flyttet opp og ned i bakken etter snøforholdene, helt til et permanent hopp av
+           stein ble anlagt i 1904.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmenkollbakken/holmbak2.jpg"
+               alt="Holmenkollbakken med tilskuere og hopper i 1901" />
+          <figcaption>Holmenkollen i 1901, før de store fartsstillasene. Foto: Fåberg og Lillehammer Historielag.</figcaption>
+        </figure>
+
+        <h3>Bakken som vokste og vokste</h3>
+        <p>Det første fartsstillaset av tre kom i 1913. Det var 9,5 meter høyt og vakte stor
+           forargelse blant skientusiaster som syntes det var altfor dristig. Naturen ga dem et
+           argument: store snømengder fikk stillaset til å rase sammen dagen etter
+           Holmenkollrennet i 1927 – men samme år reiste man et nytt og høyere stillas på 19
+           meter lenger opp i bakken. Til VM i 1940, som ble avlyst på grunn av krigen, fikk
+           bakken et fartstårn i betong på 40 meter. Etter krigen fortsatte utbyggingen i takt
+           med de store mesterskapene: til OL i 1952 ble hoppet og kulen bygd ut i tre etasjer
+           med permanente tretribuner, dommertårn og kongetribune, og arkitekt Frode Rinnan
+           satte sitt preg på bakken i flere tiår. Foran VM i 1982 fikk anlegget det utseendet
+           mange husker best, med et 60 meter høyt fartstårn som lå 417 meter over havet – et
+           svimlende utsiktspunkt over byen, fjorden og Marka.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmenkollbakken/holmbak3.jpg"
+               alt="Utsikten nedover unnarennet sett fra hopperens ståsted i 1931" />
+          <figcaption>Slik så hopperen utsikten i 1931 – rett ut i lufta over byen. Foto: Anders Beer Wilse.</figcaption>
+        </figure>
+
+        <h3>Besserudtjernet – fra is til badebasseng</h3>
+        <p>Nederst i bakken lå Besserudtjernet, og isen på tjernet dannet i de første årene
+           selve sletta hopperne landet på. Fra 1931 ble tjernet tappet helt om vinteren, og
+           ved senere utbygginger ble det gravd ut for å gjøre unnarennet brattere og lengre.
+           Til slutt ble hele tjernet borte og sletta formet som et amfi med betongtribuner
+           rundt. Men vannet fikk et nytt liv: i årene 1982–2007 ble amfiet fylt med vann om
+           sommeren og ble et rundt seks meter dypt basseng. Her badet og fisket folk
+           (fisken ble satt ut), det ble kjørt vannski og hoppet freestyle ut i vannet fra en
+           egen bakke, og over enden av sletta sto en permanent scene – om sommeren rett over
+           vannflaten.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmenkollbakken/holmbak4.jpg"
+               alt="Hopper i svevet over Holmenkollbakken omkring 1935" />
+          <figcaption>Kan du se hopperen i svevet? Omkring 1935. Foto: Oslo Museum.</figcaption>
+        </figure>
+
+        <h3>Holmenkollen Fyr og dagens stålbakke</h3>
+        <p>Foran ski-VM i 2011 ble det utlyst en arkitektkonkurranse for et helt nytt anlegg.
+           Den ble vunnet av det danske firmaet Julien de Smedt Architects med det radikale
+           forslaget «Holmenkollen Fyr», som blant annet ville rive den gamle bakken og legge
+           Holmenkollveien i tunnel under sletta. Prislappen ble for høy, og et nedskalert
+           utkast ble valgt. Rivingen startte i oktober 2008, og i 2010 sto en helt ny bakke
+           ferdig: en frittstående, skrå fagverkskonstruksjon i stål. Tilløpet er rundt 97
+           meter langt med opptil 36 graders helning, og starthuset på toppen ligger cirka 65
+           meter over bakken – med kafé, bar og utsiktsplatå. En kabinheis bringer publikum opp,
+           en stolheis bringer hopperne fra sletta og opp til kulen, og digre vindskjermer i
+           stål skjermer selve hoppet. Rundt amfiet er det plass til 20 000 tilskuere. Bakken
+           har i dag et kritisk punkt på 120 meter og en bakkestørrelse på 134 meter.
+           Bakkerekorden tilhører Robert Johansson med 144 meter (9. mars 2019), mens Sara
+           Takanashi har kvinnerekorden på 137,5 meter (4. februar 2016).</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmenkollbakken/holmbak6.jpg"
+               alt="Dagens Holmenkollbakke i stål sett nedenfra" />
+          <figcaption>Dagens anlegg – stålbakken som åpnet i 2010. Foto: Pixabay.</figcaption>
+        </figure>
+
+        <h3>Holmenkollrennene – verdens eldste</h3>
+        <p>Det er rennene som har gjort bakken verdenskjent. Holmenkollrennene har vært
+           arrangert årlig siden 1892 og regnes blant de mest prestisjefylte konkurransene i
+           verdenscupen. Kombinert har stått på programmet helt fra starten, femmila siden 1902;
+           vinneren sammenlagt i kombinert får Kongepokalen, vinneren av hopprennet Damenes
+           pokal. Folkemengdene har vært enorme: 106 000 tilskuere overvar det første
+           hopprennet etter krigen i 1946, og under OL i 1952 var det 120 000. Kong Olav 5.
+           deltok selv i hopp som kronprins i 1922 og 1923, og var til stede ved hele 72
+           Holmenkollrenn – første gang i 1911, siste gang i 1990. Utlendinger fikk det lenge
+           tungt mot nordmennene; finske Anton Collin ble den første utenlandske vinneren, på
+           femmila i 1922. Kvinnene kom inn for fullt med langrenn fra 1954, og fra 2000 har
+           det også vært hopprenn for kvinner. I dag samles tradisjonsrennene og en rekke
+           breddearrangement – som Barnas Holmenkolldag og Holmenkollmarsjen – under navnet
+           Holmenkollen Skifestival.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/holmenkollbakken/holmbak5.jpg"
+               alt="Holmenkollbakken opplyst i måneskinn i 2003" />
+          <figcaption>Bakken i måneskinn, 2003. Foto: Kim Hart.</figcaption>
+        </figure>
+
+        <h3>Et nasjonalanlegg og et av landets mest besøkte turistmål</h3>
+        <p>Holmenkollbakken er i dag bare én del av Holmenkollen Nasjonalanlegg, som siden 2003
+           er nasjonalanlegg for de nordiske skigrenene. Her finnes også skistadion for langrenn
+           og skiskyting, Midtstubakken som normalbakke, rulleskibane og serveringssteder.
+           Den såkalte Gratishaugen på østsiden er skilt fra resten av anlegget av
+           Holmenkollveien, og gjennom hoppbakken – under kulen – går den gamle Kongeveien.
+           I nærheten ligger Holmenkollen kapell, gjenreist i 1996 etter brann, og en
+           bronsestatue av kong Olav 5. på ski sammen med hunden sin, avduket i 1984. Ved
+           Skimuseet står en statue av Fridtjof Nansen, flyttet hit i 1964. Skiforeningen står
+           for driften, og anlegget har vært Norges mest besøkte turistmål med over én million
+           gjester i året.</p>
+      </div>
+    </section>
+
+    <section class="kort kilder">
+      <h3 data-i18n="kilder_h3">Kilder</h3>
+      <ul>
+        <li><a href="https://snl.no/Holmenkollbakken" target="_blank" rel="noopener">Store norske leksikon – Holmenkollbakken</a></li>
+        <li><a href="https://digitaltmuseum.no/" target="_blank" rel="noopener">DigitaltMuseum – historiske foto</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-i18n="her_er_du">Her er du</h2>
+      <div class="kart-utsnitt" id="kart"></div>
+    </section>
+
+    <section class="kort">
+      <h3 data-i18n="bli_med_h3">Slik blir du med på jakten</h3>
+      <p data-i18n="bli_med_p">Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+         hvert sted. Velg et kallenavn – så samler du poeng for hvert
+         nye sted du besøker. Ingen innlogging, ingen app.</p>
+      <a class="knapp" href="../index.html" data-i18n="se_kart_kom_i_gang">Se kart og kom i gang</a>
+    </section>
+
+    <div class="lenkerad">
+      <a class="knapp-sekundaer knapp" href="../index.html" data-i18n="til_kartet">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html" data-i18n="til_ledertavla">Til ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { kjorRegistrering } from "../assets/js/registrering.js";
+    import { lagKart } from "../assets/js/kart.js";
+    import { settSprak } from "../assets/js/i18n.js";
+
+    const STED_ID = "holmenkollbakken";
+
+    kjorRegistrering(STED_ID);
+    lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
+  </script>
+</body>
+</html>

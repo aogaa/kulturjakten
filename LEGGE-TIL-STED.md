@@ -133,5 +133,6 @@ Hver stolpe har en unik, lesbar kode `VAFS-NN`. Neste ledige nummer brukes for n
 | VAFS-07 | Holmenkollen kapell | `holmenkollen-kapell` | ✅ live |
 | VAFS-08 | Flyulykken på Voksenkollen | `flyulykken-voksenkollen` | ✅ live |
 | VAFS-09 | Huseby skole | `huseby-skole` | ✅ live |
+| VAFS-10 | Holmenkollbakken | `holmenkollbakken` | ✅ live |
 
-**Neste ledige kode: `VAFS-10`.**
+**Neste ledige kode: `VAFS-11`.**
