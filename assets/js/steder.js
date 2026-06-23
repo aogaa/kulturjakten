@@ -154,6 +154,16 @@ export const STEDER = [
     side: "steder/ris-kirke.html",             // relativ lenke til stedssiden
     kortbeskrivelse: "«Englekirken» fra 1932 – støpt i betong, vigslet med kong Haakon til stede, med en av Norges største kirkeklokker i tårnet.", // vises i kart-popup
     kortbeskrivelse_uk: "«Янгольська церква» 1932 року — відлита з бетону, освячена в присутності короля Haakon, з одним із найбільших церковних дзвонів Норвегії у вежі."
+  },
+  {
+    id: "roseslottet",                         // unik nøkkel — IKKE endre etter publisering
+    navn: "Roseslottet",
+    kode: "VAFS-12",                           // lesbar reservekode på stolpen
+    poeng: 100,                                // poeng for å finne stedet
+    lat: 59.979514,                            // fra UTM 258753.06,6657018.33 (EPSG:25833)
+    lng: 10.675468,
+    side: "steder/roseslottet.html",           // relativ lenke til stedssiden
+    kortbeskrivelse: "Vebjørn og Eimund Sands kunstpark bak Frognerseteren – 95 monumentale malerier og fem gullseil om krigen i Norge og verdiene vi må verne om." // vises i kart-popup
   }
   // ── Legg til flere steder her ──
 ];

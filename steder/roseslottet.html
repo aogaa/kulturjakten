@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roseslottet – Kultur- og historiejakt</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="../assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="../assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
+    <a class="topp-logo" href="../index.html">
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>Roseslottet</h1>
+    <p><a href="../index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
+  </header>
+
+  <main class="innhold">
+
+    <section class="kort" id="registrering"></section>
+
+    <section class="sted-historie">
+      <!-- Foreløpig kun norsk. Når ukrainsk oversettelse kommer: gi denne <h2>
+           og <div> data-sprak="nb", og legg til parallelle data-sprak="uk"-blokker
+           (se f.eks. steder/ris-kirke.html). -->
+      <h2>Fem gullseil over byen</h2>
+
+      <div>
+        <p class="ingress">Fra store deler av Oslo kan du se dem skimre på høyden bak
+           Frognerseteren: fem gullfargede seil, det høyeste 32 meter, reist mot himmelen ved
+           inngangen til Nordmarka. De er hjertet i Roseslottet – en hel kunstpark som brødrene
+           Vebjørn og Eimund Sand har skapt for å fortelle om krigen i Norge, og om verdiene som
+           ble satt ut av kraft da landet var okkupert.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/roseslottet/rose1.jpg"
+               alt="De Ufødtes Stjerne – lysende installasjon i snø i blått vinterlys" />
+          <figcaption>I midten av spiralen står installasjonen <em>De Ufødtes Stjerne</em>, her i
+            vinterlys. De fem gullseilene bak symboliserer de fem okkupasjonsårene og de ulike
+            sidene av motstandskampen. Foto: Roseslottet.</figcaption>
+        </figure>
+
+        <h3>En kunstpark om krig og verdier</h3>
+        <p>Roseslottet er en kunstinstallasjon ved Frognerseteren, skapt av brødrene Vebjørn Sand
+           og Eimund Sand. Parken markerte at det i 2020 var 80 år siden Norge ble okkupert av
+           Nazi-Tyskland, og 75 år siden frigjøringen. Gjennom malerier og installasjoner forteller
+           den om andre verdenskrig i Norge – og om de grunnleggende prinsippene for demokrati,
+           rettsstat og humanisme som ble satt ut av kraft under okkupasjonen. Navnet er inspirert
+           av <em>Den hvite rose</em>, den tyske ikke-voldelige motstandsgruppen.</p>
+        <p>Tidligere etterretningssjef Kjell Grandhagen var mentor for prosjektet. Da det ble
+           lansert 9. april 2019, sa han:</p>
+
+        <blockquote class="sitat">
+          <p><em>«Det er en flott, verdig, moderne kunstinstallasjon, som gjennom 13 måneder vil
+             glede Norges befolkning – unge som gamle. Og som vil minne oss om et kapittel i
+             historien vi håper vi aldri vil oppleve igjen. Men først og fremst skal Roseslottet
+             minne oss om de verdiene i samfunnet vårt vi må verne om – og aldri ta for gitt.»</em></p>
+        </blockquote>
+
+        <p>Roseslottet skulle åpnet på selve 75-årsdagen for frigjøringen, 8. mai 2020, men på grunn
+           av covid-19 ble åpningen forskjøvet til 13. juni 2020. På samme høyde sto tidligere
+           <em>Trollslottet</em> (1997/98) og <em>Keplerstjernen</em> (2000), som Vebjørn Sand også
+           sto bak. I 2022 mottok Roseslottet Sønstebyprisen.</p>
+
+        <h3>250 meter i spiral</h3>
+        <p>Kunstparken ligger på høyden bak Frognerseteren, ved inngangen til Nordmarka, og dekker
+           et område på 75 meter i diameter. Gjennom parken går man på en 250 meter lang vei formet
+           som en spiral. Langs spiralen står ulike kunstverk, blant annet 95 monumentale malerier
+           som hovedsakelig viser motiver fra andre verdenskrig i Norge. I midten venter
+           installasjonen <em>De Ufødtes Stjerne</em>, og rundt den de fem gullfargede seilene på
+           mellom 26 og 32 meter, synlige fra store deler av Oslo og områdene rundt. Kunstverkene er
+           integrert i naturen – flere steder er installasjonene bygget rundt gamle «istidsbjerk»
+           som har fått stå.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/roseslottet/rose2.jpg"
+               alt="Forgylt geometrisk kuleskulptur i Roseslottet med utsikt mot Oslofjorden bak" />
+          <figcaption>I flere av installasjonene brukes geometri for å visualisere universelle
+            verdier. Fra parken er det vid utsikt utover Oslo og fjorden. Foto: Roseslottet.</figcaption>
+        </figure>
+
+        <h3>En scene med utsikt over hovedstaden</h3>
+        <p>I Roseslottet er det også en utendørs scene med utsikt over byen og områdene rundt. Herfra
+           fremføres konserter, foredrag og andre kulturelle innslag gjennom sesongen. Roseslottets
+           musikalske leder er komponisten Martin Romberg.</p>
+
+        <h3>153 malerier av Vebjørn Sand</h3>
+        <p>Roseslottet inneholder 153 malerier, alle malt av Vebjørn Sand. Av dem er 95 monumentale
+           friluftsmalerier på mellom 3×4 og 4×6 meter, som hovedsakelig viser motiver fra Norge
+           under okkupasjonen 1940–45. Sand skildrer et bredt spekter av temaer, både kjente og
+           mindre kjente sider ved krigen: krigsfangenes lidelser, de ukjente enkelt-individene,
+           hverdagslivet, krigsseilernes drama og motstandskampene i sør og nord. En egen maleri-
+           og lydinstallasjon, <em>Ellinors Hus</em>, handler om forfølgelsen av de norske jødene og
+           om Holocaust. Noen malerier viser også vendepunkter i verdenskrigen utenfor Norge.</p>
+        <p>Bildene er malt i farger eller gråtoner, med mange ulike teknikker. I noen er det brukt
+           sand, stein, karbon, jord og til og med kvister – for eksempel der skogscener skildres.
+           Selve maleriene er laget med akryl på PVC-skum, med en overflatebehandling i epoksy som
+           tåler å henge ute hele året.</p>
+
+        <h3>Historiens Ansikter</h3>
+        <p>Inngangspartiet til parken rommer portrettgalleriet <em>Historiens Ansikter</em> – 37
+           malerier av tidsvitner fra andre verdenskrig. Som forberedelse reiste Vebjørn Sand rundt
+           i Norge og til utlandet for å møte mennesker som selv hadde opplevd ulike sider ved
+           okkupasjonen. Blant dem er motstandsfolk, Holocaust-overlevende, en sovjetisk krigsfange
+           i Norge, ofre for tvangsevakueringen og nedbrenningen av Finnmark og Nord-Troms, og en
+           krigsseiler.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/roseslottet/rose3.jpg"
+               alt="Portrettgalleriet Historiens Ansikter langs en rød sti mellom bjørketrær" />
+          <figcaption>Portrettgalleriet <em>Historiens Ansikter</em> med malerier av 37 tidsvitner
+            fra krigen. Foto: Roseslottet.</figcaption>
+        </figure>
+
+        <h3>Installasjonene – og kunstnernes egne ord</h3>
+        <p>I Roseslottet har Eimund Sand og Vebjørn Sand skapt installasjoner som peker på ulike
+           sider ved krigen i Norge, og på verdiene som ble satt ut av kraft da landet var okkupert.
+           I flere av dem brukes geometri for å visualisere universelle verdier. Om hva de vil med
+           verket, sier kunstnerne selv:</p>
+
+        <blockquote class="sitat">
+          <p><em>Vi ønsker å fortelle historien om krigen uten å demonisere eller glorifisere,
+             sentralt i fortellingen står individet og dets valg.</em></p>
+          <p><em>Vi berører både kjente og mindre kjente sider ved okkupasjonen: krigsfangenes
+             lidelser, de ukjente enkelt-individene, hverdagslivet, krigsseilernes drama,
+             motstandskampene i sør og nord.</em></p>
+          <p><em>Forfølgelsen av de norske jødene får stor oppmerksomhet i billedserien, og
+             antisemittismen, før og under krigen, skildres.</em></p>
+          <p><em>Det kunstneriske språket ønsker å engasjere, utfordre og konfrontere. Kort sagt,
+             vekke til live. Vi ser ikke på verden med et akademisk/analytisk blikk.</em></p>
+        </blockquote>
+
+        <p>Åpningstider, billetter og program varierer gjennom året. Det finner du på Roseslottets
+           egne sider: <a href="https://roseslottet.no/" target="_blank" rel="noopener">roseslottet.no</a>.</p>
+      </div>
+    </section>
+
+    <section class="kort kilder">
+      <h3 data-i18n="kilder_h3">Kilder</h3>
+      <ul>
+        <li><a href="https://roseslottet.no/" target="_blank" rel="noopener">Roseslottet – offisielle nettsider</a></li>
+        <li><a href="https://no.wikipedia.org/wiki/Roseslottet" target="_blank" rel="noopener">Wikipedia – Roseslottet</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-i18n="her_er_du">Her er du</h2>
+      <div class="kart-utsnitt" id="kart"></div>
+    </section>
+
+    <section class="kort">
+      <h3 data-i18n="bli_med_h3">Slik blir du med på jakten</h3>
+      <p data-i18n="bli_med_p">Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+         hvert sted. Velg et kallenavn – så samler du poeng for hvert
+         nye sted du besøker. Ingen innlogging, ingen app.</p>
+      <a class="knapp" href="../index.html" data-i18n="se_kart_kom_i_gang">Se kart og kom i gang</a>
+    </section>
+
+    <div class="lenkerad">
+      <a class="knapp-sekundaer knapp" href="../index.html" data-i18n="til_kartet">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html" data-i18n="til_ledertavla">Til ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { kjorRegistrering } from "../assets/js/registrering.js";
+    import { lagKart } from "../assets/js/kart.js";
+    import { settSprak } from "../assets/js/i18n.js";
+
+    const STED_ID = "roseslottet";
+
+    kjorRegistrering(STED_ID);
+    lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
+  </script>
+</body>
+</html>
