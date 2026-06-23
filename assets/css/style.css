@@ -34,16 +34,22 @@ body {
 }
 
 /* ── Språk-toggle for narrativ brødtekst ──
-   For lang narrativ tekst (f.eks. «Om stedet» på stedssidene) legges norsk og
-   ukrainsk versjon side om side i HTML, hver i en container med data-sprak.
-   Reglene under skjuler den som ikke matcher gjeldende <html lang>.
+   For lang narrativ tekst (f.eks. «Om stedet» på stedssidene) legges hver
+   språkversjon side om side i HTML, hver i en container med data-sprak.
+   Reglene under skjuler dem som ikke matcher gjeldende <html lang>.
+   (Mangler en stedsside blokk for det valgte språket, viser i18n.js norsk som
+   reserve via brodtekstFallback — så siden aldri blir blank.)
 
    VIKTIG: Scope MÅ være .sted-historie (eller annen tekst-container). Uten
    scope ville reglene også skjule flaggknappene i .sprakvelger (de bruker
    samme attributtnavn) — og brukeren ville mistet muligheten til å bytte
    tilbake til norsk. */
-html[lang="nb"] .sted-historie [data-sprak="uk"] { display: none; }
-html[lang="uk"] .sted-historie [data-sprak="nb"] { display: none; }
+html[lang="nb"] .sted-historie [data-sprak="uk"],
+html[lang="nb"] .sted-historie [data-sprak="en"] { display: none; }
+html[lang="uk"] .sted-historie [data-sprak="nb"],
+html[lang="uk"] .sted-historie [data-sprak="en"] { display: none; }
+html[lang="en"] .sted-historie [data-sprak="nb"],
+html[lang="en"] .sted-historie [data-sprak="uk"] { display: none; }
 
 /* ── Topp ── */
 .topp {

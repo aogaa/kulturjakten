@@ -93,9 +93,11 @@ Et lite, avhengighetsfritt i18n-lag. Innhold:
   legges som to søsken-blokker — `<div data-sprak="nb">…</div>` og
   `<div data-sprak="uk">…</div>` — inne i en `<section class="sted-historie">`-
   wrapper. CSS i `style.css` skjuler den som ikke matcher gjeldende `<html lang>`.
-  Ingen JS, ingen flimring, og hver stedsside har sin tekst samlet ett sted.
-  (Mangler ukrainsk for en stedsside? Behold bare norsk-blokken — siden viser
-  norsk for alle inntil oversettelsen er skrevet.) Stedsnavn (`<h1>` i headeren)
+  Ingen flimring, og hver stedsside har sin tekst samlet ett sted.
+  (Mangler en stedsside blokk for det valgte språket? Behold bare blokkene som
+  finnes — `brodtekstFallback()` i `i18n.js` viser da norsk som reserve, så siden
+  aldri blir blank. CSS skjuler ikke-matchende blokker; JS overstyrer kun i
+  fallback-tilfellet, så oversatte sider får ingen flimring.) Stedsnavn (`<h1>` i headeren)
   og `<title>` er foreløpig holdt på norsk for enkelhet; bytt ut `<h1>` med to
   `data-sprak`-blokker hvis det skal oversettes.
 
@@ -125,6 +127,12 @@ Et lite, avhengighetsfritt i18n-lag. Innhold:
 |-------|------|-----------|---------|------------|------------|
 | Norsk (bokmål) | `nb` | `flag-no.svg` | ✅ original | ✅ | ✅ |
 | Ukrainsk | `uk` | `flag-ua.svg` | ✅ implementert (2026-06-10) | ✅ implementert (2026-06-10) | ✅ implementert (2026-06-10) |
+| Engelsk | `en` | `flag-gb.svg` | ✅ implementert (2026-06-23) | 🔶 kun Roseslottet (test, 2026-06-23) | ✅ implementert (2026-06-23) |
+
+**Engelsk-status:** UI (`OVERSETTELSER.en` i `i18n.js`), flaggknapp (`flag-gb.svg`) på alle
+sider, og Roseslottet er oversatt som test. Øvrige stedssider mangler `data-sprak="en"`-blokk
+og faller derfor tilbake til norsk brødtekst i engelsk modus (se note under). Neste steg:
+oversett resten av stedssidene + korrektur av en engelskspråklig leser.
 
 **Neste handling:** ukrainsk korrektur av en native taler — UI-strenger ligger i
 `assets/js/i18n.js` (`OVERSETTELSER.uk`), stedssidenes brødtekst ligger inline i

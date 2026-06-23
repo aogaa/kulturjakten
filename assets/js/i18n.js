@@ -19,7 +19,7 @@
 
 const LAGRINGSNOKKEL = "vafs_sprak";
 const STANDARD = "nb";
-const STOTTEDE = ["nb", "uk"];
+const STOTTEDE = ["nb", "uk", "en"];
 
 export const OVERSETTELSER = {
   nb: {
@@ -30,6 +30,7 @@ export const OVERSETTELSER = {
     bunn_org: "Stiftelsen Vestre Aker Frivilligsentral",
     sprak_no_alt: "Norsk",
     sprak_uk_alt: "Ukrainsk",
+    sprak_en_alt: "Engelsk",
 
     // Hero
     hero_tittel: "Oppdag historien rett rundt hjørnet",
@@ -149,6 +150,7 @@ export const OVERSETTELSER = {
     bunn_org: "Фундація Vestre Aker Frivilligsentral",
     sprak_no_alt: "Норвезька",
     sprak_uk_alt: "Українська",
+    sprak_en_alt: "Англійська",
 
     // Hero
     hero_tittel: "Відкрийте історію поруч із вами",
@@ -258,6 +260,124 @@ export const OVERSETTELSER = {
     kart_les_mer: "Дізнатися більше →",
     kart_allerede_besokt: "✓ Уже відвідано",
   },
+
+  en: {
+    // Header / footer
+    topp_logo_alt: "Vestre Aker Frivilligsentral",
+    topp_org: "Vestre Aker Frivilligsentral Foundation",
+    topp_tittel: "Culture and history hunt",
+    bunn_org: "Vestre Aker Frivilligsentral Foundation",
+    sprak_no_alt: "Norwegian",
+    sprak_uk_alt: "Ukrainian",
+    sprak_en_alt: "English",
+
+    // Hero
+    hero_tittel: "Discover the history right around the corner",
+    hero_tekst: "Vestre Aker is full of stories. Go for a walk, find the posts and get to know your neighbourhood in a whole new way.",
+
+    // Hvorfor
+    hvorfor_tittel: "Why a culture hunt?",
+    hvorfor_tekst: "We believe the history of our local area deserves to be discovered – on foot, together and out in the fresh air. The culture hunt is a free walking and history experience for all of Vestre Aker: good for the legs, the heart and your curiosity.",
+
+    // Hva — paragrafen bygges av forsiden i tre deler (pre + tellbart substantiv + post).
+    // Engelsk: 1 → entall (place / is), ellers flertall (places / are).
+    hva_tittel: "What we've made",
+    hva_tekst_pre: "Around the area we've put up posts at places of local historical interest. Each post has a QR code that takes you to a page with the story of the place, photos and a map. No app, no sign-up – just a nickname. ",
+    hva_steder_navn: ["place", "places"],
+    hva_tekst_post: [" is waiting to be discovered.", " are waiting to be discovered."],
+
+    // Hvordan
+    hvordan_tittel: "How it works",
+    steg1_tittel: "Choose a nickname",
+    steg1_tekst: "Dead simple – no sign-up. Everything is completely anonymous, perfect if you just want to have a nice time.",
+    steg2_tittel: "Go for a walk and find a post",
+    steg2_tekst: "Use the map below to see where the posts are.",
+    steg3_tittel: "Scan the QR code",
+    steg3_tekst: "That opens the place page with the story, photos and a map.",
+    steg4_tittel: "Collect points",
+    steg4_tekst: "New places earn points. Keep an eye on the leaderboard!",
+    kom_i_gang_knapp: "Get started",
+
+    // Bli med
+    bli_med_tittel: "Join the hunt",
+    bli_med_tekst: "Choose a nickname and you're off. You can change it any time.",
+
+    // Kart
+    kart_tittel: "Explore the posts on the map",
+    kart_tekst: "Tap a marker to read more about the place.",
+    tegnforklaring_ny: "Not visited yet",
+    tegnforklaring_funnet: "Visited",
+
+    // Kode-skjema
+    kode_tittel: "Couldn't scan the QR code?",
+    kode_tekst: "Enter the code shown on the post and we'll take you to the place.",
+    kode_label: "Code",
+    kode_placeholder: "E.g. VAFS-A7",
+    kode_knapp: "Go to the place",
+
+    // Ledertavle-lenke
+    se_ledertavla: "See the leaderboard",
+
+    // Profil / dynamisk tekst
+    hei: "Hi",
+    poeng: "points",
+    // 1 → point, ellers points.
+    poeng_form: ["point", "points"],
+    klar_for_tur: "Ready to go! Find a post and scan the QR code.",
+    endre_kallenavn: "Change nickname",
+    profil_label: "Nickname",
+    profil_placeholder: "E.g. Turbo",
+    profil_knapp: "Get started",
+
+    // Nyhetsbrev
+    nyhetsbrev_tittel: "Want to hear about new posts?",
+    nyhetsbrev_tekst: "Sign up for the VAFS newsletter to be notified when we put up new posts and arrange walks. Completely optional — you can take part in the hunt without it. For children, an adult signs up by email on behalf of the family.",
+    nyhetsbrev_knapp: "Sign me up (opens at MailerLite)",
+
+    // Feilmeldinger
+    feil_navn: "Please choose a friendlier nickname 🙂",
+    feil_kode: "No post found with that code. Check that you've typed it correctly.",
+
+    // Felles UI på tvers av sider
+    tilbake_til_forside: "← Back to the map and home",
+
+    // Stedssider — standardbokser
+    om_stedet: "About the place",
+    her_er_du: "You are here",
+    kilder_h3: "Sources",
+    bli_med_h3: "How to join the hunt",
+    bli_med_p: "Find the posts around Vestre Aker, scan the QR code and read the story of each place. Choose a nickname – then collect points for every new place you visit. No sign-up, no app.",
+    se_kart_kom_i_gang: "See the map and get started",
+    til_kartet: "To the map",
+    til_ledertavla: "To the leaderboard",
+    til_forsiden: "To the home page",
+
+    // Ledertavle
+    ledertavle_tittel: "Leaderboard",
+    stillingen_tittel: "Standings",
+    laster_ledertavla: "Loading the leaderboard…",
+    ledertavla_ingen_firebase_html: 'The leaderboard isn\'t connected to Firebase yet. Paste your Firebase config into <code>assets/js/firebase-config.js</code> to see results.',
+    ledertavla_ingen_deltakere: "No participants yet. Be the first!",
+    ledertavla_skjult_navn: "(hidden name)",
+    ledertavla_kol_kallenavn: "Nickname",
+    ledertavla_kol_poeng: "Points",
+
+    // Registrering
+    reg_ukjent_sted: "Unknown place. Check that the id matches steder.js.",
+    reg_allerede_besokt_kort: "✓ You've already visited this place.",
+    reg_lesemodus_html: 'You\'re reading about this place. To register your visit and earn points, you need to <strong>scan the QR code on the post</strong> – or enter the code from the post on the home page.',
+    reg_vil_du_bli_med: "Want to join the hunt?",
+    reg_velg_navn: "Choose a nickname to register this place and collect points. You can read the page either way.",
+    reg_skjema_knapp: "Join and register",
+    reg_nytt_tittel: "🎉 New place found!",
+    reg_nytt_du_har_html: "Hi {navn} — you now have <strong>{poeng}</strong> in total.",
+    reg_besokt_ingen_nye: "✓ You've already visited this place. No new points this time.",
+    reg_du_har_totalt_html: "You have <strong>{poeng}</strong> in total.",
+
+    // Kart-popup
+    kart_les_mer: "Read more →",
+    kart_allerede_besokt: "✓ Already visited",
+  },
 };
 
 export function gjeldendeSprak() {
@@ -333,6 +453,30 @@ export function bruk(rot = document) {
       if (!attr || !n) return;
       const v = ord[n] ?? OVERSETTELSER[STANDARD][n];
       if (v != null) el.setAttribute(attr, v);
+    });
+  });
+
+  brodtekstFallback(rot);
+}
+
+// Brødtekst-fallback for stedssider. Den narrative teksten ligger som søsken-
+// blokker (<div data-sprak="nb|uk|en">) i .sted-historie, og CSS skjuler dem som
+// ikke matcher <html lang>. Er en stedsside ennå ikke oversatt til det valgte
+// språket, ville ALT blitt skjult — derfor viser vi norsk som reserve så siden
+// aldri blir blank. Vi overstyrer kun i fallback-tilfellet; ellers lar vi CSS
+// styre (ingen flimring på sider som faktisk er oversatt).
+function brodtekstFallback(rot = document) {
+  const sprak = gjeldendeSprak();
+  rot.querySelectorAll(".sted-historie").forEach((sek) => {
+    const blokker = sek.querySelectorAll(":scope > [data-sprak]");
+    if (!blokker.length) return;
+    const harAktiv = [...blokker].some((b) => b.getAttribute("data-sprak") === sprak);
+    blokker.forEach((b) => {
+      if (!harAktiv && b.getAttribute("data-sprak") === STANDARD) {
+        b.style.display = "block";       // vis norsk som reserve
+      } else {
+        b.style.removeProperty("display"); // la CSS bestemme
+      }
     });
   });
 }

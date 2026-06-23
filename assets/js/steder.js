@@ -164,7 +164,8 @@ export const STEDER = [
     lng: 10.675468,
     side: "steder/roseslottet.html",           // relativ lenke til stedssiden
     kortbeskrivelse: "Vebjørn og Eimund Sands kunstpark bak Frognerseteren – 95 monumentale malerier og fem gullseil om krigen i Norge og verdiene vi må verne om.", // vises i kart-popup
-    kortbeskrivelse_uk: "Парк мистецтва братів Vebjørn та Eimund Sand за Frognerseteren — 95 монументальних картин і п'ять золотих вітрил про війну в Норвегії та цінності, які ми мусимо берегти."
+    kortbeskrivelse_uk: "Парк мистецтва братів Vebjørn та Eimund Sand за Frognerseteren — 95 монументальних картин і п'ять золотих вітрил про війну в Норвегії та цінності, які ми мусимо берегти.",
+    kortbeskrivelse_en: "Vebjørn and Eimund Sand's art park behind Frognerseteren – 95 monumental paintings and five golden sails about the war in Norway and the values we must protect."
   }
   // ── Legg til flere steder her ──
 ];
