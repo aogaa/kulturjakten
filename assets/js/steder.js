@@ -134,12 +134,14 @@ export const STEDER = [
   {
     id: "holmenkollbakken",                    // unik nøkkel — IKKE endre etter publisering
     navn: "Holmenkollbakken",
+    navn_uk: "Трамплін Holmenkollbakken",
     kode: "VAFS-10",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.963541,                            // fra UTM 258203.24,6655270.42 (EPSG:25833)
     lng: 10.667694,
     side: "steder/holmenkollbakken.html",      // relativ lenke til stedssiden
-    kortbeskrivelse: "Verdens mest tradisjonsrike hoppbakke – fra 21,5 meter på snø og kvist i 1892 til stålbakken og Holmenkollrennene i dag." // vises i kart-popup
+    kortbeskrivelse: "Verdens mest tradisjonsrike hoppbakke – fra 21,5 meter på snø og kvist i 1892 til stålbakken og Holmenkollrennene i dag.", // vises i kart-popup
+    kortbeskrivelse_uk: "Найбагатший на традиції лижний трамплін світу — від 21,5 метра на снігу й хмизі 1892 року до сталевого трампліна й Holmenkollrennene сьогодні."
   }
   // ── Legg til flere steder her ──
 ];
