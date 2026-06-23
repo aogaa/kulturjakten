@@ -146,12 +146,14 @@ export const STEDER = [
   {
     id: "ris-kirke",                           // unik nøkkel — IKKE endre etter publisering
     navn: "Ris kirke",
+    navn_uk: "Церква Ris",
     kode: "VAFS-11",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.947978,                            // fra UTM 260077.79,6653409.78 (EPSG:25833)
     lng: 10.703331,
     side: "steder/ris-kirke.html",             // relativ lenke til stedssiden
-    kortbeskrivelse: "«Englekirken» fra 1932 – støpt i betong, vigslet med kong Haakon til stede, med en av Norges største kirkeklokker i tårnet." // vises i kart-popup
+    kortbeskrivelse: "«Englekirken» fra 1932 – støpt i betong, vigslet med kong Haakon til stede, med en av Norges største kirkeklokker i tårnet.", // vises i kart-popup
+    kortbeskrivelse_uk: "«Янгольська церква» 1932 року — відлита з бетону, освячена в присутності короля Haakon, з одним із найбільших церковних дзвонів Норвегії у вежі."
   }
   // ── Legg til flere steder her ──
 ];
