@@ -163,7 +163,8 @@ export const STEDER = [
     lat: 59.979514,                            // fra UTM 258753.06,6657018.33 (EPSG:25833)
     lng: 10.675468,
     side: "steder/roseslottet.html",           // relativ lenke til stedssiden
-    kortbeskrivelse: "Vebjørn og Eimund Sands kunstpark bak Frognerseteren – 95 monumentale malerier og fem gullseil om krigen i Norge og verdiene vi må verne om." // vises i kart-popup
+    kortbeskrivelse: "Vebjørn og Eimund Sands kunstpark bak Frognerseteren – 95 monumentale malerier og fem gullseil om krigen i Norge og verdiene vi må verne om.", // vises i kart-popup
+    kortbeskrivelse_uk: "Парк мистецтва братів Vebjørn та Eimund Sand за Frognerseteren — 95 монументальних картин і п'ять золотих вітрил про війну в Норвегії та цінності, які ми мусимо берегти."
   }
   // ── Legg til flere steder her ──
 ];
