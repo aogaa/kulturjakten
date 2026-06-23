@@ -142,6 +142,16 @@ export const STEDER = [
     side: "steder/holmenkollbakken.html",      // relativ lenke til stedssiden
     kortbeskrivelse: "Verdens mest tradisjonsrike hoppbakke – fra 21,5 meter på snø og kvist i 1892 til stålbakken og Holmenkollrennene i dag.", // vises i kart-popup
     kortbeskrivelse_uk: "Найбагатший на традиції лижний трамплін світу — від 21,5 метра на снігу й хмизі 1892 року до сталевого трампліна й Holmenkollrennene сьогодні."
+  },
+  {
+    id: "ris-kirke",                           // unik nøkkel — IKKE endre etter publisering
+    navn: "Ris kirke",
+    kode: "VAFS-11",                           // lesbar reservekode på stolpen
+    poeng: 100,                                // poeng for å finne stedet
+    lat: 59.947978,                            // fra UTM 260077.79,6653409.78 (EPSG:25833)
+    lng: 10.703331,
+    side: "steder/ris-kirke.html",             // relativ lenke til stedssiden
+    kortbeskrivelse: "«Englekirken» fra 1932 – støpt i betong, vigslet med kong Haakon til stede, med en av Norges største kirkeklokker i tårnet." // vises i kart-popup
   }
   // ── Legg til flere steder her ──
 ];

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ris kirke – Kultur- og historiejakt</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topp">
+    <div class="sprakvelger" role="group" aria-label="Velg språk">
+      <button type="button" data-sprak="nb" title="Norsk" aria-label="Norsk">
+        <img src="../assets/img/ui/flag-no.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="uk" title="Українська" aria-label="Українська">
+        <img src="../assets/img/ui/flag-ua.svg" alt="" />
+      </button>
+    </div>
+    <a class="topp-logo" href="../index.html">
+      <img src="../assets/img/ui/vafs-logo.png" alt="Vestre Aker Frivilligsentral" data-i18n-attr="alt:topp_logo_alt" />
+    </a>
+    <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
+    <h1>Ris kirke</h1>
+    <p><a href="../index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
+  </header>
+
+  <main class="innhold">
+
+    <section class="kort" id="registrering"></section>
+
+    <section class="sted-historie">
+      <h2 data-sprak="nb">Englekirken på Ris</h2>
+
+      <div data-sprak="nb">
+        <p class="ingress">Presis klokken elleve, søndag 12. juni 1932, gikk kong Haakon VII inn
+           gjennom dørene til en helt ny kirke i betong oppe på Ris. Det store kirkeskipet var
+           fylt til siste plass, og da organisten lot Bachs Preludium og fuge i C-dur runge under
+           hvelvet, sto en av landets største kirkeklokker klar i tårnet. Folk kalte den snart
+           bare «Englekirken» – etter alle englefigurene på altertavla.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/riskirke/riskirk4.jpg"
+               alt="Ris kirke fotografert i 2014" />
+          <figcaption>Ris kirke i 2014 – langkirke i nyromansk stil med det sidestilte, høye
+            tårnet. Foto: Stig Rune Pedersen (CC BY-SA 3.0).</figcaption>
+        </figure>
+
+        <h3>Hvorfor «Englekirken»?</h3>
+        <p>Tilnavnet kommer fra altertavla <em>Kristus og de små barn</em>, som Hugo Lous Mohr
+           malte til kirken i 1932, med englefigurer formet sammen med billedhuggeren Arthur
+           Gustavson. Over koret henger en Kristusfigur av billedhuggeren Sigri Welhaven, og
+           glassmaleriene er laget av Per Vigeland. Til sammen ga utsmykningen kirken et så
+           englerikt preg at navnet festet seg i folkemunne. Den opprinnelige skrivemåten var
+           forresten «Riis kirke» – med to i-er.</p>
+
+        <h3>En kirke i betong, vendt mot sør</h3>
+        <p>Ris kirke er en langkirke i nyromansk stil, men selve byggematerialet var moderne for
+           sin tid: den er støpt i betong, med fasader av rappet tegl og saltak tekket med skifer.
+           Det høye, sidestilte tårnet har et lavt pyramidetak. Det meste av kirker i Norge ligger
+           orientert vest–øst, men på grunn av formen på tomta ble Ris kirke i stedet liggende
+           nord–sør, med koret mot sør. Arkitekt var Carl Berner, som sammen med Jørgen Berner
+           sto bak det opprinnelige utkastet. Kirken hadde først plass til rundt 750 mennesker;
+           etter at noen benker bakerst i skipet og på galleriet er fjernet, rommer den i dag
+           omkring 500. Ved siden av ligger et frittliggende menighetshus, oppført samtidig med
+           kirken og utvidet i 1987 (arkitekt Einar Dahle), og Ris kirkegård – i dag Ris urnelund.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/riskirke/riskirk2.jpg"
+               alt="Ris hovedgård i forgrunnen med kirken bak, 1930" />
+          <figcaption>Ris hovedgård i forgrunnen og kirken bak, 1930. Hovedgården er i dag
+            Skajems Hagesenter, og fotografen står i Risveien. Foto: Anders Beer Wilse (CC0).</figcaption>
+        </figure>
+
+        <h3>Den lange veien til innvielse</h3>
+        <p>Tomta kom på plass alt i 1919, da Vestre Akers sognestyre kjøpte 36 mål av Riis gård.
+           I 1921 ble Berner-utkastet lagt til grunn, og året etter ble det satt ned en
+           kirkekomité. Men økonomien strammet til, planene måtte forenkles, og byggingen dro ut.
+           Grunnarbeidet kom i gang i 1926, grunnsteinen ble lagt ned 2. desember 1928 – og først
+           12. juni 1932 kunne Oslos biskop Johan Peter Lunde innvie kirken, med kong Haakon VII
+           til stede. Regnestykket endte på 723 000 kroner, hvorav hele 284 000 kom inn som gaver.
+           En morsom detalj: tårnet er egentlig proporsjonert til et større anlegg som aldri ble
+           noe av. Opprinnelig var det tenkt et menighetshus knyttet til tårnet med solterrasse og
+           overdekket søylegang, men også det måtte vike av økonomiske grunner.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/riskirke/riskirk1.jpg"
+               alt="Barn og hester ved Risbakken før kirken ble bygget" />
+          <figcaption>Fotografen står på tomta som ble Risbakken 19; barna og hestene er på
+            nr. 17. Foto: Esther Langberg (CC0).</figcaption>
+        </figure>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/riskirke/riskirk5.jpg"
+               alt="Avisfaksimile fra Washington Posten om åpningen av Ris kirke, 1931" />
+          <figcaption>Åpningen av Ris kirke ble behørig omtalt i avisene. Her er en faksimile fra
+            Washington Posten, fredag 17. april 1931 – avisen må dog ikke forveksles med Washington
+            Post. Foto/kilde: Nasjonalbiblioteket.</figcaption>
+        </figure>
+
+        <h3>Klokkene og orgelet</h3>
+        <p>Ris kirke har tre kirkeklokker fra 1930, alle med innskriften <em>Riis kirke – Anno
+           1930</em>. De er tegnet av Carl Berner og levert av Olsen Nauen klokkestøperi ved
+           Tønsberg. Den største veier hele 1746 kilo og er stemt i Diss – på sin tid en av de
+           største klokkene som var støpt i Norge. Den mellomste veier 892 kilo (Fiss), den minste
+           550 kilo (Ass). Orgelhistorien er like dramatisk: ved åpningen sto et orgel fra
+           J. H. Jørgensen Orgelfabrik, spesialbygd for kirken og regnet som et av orgelbyggeriets
+           hovedverk. Etter mange år med tekniske problemer ville menigheten skifte det ut – men i
+           januar 2006 fredet Riksantikvaren kirken midlertidig nettopp for å sikre det gamle
+           orgelet. I 2007 grep miljøvernministeren inn etter klage fra menigheten og biskopen,
+           og man ble enige om å bevare den gamle orgelfasaden mest mulig mens selve instrumentet
+           ble byttet. I 2011 fikk kirken et nytt, stort orgel i ren fransk-romantisk stil, bygd av
+           Ryde &amp; Berg Orgelbyggeri i Fredrikstad etter modell av Cavaillé-Colls orgler. Blant
+           organistene gjennom årene finner vi store navn som Ludvig Nielsen, Rolf Karlsen, Trond
+           Kverno, Conrad Baden, Grethe Pedersen og Inger Lise Ulsrud.</p>
+
+        <figure>
+          <img class="sted-bilde" src="../assets/img/steder/riskirke/riskirk3.jpg"
+               alt="Bryllup i Ris kirke i 1957" />
+          <figcaption>Bryllup i Ris kirke, 1957. Foto: Leif Krohn Ørnelund (CC BY-SA 4.0).</figcaption>
+        </figure>
+
+        <h3>Olav den Hellige og «Skammens stein»</h3>
+        <p>Øverst på tårnet står Olav den Hellige med skjold, spyd og forgylt kors, utformet av
+           Carl Berner og Arthur Gustavson – synlig på lang lei over byen. På kirkeveggen henger en
+           minneplakett over lokale falne fra andre verdenskrig. På kirkegården står også
+           «Skammens stein», en stor naturstein som på 2000-tallet ble supplert med en plakett.
+           Den markerer en fellesgrav i bruk fra 1965 til 1987 for mennesker som døde på Gaustad
+           sykehus, og knyttes til fortellingen om de av taterne/romanifolket som ble rammet av den
+           norske statens overgrep. Ris kirke er soknekirke for Ris menighet i Vestre Aker prosti,
+           og er listeført som verneverdig etter det såkalte kirkerundskrivet. Adressen er
+           Risbakken 1.</p>
+      </div>
+    </section>
+
+    <section class="kort kilder">
+      <h3 data-i18n="kilder_h3">Kilder</h3>
+      <ul>
+        <li><a href="https://no.wikipedia.org/wiki/Ris_kirke" target="_blank" rel="noopener">Wikipedia – Ris kirke</a></li>
+        <li><a href="https://www.nb.no/items/0874242b3c7226230e4baae365ad8819?page=3" target="_blank" rel="noopener">Nasjonalbiblioteket – Washington Posten, 1931 (avisfaksimile)</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-i18n="her_er_du">Her er du</h2>
+      <div class="kart-utsnitt" id="kart"></div>
+    </section>
+
+    <section class="kort">
+      <h3 data-i18n="bli_med_h3">Slik blir du med på jakten</h3>
+      <p data-i18n="bli_med_p">Finn stolpene rundt om i Vestre Aker, skann QR-koden og les historien om
+         hvert sted. Velg et kallenavn – så samler du poeng for hvert
+         nye sted du besøker. Ingen innlogging, ingen app.</p>
+      <a class="knapp" href="../index.html" data-i18n="se_kart_kom_i_gang">Se kart og kom i gang</a>
+    </section>
+
+    <div class="lenkerad">
+      <a class="knapp-sekundaer knapp" href="../index.html" data-i18n="til_kartet">Til kartet</a>
+      <a class="knapp-sekundaer knapp" href="../ledertavle.html" data-i18n="til_ledertavla">Til ledertavla</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <p>© <a href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="bunn_org">Stiftelsen Vestre Aker Frivilligsentral</a></p>
+  </footer>
+
+  <script type="module">
+    import { kjorRegistrering } from "../assets/js/registrering.js";
+    import { lagKart } from "../assets/js/kart.js";
+    import { settSprak } from "../assets/js/i18n.js";
+
+    const STED_ID = "ris-kirke";
+
+    kjorRegistrering(STED_ID);
+    lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+
+    document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
+      b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));
+    });
+  </script>
+</body>
+</html>
