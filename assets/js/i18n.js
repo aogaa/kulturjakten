@@ -26,7 +26,7 @@ export const OVERSETTELSER = {
     // Header / footer
     topp_logo_alt: "Vestre Aker Frivilligsentral",
     topp_org: "Stiftelsen Vestre Aker Frivilligsentral",
-    topp_tittel: "Kultur- og historiejakt",
+    topp_tittel: "Kulturjakten",
     bunn_org: "Stiftelsen Vestre Aker Frivilligsentral",
     sprak_no_alt: "Norsk",
     sprak_uk_alt: "Ukrainsk",
@@ -146,7 +146,7 @@ export const OVERSETTELSER = {
     // Header / footer
     topp_logo_alt: "Vestre Aker Frivilligsentral",
     topp_org: "Фундація Vestre Aker Frivilligsentral",
-    topp_tittel: "Полювання за культурою та історією",
+    topp_tittel: "Kulturjakten — полювання за культурою",
     bunn_org: "Фундація Vestre Aker Frivilligsentral",
     sprak_no_alt: "Норвезька",
     sprak_uk_alt: "Українська",
@@ -265,7 +265,7 @@ export const OVERSETTELSER = {
     // Header / footer
     topp_logo_alt: "Vestre Aker Frivilligsentral",
     topp_org: "Vestre Aker Frivilligsentral Foundation",
-    topp_tittel: "Culture and history hunt",
+    topp_tittel: "Heritage Hunt",
     bunn_org: "Vestre Aker Frivilligsentral Foundation",
     sprak_no_alt: "Norwegian",
     sprak_uk_alt: "Ukrainian",
@@ -276,8 +276,8 @@ export const OVERSETTELSER = {
     hero_tekst: "Vestre Aker is full of stories. Go for a walk, find the posts and get to know your neighbourhood in a whole new way.",
 
     // Hvorfor
-    hvorfor_tittel: "Why a culture hunt?",
-    hvorfor_tekst: "We believe the history of our local area deserves to be discovered – on foot, together and out in the fresh air. The culture hunt is a free walking and history experience for all of Vestre Aker: good for the legs, the heart and your curiosity.",
+    hvorfor_tittel: "Why a Heritage Hunt?",
+    hvorfor_tekst: "We believe the history of our local area deserves to be discovered – on foot, together and out in the fresh air. The Heritage Hunt is a free walking and history experience for all of Vestre Aker: good for the legs, the heart and your curiosity.",
 
     // Hva — paragrafen bygges av forsiden i tre deler (pre + tellbart substantiv + post).
     // Engelsk: 1 → entall (place / is), ellers flertall (places / are).
