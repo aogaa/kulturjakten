@@ -11,7 +11,8 @@
   Ikke noe mer. Resten (kart, registrering, poeng, ledertavle) skjer automatisk.
 
   FLERSPRÅK: Stedets historiske brødtekst legges i én versjon per språk side om
-  side — [data-sprak="nb"], [data-sprak="uk"] og [data-sprak="en"]. CSS i
+  side — [data-sprak="nb"], [data-sprak="uk"], [data-sprak="en"] og
+  [data-sprak="it"]. CSS i
   style.css skjuler den som ikke matcher gjeldende <html lang>. Mangler ukrainsk
   eller engelsk tekst ennå? Behold bare blokkene som finnes — de andre kan legges
   til senere (siden faller tilbake til norsk).
@@ -41,6 +42,9 @@
       </button>
       <button type="button" data-sprak="en" title="English" aria-label="English">
         <img src="../assets/img/ui/flag-gb.svg" alt="" />
+      </button>
+      <button type="button" data-sprak="it" title="Italiano" aria-label="Italiano">
+        <img src="../assets/img/ui/flag-it.svg" alt="" />
       </button>
     </div>
     <a class="topp-logo" href="../index.html">
@@ -87,6 +91,15 @@
         <p>[[ Engelsk tekst kommer her. ]]</p>
         <img class="sted-bilde" src="../assets/img/steder/[[bildefil.jpg]]"
              alt="[[Descriptive alt text for the image]]" />
+      </div>
+
+      <div data-sprak="it">
+        <!-- [[ Italiensk oversettelse av samme innhold. Slett denne blokken hvis
+             italiensk oversettelse ikke finnes ennå — siden viser da norsk for
+             alle. ]] -->
+        <p>[[ Italiensk tekst kommer her. ]]</p>
+        <img class="sted-bilde" src="../assets/img/steder/[[bildefil.jpg]]"
+             alt="[[Testo alternativo descrittivo per l'immagine]]" />
       </div>
     </section>
 

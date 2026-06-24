@@ -2,7 +2,7 @@
 //
 // Konvensjon (viktig — ikke bland):
 //   • SPRÅKKODE (ISO 639-1) i nøkler/lagring: "nb" = norsk, "uk" = ukrainsk.
-//   • LANDSKODE (ISO 3166-1) brukes KUN i flagg-filnavn: "no", "ua".
+//   • LANDSKODE (ISO 3166-1) brukes KUN i flagg-filnavn: "no", "ua", "gb", "it".
 //
 // Bruk i HTML:
 //   <h2 data-i18n="hva_tittel">Hva vi har laget</h2>            → setter textContent
@@ -19,7 +19,7 @@
 
 const LAGRINGSNOKKEL = "vafs_sprak";
 const STANDARD = "nb";
-const STOTTEDE = ["nb", "uk", "en"];
+const STOTTEDE = ["nb", "uk", "en", "it"];
 
 export const OVERSETTELSER = {
   nb: {
@@ -31,6 +31,7 @@ export const OVERSETTELSER = {
     sprak_no_alt: "Norsk",
     sprak_uk_alt: "Ukrainsk",
     sprak_en_alt: "Engelsk",
+    sprak_it_alt: "Italiensk",
 
     // Hero
     hero_tittel: "Oppdag historien rett rundt hjørnet",
@@ -151,6 +152,7 @@ export const OVERSETTELSER = {
     sprak_no_alt: "Норвезька",
     sprak_uk_alt: "Українська",
     sprak_en_alt: "Англійська",
+    sprak_it_alt: "Італійська",
 
     // Hero
     hero_tittel: "Відкрийте історію поруч із вами",
@@ -270,6 +272,7 @@ export const OVERSETTELSER = {
     sprak_no_alt: "Norwegian",
     sprak_uk_alt: "Ukrainian",
     sprak_en_alt: "English",
+    sprak_it_alt: "Italian",
 
     // Hero
     hero_tittel: "Discover the history right around the corner",
@@ -378,6 +381,123 @@ export const OVERSETTELSER = {
     kart_les_mer: "Read more →",
     kart_allerede_besokt: "✓ Already visited",
   },
+
+  it: {
+    // Header / footer
+    topp_logo_alt: "Vestre Aker Frivilligsentral",
+    topp_org: "Fondazione Vestre Aker Frivilligsentral",
+    topp_tittel: "Caccia alla cultura",
+    bunn_org: "Fondazione Vestre Aker Frivilligsentral",
+    sprak_no_alt: "Norvegese",
+    sprak_uk_alt: "Ucraino",
+    sprak_en_alt: "Inglese",
+    sprak_it_alt: "Italiano",
+
+    // Hero
+    hero_tittel: "Scopri la storia dietro l'angolo",
+    hero_tekst: "Vestre Aker è piena di storie. Fai una passeggiata, trova i pali e conosci il quartiere in un modo tutto nuovo.",
+
+    // Hvorfor
+    hvorfor_tittel: "Perché una caccia alla cultura?",
+    hvorfor_tekst: "Crediamo che la storia locale meriti di essere scoperta: a piedi, insieme e all'aria aperta. La Caccia alla cultura è un'esperienza gratuita di passeggiata e storia per tutta Vestre Aker: fa bene alle gambe, al cuore e alla curiosità.",
+
+    // Hva
+    hva_tittel: "Che cosa abbiamo creato",
+    hva_tekst_pre: "In diversi punti del quartiere abbiamo collocato pali in luoghi di valore storico locale. Ogni palo ha un codice QR che porta a una pagina con la storia del luogo, fotografie e una mappa. Nessuna app, nessun accesso: solo un soprannome. ",
+    hva_steder_navn: ["luogo", "luoghi"],
+    hva_tekst_post: [" aspetta di essere scoperto.", " aspettano di essere scoperti."],
+
+    // Hvordan
+    hvordan_tittel: "Come funziona",
+    steg1_tittel: "Scegli un soprannome",
+    steg1_tekst: "Semplicissimo: nessun accesso. Tutto è completamente anonimo, perfetto se vuoi solo goderti l'esperienza.",
+    steg2_tittel: "Fai una passeggiata e trova un palo",
+    steg2_tekst: "Usa la mappa qui sotto per vedere dove si trovano i pali.",
+    steg3_tittel: "Scansiona il codice QR",
+    steg3_tekst: "Si apre la pagina del luogo con storia, fotografie e mappa.",
+    steg4_tittel: "Raccogli punti",
+    steg4_tekst: "I nuovi luoghi danno punti. Tieni d'occhio la classifica!",
+    kom_i_gang_knapp: "Inizia",
+
+    // Bli med
+    bli_med_tittel: "Partecipa alla caccia",
+    bli_med_tekst: "Scegli un soprannome e sei pronto. Puoi cambiarlo quando vuoi.",
+
+    // Kart
+    kart_tittel: "Esplora i pali sulla mappa",
+    kart_tekst: "Tocca un indicatore per leggere di più sul luogo.",
+    tegnforklaring_ny: "Non ancora visitato",
+    tegnforklaring_funnet: "Visitato",
+
+    // Kode-skjema
+    kode_tittel: "Non sei riuscito a scansionare il codice QR?",
+    kode_tekst: "Inserisci il codice indicato sul palo e ti porteremo alla pagina del luogo.",
+    kode_label: "Codice",
+    kode_placeholder: "Ad es. VAFS-A7",
+    kode_knapp: "Vai al luogo",
+
+    // Ledertavle-lenke
+    se_ledertavla: "Vedi la classifica",
+
+    // Profil / dynamisk tekst
+    hei: "Ciao",
+    poeng: "punti",
+    poeng_form: ["punto", "punti"],
+    klar_for_tur: "Pronto per partire! Trova un palo e scansiona il codice QR.",
+    endre_kallenavn: "Cambia soprannome",
+    profil_label: "Soprannome",
+    profil_placeholder: "Ad es. Turbo",
+    profil_knapp: "Inizia",
+
+    // Nyhetsbrev
+    nyhetsbrev_tittel: "Vuoi sapere quando arrivano nuovi pali?",
+    nyhetsbrev_tekst: "Iscriviti alla newsletter di VAFS per ricevere notizie quando installiamo nuovi pali e organizziamo passeggiate. È del tutto facoltativo: puoi partecipare alla caccia anche senza. Per i bambini, un adulto iscrive l'indirizzo e-mail per conto della famiglia.",
+    nyhetsbrev_knapp: "Iscrivimi (si apre su MailerLite)",
+
+    // Feilmeldinger
+    feil_navn: "Scegli un soprannome più gentile 🙂",
+    feil_kode: "Non abbiamo trovato nessun palo con quel codice. Controlla di averlo scritto correttamente.",
+
+    // Felles UI på tvers av sider
+    tilbake_til_forside: "← Torna alla mappa e alla pagina iniziale",
+
+    // Stedssider — standardbokser
+    om_stedet: "Il luogo",
+    her_er_du: "Sei qui",
+    kilder_h3: "Fonti",
+    bli_med_h3: "Come partecipare alla caccia",
+    bli_med_p: "Trova i pali in giro per Vestre Aker, scansiona il codice QR e leggi la storia di ogni luogo. Scegli un soprannome: raccoglierai punti per ogni nuovo luogo visitato. Nessun accesso, nessuna app.",
+    se_kart_kom_i_gang: "Vedi la mappa e inizia",
+    til_kartet: "Alla mappa",
+    til_ledertavla: "Alla classifica",
+    til_forsiden: "Alla pagina iniziale",
+
+    // Ledertavle
+    ledertavle_tittel: "Classifica",
+    stillingen_tittel: "Risultati",
+    laster_ledertavla: "Caricamento della classifica…",
+    ledertavla_ingen_firebase_html: 'La classifica non è ancora collegata a Firebase. Incolla la configurazione Firebase in <code>assets/js/firebase-config.js</code> per vedere i risultati.',
+    ledertavla_ingen_deltakere: "Non ci sono ancora partecipanti. Sii il primo!",
+    ledertavla_skjult_navn: "(nome nascosto)",
+    ledertavla_kol_kallenavn: "Soprannome",
+    ledertavla_kol_poeng: "Punti",
+
+    // Registrering
+    reg_ukjent_sted: "Luogo sconosciuto. Controlla che l'id corrisponda a steder.js.",
+    reg_allerede_besokt_kort: "✓ Hai già visitato questo luogo.",
+    reg_lesemodus_html: 'Stai leggendo la pagina di questo luogo. Per registrare la visita e ottenere punti devi <strong>scansionare il codice QR sul palo</strong>, oppure inserire il codice del palo nella pagina iniziale.',
+    reg_vil_du_bli_med: "Vuoi partecipare alla caccia?",
+    reg_velg_navn: "Scegli un soprannome per registrare questo luogo e raccogliere punti. Puoi leggere la pagina in ogni caso.",
+    reg_skjema_knapp: "Partecipa e registra",
+    reg_nytt_tittel: "🎉 Nuovo luogo trovato!",
+    reg_nytt_du_har_html: "Ciao {navn}: ora hai <strong>{poeng}</strong> in totale.",
+    reg_besokt_ingen_nye: "✓ Hai già visitato questo luogo. Nessun nuovo punto questa volta.",
+    reg_du_har_totalt_html: "Hai <strong>{poeng}</strong> in totale.",
+
+    // Kart-popup
+    kart_les_mer: "Leggi di più →",
+    kart_allerede_besokt: "✓ Già visitato",
+  },
 };
 
 export function gjeldendeSprak() {
@@ -460,7 +580,7 @@ export function bruk(rot = document) {
 }
 
 // Brødtekst-fallback for stedssider. Den narrative teksten ligger som søsken-
-// blokker (<div data-sprak="nb|uk|en">) i .sted-historie, og CSS skjuler dem som
+// blokker (<div data-sprak="nb|uk|en|it">) i .sted-historie, og CSS skjuler dem som
 // ikke matcher <html lang>. Er en stedsside ennå ikke oversatt til det valgte
 // språket, ville ALT blitt skjult — derfor viser vi norsk som reserve så siden
 // aldri blir blank. Vi overstyrer kun i fallback-tilfellet; ellers lar vi CSS

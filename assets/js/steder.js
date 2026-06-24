@@ -140,6 +140,7 @@ export const STEDER = [
     navn: "Huseby skole",
     navn_uk: "Школа Huseby",
     navn_en: "Huseby School",
+    navn_it: "Scuola Huseby",
     kode: "VAFS-09",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.946020,                            // fra UTM 257260.18,6653375.45 (EPSG:25833)
@@ -147,7 +148,8 @@ export const STEDER = [
     side: "steder/huseby-skole.html",          // relativ lenke til stedssiden
     kortbeskrivelse: "Skole siden 1862 – fra ett tømret hus med 56 elever til et helt kvartal med bygninger fra fem tidsaldre.", // vises i kart-popup
     kortbeskrivelse_uk: "Школа від 1862 року — від одного зрубного будинку з 56 учнями до цілого кварталу будівель п’яти епох.",
-    kortbeskrivelse_en: "A school since 1862 – from one timbered house with 56 pupils to a whole block of buildings from five eras."
+    kortbeskrivelse_en: "A school since 1862 – from one timbered house with 56 pupils to a whole block of buildings from five eras.",
+    kortbeskrivelse_it: "Una scuola dal 1862: da una casa di tronchi con 56 alunni a un intero isolato di edifici di cinque epoche."
   },
   {
     id: "holmenkollbakken",                    // unik nøkkel — IKKE endre etter publisering

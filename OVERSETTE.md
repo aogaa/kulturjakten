@@ -128,12 +128,18 @@ Et lite, avhengighetsfritt i18n-lag. Innhold:
 | Norsk (bokmål) | `nb` | `flag-no.svg` | ✅ original | ✅ | ✅ |
 | Ukrainsk | `uk` | `flag-ua.svg` | ✅ implementert (2026-06-10) | ✅ implementert (2026-06-10) | ✅ implementert (2026-06-10) |
 | Engelsk | `en` | `flag-gb.svg` | ✅ implementert (2026-06-23) | ✅ alle sider (2026-06-24) | ✅ implementert (2026-06-23) |
+| Italiensk | `it` | `flag-it.svg` | ✅ UI implementert (2026-06-24) | ⏳ Huseby skole oversatt (2026-06-24), øvrige sider faller tilbake til norsk | ✅ UI implementert (2026-06-24) |
 
 **Engelsk-status:** UI (`OVERSETTELSER.en` i `i18n.js`), flaggknapp (`flag-gb.svg`) på alle
 sider, og **alle stedssider er oversatt** (`data-sprak="en"`-blokk + engelsk `<h2>`). Kart-popup
 bruker `navn_en`/`kortbeskrivelse_en` i `steder.js` for alle steder. Verifisert i preview:
 språkbytte fram/tilbake, brødtekst, overskrift og kart-popup på engelsk uten konsollfeil.
 Neste steg: korrektur av en engelskspråklig leser.
+
+**Italiensk-status:** UI (`OVERSETTELSER.it` i `i18n.js`) og flaggknapp (`flag-it.svg`) er
+lagt inn på alle sider. Foreløpig er kun Huseby skole oversatt som italiensk
+`data-sprak="it"`-blokk; andre stedssider bruker norsk brødtekst-fallback når italiensk
+er valgt. Kart-popupen for Huseby bruker `navn_it`/`kortbeskrivelse_it` i `steder.js`.
 
 **Neste handling:** ukrainsk korrektur av en native taler — UI-strenger ligger i
 `assets/js/i18n.js` (`OVERSETTELSER.uk`), stedssidenes brødtekst ligger inline i

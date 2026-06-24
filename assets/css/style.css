@@ -45,11 +45,17 @@ body {
    samme attributtnavn) — og brukeren ville mistet muligheten til å bytte
    tilbake til norsk. */
 html[lang="nb"] .sted-historie [data-sprak="uk"],
-html[lang="nb"] .sted-historie [data-sprak="en"] { display: none; }
+html[lang="nb"] .sted-historie [data-sprak="en"],
+html[lang="nb"] .sted-historie [data-sprak="it"] { display: none; }
 html[lang="uk"] .sted-historie [data-sprak="nb"],
-html[lang="uk"] .sted-historie [data-sprak="en"] { display: none; }
+html[lang="uk"] .sted-historie [data-sprak="en"],
+html[lang="uk"] .sted-historie [data-sprak="it"] { display: none; }
 html[lang="en"] .sted-historie [data-sprak="nb"],
-html[lang="en"] .sted-historie [data-sprak="uk"] { display: none; }
+html[lang="en"] .sted-historie [data-sprak="uk"],
+html[lang="en"] .sted-historie [data-sprak="it"] { display: none; }
+html[lang="it"] .sted-historie [data-sprak="nb"],
+html[lang="it"] .sted-historie [data-sprak="uk"],
+html[lang="it"] .sted-historie [data-sprak="en"] { display: none; }
 
 /* ── Topp ── */
 .topp {
@@ -60,7 +66,7 @@ html[lang="en"] .sted-historie [data-sprak="uk"] { display: none; }
   text-align: center;
 }
 
-/* Språkvelger — to flaggknapper i øvre høyre hjørne av headeren. */
+/* Språkvelger — flaggknapper i headeren. */
 .sprakvelger {
   position: absolute;
   top: 0.7rem;
@@ -92,6 +98,15 @@ html[lang="en"] .sted-historie [data-sprak="uk"] { display: none; }
   border-radius: 2px;
   object-fit: cover;
 }
+
+@media (max-width: 520px) {
+  .sprakvelger {
+    position: static;
+    justify-content: center;
+    margin: 0 0 0.75rem;
+  }
+}
+
 .topp h1 { margin: 0; font-size: 1.4rem; }
 .topp p { margin: 0.3rem 0 0; opacity: 0.9; font-size: 0.95rem; }
 .topp a { color: #fff; }
