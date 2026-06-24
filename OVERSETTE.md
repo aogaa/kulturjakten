@@ -127,12 +127,13 @@ Et lite, avhengighetsfritt i18n-lag. Innhold:
 |-------|------|-----------|---------|------------|------------|
 | Norsk (bokmål) | `nb` | `flag-no.svg` | ✅ original | ✅ | ✅ |
 | Ukrainsk | `uk` | `flag-ua.svg` | ✅ implementert (2026-06-10) | ✅ implementert (2026-06-10) | ✅ implementert (2026-06-10) |
-| Engelsk | `en` | `flag-gb.svg` | ✅ implementert (2026-06-23) | 🔶 kun Roseslottet (test, 2026-06-23) | ✅ implementert (2026-06-23) |
+| Engelsk | `en` | `flag-gb.svg` | ✅ implementert (2026-06-23) | ✅ alle sider (2026-06-24) | ✅ implementert (2026-06-23) |
 
 **Engelsk-status:** UI (`OVERSETTELSER.en` i `i18n.js`), flaggknapp (`flag-gb.svg`) på alle
-sider, og Roseslottet er oversatt som test. Øvrige stedssider mangler `data-sprak="en"`-blokk
-og faller derfor tilbake til norsk brødtekst i engelsk modus (se note under). Neste steg:
-oversett resten av stedssidene + korrektur av en engelskspråklig leser.
+sider, og **alle stedssider er oversatt** (`data-sprak="en"`-blokk + engelsk `<h2>`). Kart-popup
+bruker `navn_en`/`kortbeskrivelse_en` i `steder.js` for alle steder. Verifisert i preview:
+språkbytte fram/tilbake, brødtekst, overskrift og kart-popup på engelsk uten konsollfeil.
+Neste steg: korrektur av en engelskspråklig leser.
 
 **Neste handling:** ukrainsk korrektur av en native taler — UI-strenger ligger i
 `assets/js/i18n.js` (`OVERSETTELSER.uk`), stedssidenes brødtekst ligger inline i

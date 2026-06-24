@@ -10,10 +10,11 @@
     3. Sett STED_ID nederst lik stedets id, og legg til raden i assets/js/steder.js.
   Ikke noe mer. Resten (kart, registrering, poeng, ledertavle) skjer automatisk.
 
-  FLERSPRÅK: Stedets historiske brødtekst legges i to versjoner side om side —
-  én i [data-sprak="nb"] og én i [data-sprak="uk"]. CSS i style.css skjuler den
-  som ikke matcher gjeldende <html lang>. Mangler ukrainsk tekst ennå? Behold
-  bare den norske blokken — den ukrainske kan legges til senere.
+  FLERSPRÅK: Stedets historiske brødtekst legges i én versjon per språk side om
+  side — [data-sprak="nb"], [data-sprak="uk"] og [data-sprak="en"]. CSS i
+  style.css skjuler den som ikke matcher gjeldende <html lang>. Mangler ukrainsk
+  eller engelsk tekst ennå? Behold bare blokkene som finnes — de andre kan legges
+  til senere (siden faller tilbake til norsk).
   ════════════════════════════════════════════════════════════════════════
 -->
 <head>
@@ -47,7 +48,7 @@
     </a>
     <a class="topp-org" href="https://frivilligsentralen.org/om-oss.html" target="_blank" rel="noopener" data-i18n="topp_org">Stiftelsen Vestre Aker Frivilligsentral</a>
     <!-- Stedsnavnet er stedsspesifikt og foreløpig kun på norsk. Skal stedsnavnet
-         oversettes til ukrainsk, bytt ut <h1> med to <h1 data-sprak="…">-blokker. -->
+         oversettes, bytt ut <h1> med flere <h1 data-sprak="…">-blokker. -->
     <h1>[[Stedets navn]]</h1>
     <p><a href="../index.html" data-i18n="tilbake_til_forside">← Tilbake til kart og forside</a></p>
   </header>
@@ -77,6 +78,15 @@
         <p>[[ Ukrainsk tekst kommer her. ]]</p>
         <img class="sted-bilde" src="../assets/img/steder/[[bildefil.jpg]]"
              alt="[[Опис зображення]]" />
+      </div>
+
+      <div data-sprak="en">
+        <!-- [[ Engelsk oversettelse av samme innhold. Slett denne blokken hvis
+             engelsk oversettelse ikke finnes ennå — siden viser da norsk for
+             alle. ]] -->
+        <p>[[ Engelsk tekst kommer her. ]]</p>
+        <img class="sted-bilde" src="../assets/img/steder/[[bildefil.jpg]]"
+             alt="[[Descriptive alt text for the image]]" />
       </div>
     </section>
 

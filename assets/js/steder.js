@@ -24,25 +24,29 @@ export const STEDER = [
     id: "moteplass-vinderen",                  // unik nøkkel — IKKE endre etter publisering
     navn: "Møteplass Vinderen",
     navn_uk: "Місце зустрічі Vinderen",
+    navn_en: "Vinderen Meeting Place",
     kode: "VAFS-01",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.943133,                            // fra UTM 260093.04,6652867.77 (EPSG:25833)
     lng: 10.704232,
     side: "steder/moteplass-vinderen.html",    // relativ lenke til stedssiden
     kortbeskrivelse: "Kafé, frivillighet og varme møter mellom mennesker – kultur i hverdagen.", // vises i kart-popup
-    kortbeskrivelse_uk: "Кафе, волонтерство і теплі зустрічі між людьми — культура у повсякденні."
+    kortbeskrivelse_uk: "Кафе, волонтерство і теплі зустрічі між людьми — культура у повсякденні.",
+    kortbeskrivelse_en: "Café, volunteering and warm encounters between people – culture in everyday life."
   },
   {
     id: "froen-politistasjon",                 // unik nøkkel — IKKE endre etter publisering
     navn: "Frøen politistasjon",
     navn_uk: "Поліцейський відділок Frøen",
+    navn_en: "Frøen Police Station",
     kode: "VAFS-02",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.939396,                            // fra UTM 260037.13,6652454.01 (EPSG:25833)
     lng: 10.703714,
     side: "steder/froen-politistasjon.html",   // relativ lenke til stedssiden
     kortbeskrivelse: "Slemdalsveien 54 A – bolig, venterom og politistasjon med celler i sokkelen.", // vises i kart-popup
-    kortbeskrivelse_uk: "Slemdalsveien 54 A — житло, кімната очікування та поліцейський відділок з камерами в цоколі."
+    kortbeskrivelse_uk: "Slemdalsveien 54 A — житло, кімната очікування та поліцейський відділок з камерами в цоколі.",
+    kortbeskrivelse_en: "Slemdalsveien 54 A – home, waiting room and police station with cells in the basement."
   },
   // ── AVPUBLISERT 2026-06-18 (Espen): Grimelund gård er midlertidig tatt ut av
   //    kartet og jakten. HTML-sida (steder/grimelund-gard.html) og koden VAFS-03
@@ -51,109 +55,127 @@ export const STEDER = [
   //   id: "grimelund-gard",                      // unik nøkkel — IKKE endre etter publisering
   //   navn: "Grimelund gård",
   //   navn_uk: "Садиба Grimelund",
+  //   navn_en: "Grimelund Farm",
   //   kode: "VAFS-03",                           // lesbar reservekode på stolpen
   //   poeng: 100,                                // poeng for å finne stedet
   //   lat: 59.942646,                            // fra UTM 259450.83,6652855.14 (EPSG:25833)
   //   lng: 10.692785,
   //   side: "steder/grimelund-gard.html",        // relativ lenke til stedssiden
   //   kortbeskrivelse: "En 700 år gammel gård midt i byen – med smie, stabbur, hoppbakke-historie og hemmelige krigsmøter.", // vises i kart-popup
-  //   kortbeskrivelse_uk: "700-річна садиба посеред міста — з кузнею, коморою, історією лижного трампліна і таємними зустрічами часів війни."
+  //   kortbeskrivelse_uk: "700-річна садиба посеред міста — з кузнею, коморою, історією лижного трампліна і таємними зустрічами часів війни.",
+  //   kortbeskrivelse_en: "A 700-year-old farm in the middle of the city – with a smithy, storehouse, ski-jump history and secret wartime meetings."
   // },
   {
     id: "heftyevillaen",                       // unik nøkkel — IKKE endre etter publisering
     navn: "Heftyevillaen",
     navn_uk: "Вілла Heftye",
+    navn_en: "The Heftye Villa",
     kode: "VAFS-04",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.976896,                            // fra UTM 258905.80,6656715.86 (EPSG:25833)
     lng: 10.678551,
     side: "steder/heftyevillaen.html",         // relativ lenke til stedssiden
     kortbeskrivelse: "Thomas Heftyes villa fra 1867 ved Frognerseteren – DNTs vugge, presidenter på besøk og spiren til Osloavtalen.", // vises i kart-popup
-    kortbeskrivelse_uk: "Вілла Thomas Heftye 1867 року біля Frognerseteren — колиска Норвезького туристичного товариства, гості-президенти й паросток Ословської угоди."
+    kortbeskrivelse_uk: "Вілла Thomas Heftye 1867 року біля Frognerseteren — колиска Норвезького туристичного товариства, гості-президенти й паросток Ословської угоди.",
+    kortbeskrivelse_en: "Thomas Heftye's villa from 1867 by Frognerseteren – cradle of the Norwegian Trekking Association, presidential guests and the seed of the Oslo Accords."
   },
   {
     id: "bogstadleiren",                       // unik nøkkel — IKKE endre etter publisering
     navn: "Bogstadleiren",
     navn_uk: "Табір Bogstad",
+    navn_en: "Bogstad Camp",
     kode: "VAFS-05",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.961952,                            // fra UTM 256670,6655193.74 (EPSG:25833)
     lng: 10.640405,
     side: "steder/bogstadleiren.html",         // relativ lenke til stedssiden
     kortbeskrivelse: "Tysk militærleir, brakkeby for husløse familier, og i dag Bogstad Camping – tre liv på samme jorde.", // vises i kart-popup
-    kortbeskrivelse_uk: "Німецький військовий табір, бараки для безпритульних родин, а сьогодні Bogstad Camping — три життя на одному полі."
+    kortbeskrivelse_uk: "Німецький військовий табір, бараки для безпритульних родин, а сьогодні Bogstad Camping — три життя на одному полі.",
+    kortbeskrivelse_en: "A German military camp, a barrack town for homeless families, and today Bogstad Camping – three lives on the same field."
   },
   {
     id: "holmendammen",                        // unik nøkkel — IKKE endre etter publisering
     navn: "Holmendammen",
     navn_uk: "Ставок Holmendammen",
+    navn_en: "Holmendammen Pond",
     kode: "VAFS-06",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.944847,                            // fra UTM 258769.53,6653145.46 (EPSG:25833)
     lng: 10.680287,
     side: "steder/holmendammen.html",          // relativ lenke til stedssiden
     kortbeskrivelse: "Da isen herfra holdt bryggeri-Kristiania kald – hester, sleder og en elleveåring som kjørte for brødskiver.", // vises i kart-popup
-    kortbeskrivelse_uk: "Колись лід звідси охолоджував Крістіанію — коні, сани та одинадцятирічний хлопчина, що возив лід за окрайці хліба."
+    kortbeskrivelse_uk: "Колись лід звідси охолоджував Крістіанію — коні, сани та одинадцятирічний хлопчина, що возив лід за окрайці хліба.",
+    kortbeskrivelse_en: "When the ice from here kept brewery Kristiania cold – horses, sleds and an eleven-year-old who drove for slices of bread."
   },
   {
     id: "holmenkollen-kapell",                 // unik nøkkel — IKKE endre etter publisering
     navn: "Holmenkollen kapell",
     navn_uk: "Каплиця Holmenkollen",
+    navn_en: "Holmenkollen Chapel",
     kode: "VAFS-07",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.96542027,                          // GPS-posisjon (EU89 / WGS84)
     lng: 10.67226674,
     side: "steder/holmenkollen-kapell.html",   // relativ lenke til stedssiden
     kortbeskrivelse: "Stavkirkelignende sportskapell fra 1903 – brant ned i 1992, gjenreist i 1996 som landemerke over byen.", // vises i kart-popup
-    kortbeskrivelse_uk: "Спортивна каплиця 1903 року у стилі ставкірки — згоріла 1992-го, відбудована 1996-го як прикмета над містом."
+    kortbeskrivelse_uk: "Спортивна каплиця 1903 року у стилі ставкірки — згоріла 1992-го, відбудована 1996-го як прикмета над містом.",
+    kortbeskrivelse_en: "A stave-church-like sports chapel from 1903 – burned down in 1992, rebuilt in 1996 as a landmark over the city."
   },
   {
     id: "flyulykken-voksenkollen",             // unik nøkkel — IKKE endre etter publisering
     navn: "Flyulykken på Voksenkollen",
     navn_uk: "Авіакатастрофа на Voksenkollen",
+    navn_en: "The Voksenkollen Air Crash",
     kode: "VAFS-08",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.970000,                            // fra 59°58′12″N (DMS → desimal)
     lng: 10.661667,                            // fra 10°39′42″Ø (DMS → desimal)
     side: "steder/flyulykken-voksenkollen.html", // relativ lenke til stedssiden
     kortbeskrivelse: "Her styrtet et kanadisk militærfly 18. desember 1945 – ising tok løftet fra vingene, og bare to av dem om bord overlevde.", // vises i kart-popup
-    kortbeskrivelse_uk: "Тут 18 грудня 1945 року розбився канадський військовий літак — обмерзання позбавило крила підйомної сили, і з тих, хто був на борту, вижили лише двоє."
+    kortbeskrivelse_uk: "Тут 18 грудня 1945 року розбився канадський військовий літак — обмерзання позбавило крила підйомної сили, і з тих, хто був на борту, вижили лише двоє.",
+    kortbeskrivelse_en: "Here a Canadian military plane crashed on 18 December 1945 – icing took the lift from the wings, and only two of those on board survived."
   },
   {
     id: "huseby-skole",                        // unik nøkkel — IKKE endre etter publisering
     navn: "Huseby skole",
     navn_uk: "Школа Huseby",
+    navn_en: "Huseby School",
     kode: "VAFS-09",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.946020,                            // fra UTM 257260.18,6653375.45 (EPSG:25833)
     lng: 10.653080,
     side: "steder/huseby-skole.html",          // relativ lenke til stedssiden
     kortbeskrivelse: "Skole siden 1862 – fra ett tømret hus med 56 elever til et helt kvartal med bygninger fra fem tidsaldre.", // vises i kart-popup
-    kortbeskrivelse_uk: "Школа від 1862 року — від одного зрубного будинку з 56 учнями до цілого кварталу будівель п’яти епох."
+    kortbeskrivelse_uk: "Школа від 1862 року — від одного зрубного будинку з 56 учнями до цілого кварталу будівель п’яти епох.",
+    kortbeskrivelse_en: "A school since 1862 – from one timbered house with 56 pupils to a whole block of buildings from five eras."
   },
   {
     id: "holmenkollbakken",                    // unik nøkkel — IKKE endre etter publisering
     navn: "Holmenkollbakken",
     navn_uk: "Трамплін Holmenkollbakken",
+    navn_en: "Holmenkollbakken Ski Jump",
     kode: "VAFS-10",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.963541,                            // fra UTM 258203.24,6655270.42 (EPSG:25833)
     lng: 10.667694,
     side: "steder/holmenkollbakken.html",      // relativ lenke til stedssiden
     kortbeskrivelse: "Verdens mest tradisjonsrike hoppbakke – fra 21,5 meter på snø og kvist i 1892 til stålbakken og Holmenkollrennene i dag.", // vises i kart-popup
-    kortbeskrivelse_uk: "Найбагатший на традиції лижний трамплін світу — від 21,5 метра на снігу й хмизі 1892 року до сталевого трампліна й Holmenkollrennene сьогодні."
+    kortbeskrivelse_uk: "Найбагатший на традиції лижний трамплін світу — від 21,5 метра на снігу й хмизі 1892 року до сталевого трампліна й Holmenkollrennene сьогодні.",
+    kortbeskrivelse_en: "The world's most tradition-rich ski jump – from 21.5 metres on snow and brushwood in 1892 to the steel hill and the Holmenkollen competitions today."
   },
   {
     id: "ris-kirke",                           // unik nøkkel — IKKE endre etter publisering
     navn: "Ris kirke",
     navn_uk: "Церква Ris",
+    navn_en: "Ris Church",
     kode: "VAFS-11",                           // lesbar reservekode på stolpen
     poeng: 100,                                // poeng for å finne stedet
     lat: 59.947978,                            // fra UTM 260077.79,6653409.78 (EPSG:25833)
     lng: 10.703331,
     side: "steder/ris-kirke.html",             // relativ lenke til stedssiden
     kortbeskrivelse: "«Englekirken» fra 1932 – støpt i betong, vigslet med kong Haakon til stede, med en av Norges største kirkeklokker i tårnet.", // vises i kart-popup
-    kortbeskrivelse_uk: "«Янгольська церква» 1932 року — відлита з бетону, освячена в присутності короля Haakon, з одним із найбільших церковних дзвонів Норвегії у вежі."
+    kortbeskrivelse_uk: "«Янгольська церква» 1932 року — відлита з бетону, освячена в присутності короля Haakon, з одним із найбільших церковних дзвонів Норвегії у вежі.",
+    kortbeskrivelse_en: "The “Angel Church” from 1932 – cast in concrete, consecrated with King Haakon present, with one of Norway's largest church bells in the tower."
   },
   {
     id: "roseslottet",                         // unik nøkkel — IKKE endre etter publisering
