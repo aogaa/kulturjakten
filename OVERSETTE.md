@@ -140,6 +140,15 @@ Neste steg: korrektur av en engelskspråklig leser.
 lagt inn på alle sider. Alle stedssider har italiensk `<h2>` og `data-sprak="it"`-blokk.
 Kart-popup bruker `navn_it`/`kortbeskrivelse_it` i `steder.js` for alle aktive steder.
 Grimelund-siden er også oversatt, men stedet er fortsatt avpublisert/kommentert ut i kartdataene.
+**Native korrektur gjennomført (2026-06-25):** «palo/pali» (stolpe) erstattet av «sito di
+interesse storico locale» / «sito culturale», og «caccia» (jakt) erstattet av «Alla scoperta
+della cultura locale» / «il percorso» (jakt-konnotasjonen er for sterk på italiensk). Også
+«accesso» → «registrazione». Endringene ligger i `OVERSETTELSER.it` + de tre programnavn-
+referansene i `steder/moteplass-vinderen.html`.
+
+**Engelsk-status (oppdatert 2026-06-25):** «posts» (direkte avløp fra «stolpe») erstattet av
+«heritage sites» / «sites» i `OVERSETTELSER.en`. Merkenavnet «Heritage Hunt» og «hunt»-
+referansene er beholdt.
 
 **Neste handling:** ukrainsk korrektur av en native taler — UI-strenger ligger i
 `assets/js/i18n.js` (`OVERSETTELSER.uk`), stedssidenes brødtekst ligger inline i

@@ -276,7 +276,7 @@ export const OVERSETTELSER = {
 
     // Hero
     hero_tittel: "Discover the history right around the corner",
-    hero_tekst: "Vestre Aker is full of stories. Go for a walk, find the posts and get to know your neighbourhood in a whole new way.",
+    hero_tekst: "Vestre Aker is full of stories. Go for a walk, find the heritage sites and get to know your neighbourhood in a whole new way.",
 
     // Hvorfor
     hvorfor_tittel: "Why a Heritage Hunt?",
@@ -285,16 +285,16 @@ export const OVERSETTELSER = {
     // Hva — paragrafen bygges av forsiden i tre deler (pre + tellbart substantiv + post).
     // Engelsk: 1 → entall (place / is), ellers flertall (places / are).
     hva_tittel: "What we've made",
-    hva_tekst_pre: "Around the area we've put up posts at places of local historical interest. Each post has a QR code that takes you to a page with the story of the place, photos and a map. No app, no sign-up – just a nickname. ",
-    hva_steder_navn: ["place", "places"],
+    hva_tekst_pre: "Around the area we've marked sites of local historical interest. Each site has a QR code that takes you to a page with the story of the place, photos and a map. No app, no sign-up – just a nickname. ",
+    hva_steder_navn: ["site", "sites"],
     hva_tekst_post: [" is waiting to be discovered.", " are waiting to be discovered."],
 
     // Hvordan
     hvordan_tittel: "How it works",
     steg1_tittel: "Choose a nickname",
     steg1_tekst: "Dead simple – no sign-up. Everything is completely anonymous, perfect if you just want to have a nice time.",
-    steg2_tittel: "Go for a walk and find a post",
-    steg2_tekst: "Use the map below to see where the posts are.",
+    steg2_tittel: "Go for a walk and find a heritage site",
+    steg2_tekst: "Use the map below to see where the sites are.",
     steg3_tittel: "Scan the QR code",
     steg3_tekst: "That opens the place page with the story, photos and a map.",
     steg4_tittel: "Collect points",
@@ -306,14 +306,14 @@ export const OVERSETTELSER = {
     bli_med_tekst: "Choose a nickname and you're off. You can change it any time.",
 
     // Kart
-    kart_tittel: "Explore the posts on the map",
+    kart_tittel: "Explore the heritage sites on the map",
     kart_tekst: "Tap a marker to read more about the place.",
     tegnforklaring_ny: "Not visited yet",
     tegnforklaring_funnet: "Visited",
 
     // Kode-skjema
     kode_tittel: "Couldn't scan the QR code?",
-    kode_tekst: "Enter the code shown on the post and we'll take you to the place.",
+    kode_tekst: "Enter the code shown at the site and we'll take you to the place.",
     kode_label: "Code",
     kode_placeholder: "E.g. VAFS-A7",
     kode_knapp: "Go to the place",
@@ -326,20 +326,20 @@ export const OVERSETTELSER = {
     poeng: "points",
     // 1 → point, ellers points.
     poeng_form: ["point", "points"],
-    klar_for_tur: "Ready to go! Find a post and scan the QR code.",
+    klar_for_tur: "Ready to go! Find a heritage site and scan the QR code.",
     endre_kallenavn: "Change nickname",
     profil_label: "Nickname",
     profil_placeholder: "E.g. Turbo",
     profil_knapp: "Get started",
 
     // Nyhetsbrev
-    nyhetsbrev_tittel: "Want to hear about new posts?",
-    nyhetsbrev_tekst: "Sign up for the VAFS newsletter to be notified when we put up new posts and arrange walks. Completely optional — you can take part in the hunt without it. For children, an adult signs up by email on behalf of the family.",
+    nyhetsbrev_tittel: "Want to hear about new sites?",
+    nyhetsbrev_tekst: "Sign up for the VAFS newsletter to be notified when we add new heritage sites and arrange walks. Completely optional — you can take part in the hunt without it. For children, an adult signs up by email on behalf of the family.",
     nyhetsbrev_knapp: "Sign me up (opens at MailerLite)",
 
     // Feilmeldinger
     feil_navn: "Please choose a friendlier nickname 🙂",
-    feil_kode: "No post found with that code. Check that you've typed it correctly.",
+    feil_kode: "No site found with that code. Check that you've typed it correctly.",
 
     // Felles UI på tvers av sider
     tilbake_til_forside: "← Back to the map and home",
@@ -349,7 +349,7 @@ export const OVERSETTELSER = {
     her_er_du: "You are here",
     kilder_h3: "Sources",
     bli_med_h3: "How to join the hunt",
-    bli_med_p: "Find the posts around Vestre Aker, scan the QR code and read the story of each place. Choose a nickname – then collect points for every new place you visit. No sign-up, no app.",
+    bli_med_p: "Find the heritage sites around Vestre Aker, scan the QR code and read the story of each place. Choose a nickname – then collect points for every new site you visit. No sign-up, no app.",
     se_kart_kom_i_gang: "See the map and get started",
     til_kartet: "To the map",
     til_ledertavla: "To the leaderboard",
@@ -368,7 +368,7 @@ export const OVERSETTELSER = {
     // Registrering
     reg_ukjent_sted: "Unknown place. Check that the id matches steder.js.",
     reg_allerede_besokt_kort: "✓ You've already visited this place.",
-    reg_lesemodus_html: 'You\'re reading about this place. To register your visit and earn points, you need to <strong>scan the QR code on the post</strong> – or enter the code from the post on the home page.',
+    reg_lesemodus_html: 'You\'re reading about this place. To register your visit and earn points, you need to <strong>scan the QR code at the heritage site</strong> – or enter the code from the site on the home page.',
     reg_vil_du_bli_med: "Want to join the hunt?",
     reg_velg_navn: "Choose a nickname to register this place and collect points. You can read the page either way.",
     reg_skjema_knapp: "Join and register",
@@ -386,7 +386,7 @@ export const OVERSETTELSER = {
     // Header / footer
     topp_logo_alt: "Vestre Aker Frivilligsentral",
     topp_org: "Fondazione Vestre Aker Frivilligsentral",
-    topp_tittel: "Caccia alla cultura",
+    topp_tittel: "Alla scoperta della cultura locale",
     bunn_org: "Fondazione Vestre Aker Frivilligsentral",
     sprak_no_alt: "Norvegese",
     sprak_uk_alt: "Ucraino",
@@ -395,43 +395,43 @@ export const OVERSETTELSER = {
 
     // Hero
     hero_tittel: "Scopri la storia dietro l'angolo",
-    hero_tekst: "Vestre Aker è piena di storie. Fai una passeggiata, trova i pali e conosci il quartiere in un modo tutto nuovo.",
+    hero_tekst: "Vestre Aker è piena di storie. Fai una passeggiata, scopri i siti culturali e conosci il quartiere in un modo tutto nuovo.",
 
     // Hvorfor
-    hvorfor_tittel: "Perché una caccia alla cultura?",
-    hvorfor_tekst: "Crediamo che la storia locale meriti di essere scoperta: a piedi, insieme e all'aria aperta. La Caccia alla cultura è un'esperienza gratuita di passeggiata e storia per tutta Vestre Aker: fa bene alle gambe, al cuore e alla curiosità.",
+    hvorfor_tittel: "Perché questo percorso?",
+    hvorfor_tekst: "Crediamo che la storia locale meriti di essere scoperta: a piedi, insieme e all'aria aperta. Questo percorso è un'esperienza gratuita che unisce passeggiate e storia in tutta Vestre Aker: fa bene alle gambe, al cuore e alla curiosità.",
 
     // Hva
     hva_tittel: "Che cosa abbiamo creato",
-    hva_tekst_pre: "In diversi punti del quartiere abbiamo collocato pali in luoghi di valore storico locale. Ogni palo ha un codice QR che porta a una pagina con la storia del luogo, fotografie e una mappa. Nessuna app, nessun accesso: solo un soprannome. ",
-    hva_steder_navn: ["luogo", "luoghi"],
+    hva_tekst_pre: "In diversi punti del quartiere abbiamo individuato siti di interesse storico locale. In ciascun sito troverai un codice QR che ti porterà a una pagina con la storia del luogo, fotografie e una mappa. Nessuna app, nessuna registrazione: basta scegliere un soprannome. ",
+    hva_steder_navn: ["sito culturale", "siti culturali"],
     hva_tekst_post: [" aspetta di essere scoperto.", " aspettano di essere scoperti."],
 
     // Hvordan
     hvordan_tittel: "Come funziona",
     steg1_tittel: "Scegli un soprannome",
-    steg1_tekst: "Semplicissimo: nessun accesso. Tutto è completamente anonimo, perfetto se vuoi solo goderti l'esperienza.",
-    steg2_tittel: "Fai una passeggiata e trova un palo",
-    steg2_tekst: "Usa la mappa qui sotto per vedere dove si trovano i pali.",
+    steg1_tekst: "Semplicissimo: nessuna registrazione. Tutto è completamente anonimo, perfetto se vuoi semplicemente goderti l'esperienza.",
+    steg2_tittel: "Visita un sito culturale",
+    steg2_tekst: "Usa la mappa qui sotto per vedere dove si trovano i siti culturali.",
     steg3_tittel: "Scansiona il codice QR",
-    steg3_tekst: "Si apre la pagina del luogo con storia, fotografie e mappa.",
+    steg3_tekst: "Si aprirà una pagina con la storia del luogo, fotografie e una mappa.",
     steg4_tittel: "Raccogli punti",
-    steg4_tekst: "I nuovi luoghi danno punti. Tieni d'occhio la classifica!",
+    steg4_tekst: "Ogni nuovo sito culturale visitato ti fa guadagnare punti. Tieni d'occhio la classifica!",
     kom_i_gang_knapp: "Inizia",
 
     // Bli med
-    bli_med_tittel: "Partecipa alla caccia",
-    bli_med_tekst: "Scegli un soprannome e sei pronto. Puoi cambiarlo quando vuoi.",
+    bli_med_tittel: "Inizia il percorso",
+    bli_med_tekst: "Scegli un soprannome e sei pronto. Potrai cambiarlo quando vuoi.",
 
     // Kart
-    kart_tittel: "Esplora i pali sulla mappa",
+    kart_tittel: "Esplora i siti culturali sulla mappa",
     kart_tekst: "Tocca un indicatore per leggere di più sul luogo.",
     tegnforklaring_ny: "Non ancora visitato",
     tegnforklaring_funnet: "Visitato",
 
     // Kode-skjema
-    kode_tittel: "Non sei riuscito a scansionare il codice QR?",
-    kode_tekst: "Inserisci il codice indicato sul palo e ti porteremo alla pagina del luogo.",
+    kode_tittel: "Non riesci a scansionare il codice QR?",
+    kode_tekst: "Inserisci il codice riportato accanto al QR code e ti porteremo direttamente alla pagina del sito culturale.",
     kode_label: "Codice",
     kode_placeholder: "Ad es. VAFS-A7",
     kode_knapp: "Vai al luogo",
@@ -443,20 +443,20 @@ export const OVERSETTELSER = {
     hei: "Ciao",
     poeng: "punti",
     poeng_form: ["punto", "punti"],
-    klar_for_tur: "Pronto per partire! Trova un palo e scansiona il codice QR.",
+    klar_for_tur: "Pronto per partire! Trova un sito culturale e scansiona il codice QR.",
     endre_kallenavn: "Cambia soprannome",
     profil_label: "Soprannome",
     profil_placeholder: "Ad es. Turbo",
     profil_knapp: "Inizia",
 
     // Nyhetsbrev
-    nyhetsbrev_tittel: "Vuoi sapere quando arrivano nuovi pali?",
-    nyhetsbrev_tekst: "Iscriviti alla newsletter di VAFS per ricevere notizie quando installiamo nuovi pali e organizziamo passeggiate. È del tutto facoltativo: puoi partecipare alla caccia anche senza. Per i bambini, un adulto iscrive l'indirizzo e-mail per conto della famiglia.",
+    nyhetsbrev_tittel: "Vuoi sapere quando arrivano nuovi siti culturali?",
+    nyhetsbrev_tekst: "Iscriviti alla newsletter di VAFS per ricevere notizie quando aggiungiamo nuovi siti culturali e organizziamo passeggiate. È del tutto facoltativo: puoi partecipare anche senza. Per i bambini, un adulto iscrive l'indirizzo e-mail per conto della famiglia.",
     nyhetsbrev_knapp: "Iscrivimi (si apre su MailerLite)",
 
     // Feilmeldinger
     feil_navn: "Scegli un soprannome più gentile 🙂",
-    feil_kode: "Non abbiamo trovato nessun palo con quel codice. Controlla di averlo scritto correttamente.",
+    feil_kode: "Non abbiamo trovato nessun sito con quel codice. Controlla di averlo scritto correttamente.",
 
     // Felles UI på tvers av sider
     tilbake_til_forside: "← Torna alla mappa e alla pagina iniziale",
@@ -465,8 +465,8 @@ export const OVERSETTELSER = {
     om_stedet: "Il luogo",
     her_er_du: "Sei qui",
     kilder_h3: "Fonti",
-    bli_med_h3: "Come partecipare alla caccia",
-    bli_med_p: "Trova i pali in giro per Vestre Aker, scansiona il codice QR e leggi la storia di ogni luogo. Scegli un soprannome: raccoglierai punti per ogni nuovo luogo visitato. Nessun accesso, nessuna app.",
+    bli_med_h3: "Come partecipare al percorso",
+    bli_med_p: "Trova i siti culturali in giro per Vestre Aker, scansiona il codice QR e leggi la storia di ogni luogo. Scegli un soprannome: raccoglierai punti per ogni nuovo sito visitato. Nessuna registrazione, nessuna app.",
     se_kart_kom_i_gang: "Vedi la mappa e inizia",
     til_kartet: "Alla mappa",
     til_ledertavla: "Alla classifica",
@@ -485,8 +485,8 @@ export const OVERSETTELSER = {
     // Registrering
     reg_ukjent_sted: "Luogo sconosciuto. Controlla che l'id corrisponda a steder.js.",
     reg_allerede_besokt_kort: "✓ Hai già visitato questo luogo.",
-    reg_lesemodus_html: 'Stai leggendo la pagina di questo luogo. Per registrare la visita e ottenere punti devi <strong>scansionare il codice QR sul palo</strong>, oppure inserire il codice del palo nella pagina iniziale.',
-    reg_vil_du_bli_med: "Vuoi partecipare alla caccia?",
+    reg_lesemodus_html: 'Stai leggendo la pagina di questo luogo. Per registrare la visita e ottenere punti devi <strong>scansionare il codice QR del sito di interesse storico</strong>, oppure inserire il codice del sito di interesse storico nella pagina iniziale.',
+    reg_vil_du_bli_med: "Vuoi partecipare al percorso?",
     reg_velg_navn: "Scegli un soprannome per registrare questo luogo e raccogliere punti. Puoi leggere la pagina in ogni caso.",
     reg_skjema_knapp: "Partecipa e registra",
     reg_nytt_tittel: "🎉 Nuovo luogo trovato!",
