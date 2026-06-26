@@ -6,6 +6,31 @@ For den autoritative, oppsummerte tilstanden: se [`CLAUDE.md`](CLAUDE.md) §0.
 
 ---
 
+## 2026-06-26 — Google Analytics med samtykke
+
+La til trafikkmåling (Google Analytics 4, måle-id `G-2N76DV26V7`) på hele siten, bak et
+samtykkebanner. Personvern-først: GA lastes **ikke** før brukeren aktivt godtar.
+
+- **Modul:** `assets/js/samtykke.js` med `monterSamtykke()`. Leser valget fra `localStorage`
+  (`vafs_samtykke` = `ja`/`nei`). `ja` → last GA umiddelbart; `nei` → ikke last, ikke vis
+  banner; uavklart → vis banner. GA-skriptet (`googletagmanager.com/gtag/js`) injiseres
+  først ved «Godta», med `gtag('config', …, { anonymize_ip: true })`.
+- **Banner:** fast nederst på siden. Tekst (Espens ordlyd): «Vi ønsker kun din godkjennelse
+  for å måle trafikk – ingen annen informasjon vil bli lagret.» + knappene Godta / Nei takk.
+- **i18n:** nye `samtykke_*`-nøkler i alle fire språk (nb/uk/en/it). Banneret bruker
+  `data-i18n`, så `bruk()` oppdaterer tekstene live ved språkbytte.
+- **CSS:** `.samtykke` (+ `.samtykke-tekst`, `.samtykke-knapper`) i `style.css`.
+- **Innkobling:** `monterSamtykke()` kalt på alle 15 sider — forsiden, ledertavla, `_mal.html`
+  og alle 12 stedssider (`bogstadleiren.html` hadde eldre script-mønster uten meld-feil; lagt
+  inn separat der).
+- **Felle / merk:** I GA4 styres IP-/dataoppbevaring i hovedsak server-side; `anonymize_ip`
+  er det riktige klient-signalet, men regioner og oppbevaringstid settes i GA-konsollen.
+- Verifisert lokalt (preview): banner vises ved første besøk uten GA; «Godta» laster GA og
+  husker valget over ny innlasting; «Nei takk» laster aldri GA; språkbytte oversetter
+  banneret (testet en/it); ingen konsollfeil.
+
+---
+
 ## 2026-06-26 — «Meld feil»-skjema
 
 La til en «Meld feil»-knapp på forsiden og alle stedssider, så folk kan si fra om en

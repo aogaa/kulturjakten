@@ -51,6 +51,11 @@ Gjenstår mest å fylle inn flere steder.
   Firestore er bakstopper.
 - **Lokal testing:** `serve.json` i rot (`cleanUrls:false` + rewrite `/`→`/index.html`) så
   `npx serve` bevarer `?k=` og serverer forsiden. GitHub Pages ignorerer fila.
+- **Trafikkmåling med samtykke:** Google Analytics 4 (måle-id `G-2N76DV26V7`) lastes via
+  `assets/js/samtykke.js` (`monterSamtykke()` på alle sider) — men **kun etter at brukeren
+  trykker «Godta»** i samtykkebanneret. Valg huskes i `localStorage` (`vafs_samtykke`=
+  `ja`/`nei`); nei laster aldri GA. Banner-tekst i `i18n.js` (`samtykke_*`, alle 4 språk).
+  Se ENDRINGSLOGG 2026-06-26.
 
 **Innhold nå:** ett ekte sted — **Møteplass Vinderen** (`id: moteplass-vinderen`, kode
 `VAFS-01`). Holmenkollen-eksempelet er fjernet.
