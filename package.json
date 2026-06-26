@@ -1,0 +1,13 @@
+{
+  "name": "kulturjakten",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "etiketter": "node tools/lag-etiketter.mjs"
+  },
+  "devDependencies": {
+    "exceljs": "^4.4.0",
+    "pdfkit": "^0.19.1",
+    "qrcode": "^1.5.4"
+  }
+}

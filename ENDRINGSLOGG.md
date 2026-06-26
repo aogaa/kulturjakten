@@ -6,6 +6,32 @@ For den autoritative, oppsummerte tilstanden: se [`CLAUDE.md`](CLAUDE.md) §0.
 
 ---
 
+## 2026-06-26 — «Meld feil»-skjema
+
+La til en «Meld feil»-knapp på forsiden og alle stedssider, så folk kan si fra om en
+stolpe som mangler, er ødelagt, eller en feil i teksten.
+
+- **Modul:** `assets/js/meld-feil.js` sprøyter inn én `<dialog>` (modal) og kobler alle
+  `[data-meld-feil]`-knapper til den. Hver side trenger bare knappen + `monterMeldFeil()`
+  (forsiden) / `monterMeldFeil(STED_ID)` (stedssider, forhåndsvelger stedet og fyller
+  kallenavn fra `jakt.js`). Stedsnedtrekket bygges fra `steder.js`.
+- **Levering:** statisk side kan ikke sende e-post selv → bruker **FormSubmit.co** (AJAX,
+  ingen konto). POST til `https://formsubmit.co/ajax/kulturjakten@frivilligsentralen.org`;
+  innsendingen videresendes som e-post dit. Felt: sted (navn + id + kode), feil-tekst, og
+  frivillig navn + e-post; pluss `side` (URL det ble meldt fra). Honningfelle (`_honey`)
+  mot spam.
+- **Felle / venter på Espen:** FormSubmit krever **engangs-aktivering** — første testmelding
+  utløser en «Activate Form»-e-post til `kulturjakten@frivilligsentralen.org` som må
+  bekreftes før meldinger ruller inn. Vil man skjule adressen i kildekoden: bytt e-posten
+  i `meld-feil.js` med den anonyme alias-strengen FormSubmit oppgir.
+- **i18n:** nye `meld_feil_*`-nøkler i alle fire språk (nb/uk/en/it) i `i18n.js`.
+- **CSS:** `.meld-feil-dialog` (+ `::backdrop`) og `textarea` lagt til `.skjema` i `style.css`.
+- Verifisert lokalt: modal åpner, forhåndsvalg + navn-prefyll på stedsside, språkbytte
+  oppdaterer tekstene og nedtrekket, og innsending (mocket fetch) gir riktig payload +
+  «Takk!»/feil-status.
+
+---
+
 ## 2026-06-09 — Bygget og lansert (v1)
 
 Hele prosjektet ble bygget, verifisert og publisert live denne dagen.

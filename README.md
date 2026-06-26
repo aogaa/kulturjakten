@@ -74,6 +74,34 @@ Genererer du QR-koder uten `?k=<KODE>`, gir et skann **null poeng**. Legg alltid
 > Lokal testing: query-strengen (`?k=...`) krever at `cleanUrls` er av, ellers
 > redirecter `npx serve` bort parameteren. Det er allerede satt i `serve.json`.
 
+## QR-koder og trykkeklare stolpe-etiketter
+
+Alt materiellet til stolpene genereres automatisk fra `steder.js`:
+
+```
+npm install     # første gang (henter qrcode + pdfkit, kun lokalt verktøy)
+npm run etiketter
+```
+
+Det lager, for hvert **aktivt** sted:
+
+- `qr/<id>.png` og `qr/<id>.svg` — rå QR-kode (frittstående bruk).
+- `qr/etiketter/<id>.pdf` — én **omslagsstripe** på **400 × 150 mm** (ferdig format) som
+  trekkes/limes rundt stolpen. Stolpen er firkantet med 98 mm sider (omkrets 4 × 98 = 392 mm),
+  så stripa har de fire sidene ved siden av hverandre — **QR · info · QR · info** — pluss en
+  8 mm limflik på enden (gjentar starten av side 1) til skjøten. I tillegg **3 mm utfallende
+  kant (bleed) + skjæremerker** → 406 × 156 mm fysisk ark (grafikken går helt ut til kant).
+- `qr/etiketter/_alle-stolper.pdf` — alle stripene samlet i én fil (lett å sende trykkeri).
+
+QR-koden peker alltid til `…/steder/<id>.html?k=<KODE>` (se avsnittet over). Designet
+(grønn «KULTURJAKTEN»-header, VAFS-logo, «Skan QR koden» / «1. Gå til nettsiden …») og
+målene (panelbredde, limflik, headerhøyde, bleed) ligger øverst i
+[`tools/lag-etiketter.mjs`](tools/lag-etiketter.mjs). Vil du ha ren 400 × 150 mm uten
+bleed/skjæremerker (f.eks. for utskrift selv): sett `MED_BLEED = false` og kjør på nytt.
+
+Legger du til et nytt sted, kjør bare `npm run etiketter` igjen — den nye stolpen
+kommer med automatisk. `node_modules/` er git-ignorert og skal ikke pushes.
+
 ## Upassende kallenavn
 
 Et enkelt filter ([`assets/js/forbudteord.js`](assets/js/forbudteord.js)) hindrer de
@@ -133,5 +161,6 @@ nederst, og lim inn URL-en til VAFS sitt MailerLite-skjema. Selve samtykket
   besøkte steder + tegnforklaring, kallenavn-filter, responsiv (mobil først).
 - ✅ Forside: hero + «golden circle» (hvorfor/hva/hvordan), ett ekte sted
   (Møteplass Vinderen).
-- ⬜ Gjenstår: MailerLite-URL, Milepæl 3 (QR-koder med `?k=<KODE>`, flere steder),
-  og DNS-oppsett for custom domain.
+- ✅ Milepæl 3: QR-koder + trykkeklar omslagsstripe (400 × 150 mm) genereres med
+  `npm run etiketter` (se avsnittet over). 11 aktive steder.
+- ⬜ Gjenstår: MailerLite-URL, flere steder, DNS-oppsett for custom domain.

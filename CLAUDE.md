@@ -16,8 +16,12 @@ se `ENDRINGSLOGG.md`.
   Pages-kilde `main`/rot, Enforce HTTPS på. `CNAME` i rot. DNS er satt opp.
 - Publiser endringer = `git add -A && git commit && git push` til `main` (Pages bygger automatisk).
 
-**Milepæler:** 0, 1 og 2 er ferdige og deployet. Gjenstår **Milepæl 3** (QR-koder i `/qr/`
-+ flere steder).
+**Milepæler:** 0, 1 og 2 er ferdige og deployet. **Milepæl 3** er på plass: QR-koder og
+trykkeklare stolpe-etiketter genereres fra `steder.js` med `npm run etiketter`
+(`tools/lag-etiketter.mjs` → `qr/<id>.png|.svg` + `qr/etiketter/<id>.pdf`: én
+omslagsstripe 400 × 150 mm med de fire stolpesidene side ved side, QR · info · QR · info,
++ 8 mm limflik, + 3 mm bleed og skjæremerker → 406 × 156 mm — trekkes rundt stolpen).
+Gjenstår mest å fylle inn flere steder.
 
 **Beslutninger som er tatt (ikke åpne uten grunn):**
 - **Ingen klasser** (besluttet 2026-06-10, erstatter tidligere Barn/Voksen/Senior).
@@ -64,7 +68,9 @@ forsiden til ukrainsk»). Ikke bygd ennå.
 
 **Venter på Espen:** rydde testrader i Firestore-ledertavla; generere QR-koder (Milepæl 3);
 fylle inn flere steder; (valgfritt) sette `MAILERLITE_URL` i `index.html`; **gi klarsignal
-for ukrainsk oversetting av forsiden (se `OVERSETTE.md`).**
+for ukrainsk oversetting av forsiden (se `OVERSETTE.md`)**; **aktivere «Meld feil»-skjemaet
+hos FormSubmit** (engangs — send én testmelding fra skjemaet og klikk «Activate Form» i
+e-posten til `kulturjakten@frivilligsentralen.org`; se ENDRINGSLOGG 2026-06-26).
 
 ---
 

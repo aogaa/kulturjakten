@@ -101,6 +101,28 @@ export const OVERSETTELSER = {
     feil_navn: "Velg et vennligere kallenavn 🙂",
     feil_kode: "Fant ingen stolpe med den koden. Sjekk at du har skrevet den riktig.",
 
+    // «Meld feil»-skjema (meld-feil.js)
+    meld_feil_knapp: "Meld feil",
+    meld_feil_tittel: "Meld feil på en stolpe",
+    meld_feil_intro: "Mangler en stolpe, er den ødelagt, eller fant du en feil i teksten? Gi oss beskjed.",
+    meld_feil_sted_label: "Hvilken stolpe gjelder det?",
+    meld_feil_sted_velg: "Velg stolpe …",
+    meld_feil_sted_annet: "En stolpe mangler / annet",
+    meld_feil_tekst_label: "Hva er feil?",
+    meld_feil_tekst_ph: "Beskriv kort hva som er galt …",
+    meld_feil_navn_label: "Navn (valgfritt)",
+    meld_feil_epost_label: "E-post (valgfritt, hvis vi kan svare deg)",
+    meld_feil_send: "Send melding",
+    meld_feil_sender: "Sender …",
+    meld_feil_takk: "Takk! Meldingen er sendt.",
+    meld_feil_sendefeil: "Klarte ikke å sende. Prøv igjen, eller send e-post til kulturjakten@frivilligsentralen.org.",
+    meld_feil_lukk: "Lukk",
+
+    // Samtykkebanner (samtykke.js)
+    samtykke_tekst: "Vi ønsker kun din godkjennelse for å måle trafikk – ingen annen informasjon vil bli lagret.",
+    samtykke_godta: "Godta",
+    samtykke_avsla: "Nei takk",
+
     // Felles UI på tvers av sider
     tilbake_til_forside: "← Tilbake til kart og forside",
 
@@ -222,6 +244,28 @@ export const OVERSETTELSER = {
     feil_navn: "Оберіть, будь ласка, доброзичливіше прізвисько 🙂",
     feil_kode: "Стовпчика з таким кодом не знайдено. Перевірте, чи правильно ви ввели його.",
 
+    // «Meld feil»-skjema (meld-feil.js)
+    meld_feil_knapp: "Повідомити про проблему",
+    meld_feil_tittel: "Повідомити про проблему зі стовпчиком",
+    meld_feil_intro: "Стовпчик зник, пошкоджений чи ви помітили помилку в тексті? Повідомте нам.",
+    meld_feil_sted_label: "Якого стовпчика це стосується?",
+    meld_feil_sted_velg: "Оберіть стовпчик …",
+    meld_feil_sted_annet: "Стовпчик відсутній / інше",
+    meld_feil_tekst_label: "У чому проблема?",
+    meld_feil_tekst_ph: "Коротко опишіть, що не так …",
+    meld_feil_navn_label: "Ім'я (необов'язково)",
+    meld_feil_epost_label: "Електронна пошта (необов'язково, щоб ми могли відповісти)",
+    meld_feil_send: "Надіслати повідомлення",
+    meld_feil_sender: "Надсилання …",
+    meld_feil_takk: "Дякуємо! Ваше повідомлення надіслано.",
+    meld_feil_sendefeil: "Не вдалося надіслати. Спробуйте ще раз або напишіть на kulturjakten@frivilligsentralen.org.",
+    meld_feil_lukk: "Закрити",
+
+    // Samtykkebanner (samtykke.js)
+    samtykke_tekst: "Ми просимо лише вашу згоду на вимірювання трафіку — жодна інша інформація не зберігатиметься.",
+    samtykke_godta: "Погоджуюсь",
+    samtykke_avsla: "Ні, дякую",
+
     // Felles UI på tvers av sider
     tilbake_til_forside: "← Назад до карти й головної",
 
@@ -341,6 +385,28 @@ export const OVERSETTELSER = {
     feil_navn: "Please choose a friendlier nickname 🙂",
     feil_kode: "No site found with that code. Check that you've typed it correctly.",
 
+    // «Meld feil»-skjema (meld-feil.js)
+    meld_feil_knapp: "Report a problem",
+    meld_feil_tittel: "Report a problem with a site",
+    meld_feil_intro: "Is a site missing, is a post damaged, or did you spot a mistake in the text? Let us know.",
+    meld_feil_sted_label: "Which site does this concern?",
+    meld_feil_sted_velg: "Choose a site …",
+    meld_feil_sted_annet: "A site is missing / other",
+    meld_feil_tekst_label: "What's wrong?",
+    meld_feil_tekst_ph: "Briefly describe what's wrong …",
+    meld_feil_navn_label: "Name (optional)",
+    meld_feil_epost_label: "Email (optional, so we can reply)",
+    meld_feil_send: "Send message",
+    meld_feil_sender: "Sending …",
+    meld_feil_takk: "Thank you! Your message has been sent.",
+    meld_feil_sendefeil: "Couldn't send. Please try again, or email kulturjakten@frivilligsentralen.org.",
+    meld_feil_lukk: "Close",
+
+    // Samtykkebanner (samtykke.js)
+    samtykke_tekst: "We only ask your consent to measure traffic – no other information will be stored.",
+    samtykke_godta: "Accept",
+    samtykke_avsla: "No thanks",
+
     // Felles UI på tvers av sider
     tilbake_til_forside: "← Back to the map and home",
 
@@ -457,6 +523,28 @@ export const OVERSETTELSER = {
     // Feilmeldinger
     feil_navn: "Scegli un soprannome più gentile 🙂",
     feil_kode: "Non abbiamo trovato nessun sito con quel codice. Controlla di averlo scritto correttamente.",
+
+    // «Meld feil»-skjema (meld-feil.js)
+    meld_feil_knapp: "Segnala un problema",
+    meld_feil_tittel: "Segnala un problema con un sito",
+    meld_feil_intro: "Manca un sito, la palina è danneggiata o hai notato un errore nel testo? Faccelo sapere.",
+    meld_feil_sted_label: "A quale sito si riferisce?",
+    meld_feil_sted_velg: "Scegli un sito …",
+    meld_feil_sted_annet: "Manca una palina / altro",
+    meld_feil_tekst_label: "Qual è il problema?",
+    meld_feil_tekst_ph: "Descrivi brevemente il problema …",
+    meld_feil_navn_label: "Nome (facoltativo)",
+    meld_feil_epost_label: "Email (facoltativa, per poterti rispondere)",
+    meld_feil_send: "Invia messaggio",
+    meld_feil_sender: "Invio in corso …",
+    meld_feil_takk: "Grazie! Il tuo messaggio è stato inviato.",
+    meld_feil_sendefeil: "Invio non riuscito. Riprova oppure scrivi a kulturjakten@frivilligsentralen.org.",
+    meld_feil_lukk: "Chiudi",
+
+    // Samtykkebanner (samtykke.js)
+    samtykke_tekst: "Chiediamo solo il tuo consenso per misurare il traffico – nessun'altra informazione verrà memorizzata.",
+    samtykke_godta: "Accetto",
+    samtykke_avsla: "No, grazie",
 
     // Felles UI på tvers av sider
     tilbake_til_forside: "← Torna alla mappa e alla pagina iniziale",

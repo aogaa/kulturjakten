@@ -495,11 +495,13 @@
     import { kjorRegistrering } from "../assets/js/registrering.js";
     import { lagKart } from "../assets/js/kart.js";
     import { settSprak } from "../assets/js/i18n.js";
+    import { monterSamtykke } from "../assets/js/samtykke.js";
 
     const STED_ID = "bogstadleiren";
 
     kjorRegistrering(STED_ID);
     lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+    monterSamtykke();
 
     document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {
       b.addEventListener("click", () => settSprak(b.getAttribute("data-sprak")));

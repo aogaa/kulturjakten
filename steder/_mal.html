@@ -135,6 +135,7 @@
     <div class="lenkerad">
       <a class="knapp-sekundaer knapp" href="../index.html" data-i18n="til_kartet">Til kartet</a>
       <a class="knapp-sekundaer knapp" href="../ledertavle.html" data-i18n="til_ledertavla">Til ledertavla</a>
+      <button type="button" class="knapp-sekundaer knapp" data-meld-feil data-i18n="meld_feil_knapp">Meld feil</button>
     </div>
   </main>
 
@@ -146,6 +147,10 @@
     import { kjorRegistrering } from "../assets/js/registrering.js";
     import { lagKart } from "../assets/js/kart.js";
     import { settSprak } from "../assets/js/i18n.js";
+    import { monterMeldFeil } from "../assets/js/meld-feil.js";
+    import { monterSamtykke } from "../assets/js/samtykke.js";
+
+    monterSamtykke();
 
     // ── SETT denne lik stedets id (samme som i steder.js) ──
     // Merk: poeng gis kun når siden åpnes med koden i URL-en (?k=<kode>).
@@ -154,6 +159,7 @@
 
     kjorRegistrering(STED_ID);
     lagKart("kart", { kunSted: STED_ID, interaktiv: false });
+    monterMeldFeil(STED_ID);
 
     // Koble språkvelgeren.
     document.querySelectorAll(".sprakvelger [data-sprak]").forEach((b) => {

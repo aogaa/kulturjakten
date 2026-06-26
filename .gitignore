@@ -1,6 +1,9 @@
 # Lokale verktøy- og editorfiler (ikke del av nettstedet)
 .claude/
 
+# Node-avhengigheter for etikett-generatoren (installeres lokalt med `npm install`)
+node_modules/
+
 # OS-genererte filer
 Thumbs.db
 .DS_Store

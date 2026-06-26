@@ -82,8 +82,11 @@ Du trenger **ikke** finne på stolpekode eller id — det gjør jeg, så de blir
    legges de inn som valgfrie `navn_uk` / `kortbeskrivelse_uk` ved siden av — mangler de
    viser kart-popupen norsk fallback.
 6. Tester lokalt (kart-markør, lesemodus uten kode, registrering med `?k=`).
-7. `git commit` + `git push` til `main` → GitHub Pages bygger automatisk.
-8. Oppdaterer **kode-registeret** nederst i denne fila.
+7. Kjører `npm run etiketter` → regenererer QR-koder (`qr/<id>.png`/`.svg`) og den
+   trykkeklare omslagsstripa (`qr/etiketter/<id>.pdf`, 400 × 150 mm, trekkes rundt stolpen)
+   for det nye stedet. Se [`README.md`](README.md#qr-koder-og-trykkeklare-stolpe-etiketter).
+8. `git commit` + `git push` til `main` → GitHub Pages bygger automatisk.
+9. Oppdaterer **kode-registeret** nederst i denne fila.
 
 ---
 
@@ -101,8 +104,10 @@ Du trenger **ikke** finne på stolpekode eller id — det gjør jeg, så de blir
   > ⚠️ QR-koden MÅ inneholde `?k=<KODE>`. Uten den gir et skann **null poeng** (siden vises
   > bare i lesemodus). Dette er bevisst — se §0/§5 i `CLAUDE.md`.
 
-- (Valgfritt) Jeg kan også **generere selve QR-bildet** (PNG/SVG) til `/qr/<id>.png` hvis du
-  vil ha det ferdig til utskrift — bare si fra.
+- **QR-bildene og den trykkeklare etiketten lages automatisk** med `npm run etiketter`:
+  rå QR (`qr/<id>.png` + `.svg`) og en omslagsstripe (`qr/etiketter/<id>.pdf`,
+  400 × 150 mm, fire sider side ved side, trekkes rundt stolpen). Se
+  [`README.md`](README.md#qr-koder-og-trykkeklare-stolpe-etiketter).
 
 ---
 

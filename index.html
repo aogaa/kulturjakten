@@ -145,6 +145,7 @@
 
     <div class="lenkerad">
       <a class="knapp" href="ledertavle.html" data-i18n="se_ledertavla">Se ledertavla</a>
+      <button type="button" class="knapp knapp-sekundaer" data-meld-feil data-i18n="meld_feil_knapp">Meld feil</button>
     </div>
   </main>
 
@@ -158,8 +159,12 @@
     import { erUpassende } from "./assets/js/forbudteord.js";
     import { finnStedMedKode, STEDER } from "./assets/js/steder.js";
     import { t, settSprak, plural } from "./assets/js/i18n.js";
+    import { monterMeldFeil } from "./assets/js/meld-feil.js";
+    import { monterSamtykke } from "./assets/js/samtykke.js";
 
     lagKart("kart");
+    monterMeldFeil();
+    monterSamtykke();
 
     // Bygg «Hva vi har laget»-paragrafen. Tallet på steder + pluralform settes
     // her, så slaviske språk får korrekt grammatikk uansett antall.

@@ -271,13 +271,14 @@ a { color: var(--farge-skog-mork); }
 /* ── Skjema ── */
 .skjema { display: flex; flex-direction: column; gap: 0.8rem; }
 .skjema label { display: flex; flex-direction: column; gap: 0.25rem; font-weight: 600; font-size: 0.95rem; }
-.skjema input, .skjema select {
+.skjema input, .skjema select, .skjema textarea {
   padding: 0.65rem 0.7rem;
   font-size: 1rem;
   border: 1px solid var(--kant);
   border-radius: 8px;
   background: #fff;
 }
+.skjema textarea { font-family: inherit; min-height: 5rem; resize: vertical; }
 button, .knapp {
   display: inline-block;
   background: var(--farge-skog);
@@ -294,6 +295,48 @@ button, .knapp {
 button:hover, .knapp:hover { background: var(--farge-skog-mork); }
 .knapp-sekundaer { background: transparent; color: var(--farge-skog-mork); border: 1px solid var(--farge-skog); }
 .knapp-sekundaer:hover { background: rgba(47, 93, 58, 0.08); }
+
+/* ── «Meld feil»-modal (meld-feil.js) ── */
+.meld-feil-dialog {
+  border: none;
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  max-width: 32rem;
+  width: calc(100% - 2rem);
+  box-shadow: var(--skygge);
+  color: var(--farge-tekst);
+}
+.meld-feil-dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+.meld-feil-dialog h2 { margin: 0 0 0.3rem; }
+.meld-feil-dialog p.dempet { margin: 0 0 0.4rem; }
+.meld-feil-status { margin: 0; font-size: 0.95rem; }
+.meld-feil-status.feil { color: var(--farge-aksent); }
+.meld-feil-status.ok { color: var(--farge-suksess); font-weight: 600; }
+.meld-feil-knapper { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+/* ── Samtykkebanner (samtykke.js) ── */
+.samtykke {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  max-width: var(--bredde);
+  margin: 0 auto;
+  background: #fff;
+  color: var(--farge-tekst);
+  border: 1px solid var(--kant);
+  border-radius: var(--radius);
+  box-shadow: var(--skygge);
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1.2rem;
+}
+.samtykke-tekst { margin: 0; flex: 1 1 16rem; font-size: 0.95rem; }
+.samtykke-knapper { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.samtykke-knapper .knapp { padding: 0.55rem 1rem; }
 
 /* ── Kart ── */
 #kart, .kart-utsnitt {
